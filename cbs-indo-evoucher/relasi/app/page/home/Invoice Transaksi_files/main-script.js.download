@@ -1,0 +1,1990 @@
+// core library
+var Base64 = {
+    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", encode: function (e) {
+        var t = "";
+        var n, r, i, s, o, u, a;
+        var f = 0;
+        e = Base64._utf8_encode(e);
+        while (f < e.length) {
+            n = e.charCodeAt(f++);
+            r = e.charCodeAt(f++);
+            i = e.charCodeAt(f++);
+            s = n >> 2;
+            o = (n & 3) << 4 | r >> 4;
+            u = (r & 15) << 2 | i >> 6;
+            a = i & 63;
+            if (isNaN(r)) {
+                u = a = 64
+            } else if (isNaN(i)) {
+                a = 64
+            }
+            t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)
+        }
+        return t
+    }, decode: function (e) {
+        var t = "";
+        var n, r, i;
+        var s, o, u, a;
+        var f = 0;
+        e = e.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+        while (f < e.length) {
+            s = this._keyStr.indexOf(e.charAt(f++));
+            o = this._keyStr.indexOf(e.charAt(f++));
+            u = this._keyStr.indexOf(e.charAt(f++));
+            a = this._keyStr.indexOf(e.charAt(f++));
+            n = s << 2 | o >> 4;
+            r = (o & 15) << 4 | u >> 2;
+            i = (u & 3) << 6 | a;
+            t = t + String.fromCharCode(n);
+            if (u != 64) {
+                t = t + String.fromCharCode(r)
+            }
+            if (a != 64) {
+                t = t + String.fromCharCode(i)
+            }
+        }
+        t = Base64._utf8_decode(t);
+        return t
+    }, _utf8_encode: function (e) {
+        e = e.replace(/\r\n/g, "\n");
+        var t = "";
+        for (var n = 0; n < e.length; n++) {
+            var r = e.charCodeAt(n);
+            if (r < 128) {
+                t += String.fromCharCode(r)
+            } else if (r > 127 && r < 2048) {
+                t += String.fromCharCode(r >> 6 | 192);
+                t += String.fromCharCode(r & 63 | 128)
+            } else {
+                t += String.fromCharCode(r >> 12 | 224);
+                t += String.fromCharCode(r >> 6 & 63 | 128);
+                t += String.fromCharCode(r & 63 | 128)
+            }
+        }
+        return t
+    }, _utf8_decode: function (e) {
+        var t = "";
+        var n = 0;
+        var r = c1 = c2 = 0;
+        while (n < e.length) {
+            r = e.charCodeAt(n);
+            if (r < 128) {
+                t += String.fromCharCode(r);
+                n++
+            } else if (r > 191 && r < 224) {
+                c2 = e.charCodeAt(n + 1);
+                t += String.fromCharCode((r & 31) << 6 | c2 & 63);
+                n += 2
+            } else {
+                c2 = e.charCodeAt(n + 1);
+                c3 = e.charCodeAt(n + 2);
+                t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);
+                n += 3
+            }
+        }
+        return t
+    }
+};
+
+// object transverse
+!function (a) {
+    "use strict";
+
+    function b(a) {
+        return a instanceof Object
+    }
+
+    function c(a) {
+        return "number" == typeof a && !h(a)
+    }
+
+    function d(a, c, d, e, f, h) {
+        var i = [[], 0, g(a).sort(), a], j = [];
+        do {
+            var k = i.pop(), l = i.pop(), m = i.pop(), n = i.pop();
+            for (j.push(k); l[0];) {
+                var o = l.shift(), p = k[o], q = n.concat(o), r = c.call(d, k, p, o, q, m);
+                if (r !== !0) {
+                    if (r === !1) {
+                        i.length = 0;
+                        break
+                    }
+                    if (!(m >= h) && b(p)) {
+                        if (-1 !== j.indexOf(p)) {
+                            if (f) continue;
+                            throw new Error("Circular reference")
+                        }
+                        if (!e) {
+                            i.push(n, m, l, k), i.push(q, m + 1, g(p).sort(), p);
+                            break
+                        }
+                        i.unshift(q, m + 1, g(p).sort(), p)
+                    }
+                }
+            }
+        } while (i[0]);
+        return a
+    }
+
+    function e(a, b, e, g, h, i) {
+        var j = b, k = e, l = 1 === g, m = !!h, n = c(i) ? i : f;
+        return d(a, j, k, l, m, n)
+    }
+
+    var f = 100, g = Object.keys, h = a.isNaN;
+    Object.traverse = e
+}(window);
+
+// object to formdata
+!function (a) {
+    "use strict";
+
+    function b(a) {
+        return j.call(a).slice(8, -1)
+    }
+
+    function c(a) {
+        var b = l.call(a, function (a) {
+            return "[" + a + "]"
+        });
+        return b[0] = a[0], b.join("")
+    }
+
+    function d(a) {
+        var d = new h, e = function (a, e, f, g) {
+            var h = b(e);
+            switch (h) {
+                case"Array":
+                    break;
+                case"Object":
+                    break;
+                case"FileList":
+                    return k.call(e, function (a, b) {
+                        var e = g.concat(b), f = c(e);
+                        d.append(f, a)
+                    }), !0;
+                case"File":
+                    var i = c(g);
+                    return d.append(i, e), !0;
+                case"Blob":
+                    var i = c(g);
+                    return d.append(i, e, e.name), !0;
+                default:
+                    var i = c(g);
+                    return d.append(i, e), !0
+            }
+        };
+        return Object.traverse(a, e, null, null, !0), d
+    }
+
+    var e = a.Blob, f = a.File, g = a.FileList, h = a.FormData, i = e && f && g && h, j = Object.prototype.toString,
+        k = Array.prototype.forEach, l = Array.prototype.map;
+    i && (Object.toFormData = d)
+}(window);
+
+Array.prototype.remove = function () {
+    var what, a = arguments, L = a.length, ax;
+    while (L && this.length) {
+        what = a[--L];
+        while ((ax = this.indexOf(what)) !== -1) {
+            this.splice(ax, 1);
+        }
+    }
+    return this;
+};
+
+Number.prototype.numberFormat = function (c, d, t) {
+    var n = this,
+        c = isNaN(c = Math.abs(c)) ? 2 : c,
+        d = d == undefined ? "." : d,
+        t = t == undefined ? "," : t,
+        s = n < 0 ? "-" : "",
+        i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
+        j = (j = i.length) > 3 ? j % 3 : 0;
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+};
+
+var MD5 = function (string) {
+
+    function RotateLeft(lValue, iShiftBits) {
+        return (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
+    }
+
+    function AddUnsigned(lX, lY) {
+        var lX4, lY4, lX8, lY8, lResult;
+        lX8 = (lX & 0x80000000);
+        lY8 = (lY & 0x80000000);
+        lX4 = (lX & 0x40000000);
+        lY4 = (lY & 0x40000000);
+        lResult = (lX & 0x3FFFFFFF) + (lY & 0x3FFFFFFF);
+        if (lX4 & lY4) {
+            return (lResult ^ 0x80000000 ^ lX8 ^ lY8);
+        }
+        if (lX4 | lY4) {
+            if (lResult & 0x40000000) {
+                return (lResult ^ 0xC0000000 ^ lX8 ^ lY8);
+            } else {
+                return (lResult ^ 0x40000000 ^ lX8 ^ lY8);
+            }
+        } else {
+            return (lResult ^ lX8 ^ lY8);
+        }
+    }
+
+    function F(x, y, z) {
+        return (x & y) | ((~x) & z);
+    }
+
+    function G(x, y, z) {
+        return (x & z) | (y & (~z));
+    }
+
+    function H(x, y, z) {
+        return (x ^ y ^ z);
+    }
+
+    function I(x, y, z) {
+        return (y ^ (x | (~z)));
+    }
+
+    function FF(a, b, c, d, x, s, ac) {
+        a = AddUnsigned(a, AddUnsigned(AddUnsigned(F(b, c, d), x), ac));
+        return AddUnsigned(RotateLeft(a, s), b);
+    }
+
+    function GG(a, b, c, d, x, s, ac) {
+        a = AddUnsigned(a, AddUnsigned(AddUnsigned(G(b, c, d), x), ac));
+        return AddUnsigned(RotateLeft(a, s), b);
+    }
+
+    function HH(a, b, c, d, x, s, ac) {
+        a = AddUnsigned(a, AddUnsigned(AddUnsigned(H(b, c, d), x), ac));
+        return AddUnsigned(RotateLeft(a, s), b);
+    }
+
+    function II(a, b, c, d, x, s, ac) {
+        a = AddUnsigned(a, AddUnsigned(AddUnsigned(I(b, c, d), x), ac));
+        return AddUnsigned(RotateLeft(a, s), b);
+    }
+
+    function ConvertToWordArray(string) {
+        var lWordCount;
+        var lMessageLength = string.length;
+        var lNumberOfWords_temp1 = lMessageLength + 8;
+        var lNumberOfWords_temp2 = (lNumberOfWords_temp1 - (lNumberOfWords_temp1 % 64)) / 64;
+        var lNumberOfWords = (lNumberOfWords_temp2 + 1) * 16;
+        var lWordArray = Array(lNumberOfWords - 1);
+        var lBytePosition = 0;
+        var lByteCount = 0;
+        while (lByteCount < lMessageLength) {
+            lWordCount = (lByteCount - (lByteCount % 4)) / 4;
+            lBytePosition = (lByteCount % 4) * 8;
+            lWordArray[lWordCount] = (lWordArray[lWordCount] | (string.charCodeAt(lByteCount) << lBytePosition));
+            lByteCount++;
+        }
+        lWordCount = (lByteCount - (lByteCount % 4)) / 4;
+        lBytePosition = (lByteCount % 4) * 8;
+        lWordArray[lWordCount] = lWordArray[lWordCount] | (0x80 << lBytePosition);
+        lWordArray[lNumberOfWords - 2] = lMessageLength << 3;
+        lWordArray[lNumberOfWords - 1] = lMessageLength >>> 29;
+        return lWordArray;
+    }
+
+    function WordToHex(lValue) {
+        var WordToHexValue = "", WordToHexValue_temp = "", lByte, lCount;
+        for (lCount = 0; lCount <= 3; lCount++) {
+            lByte = (lValue >>> (lCount * 8)) & 255;
+            WordToHexValue_temp = "0" + lByte.toString(16);
+            WordToHexValue = WordToHexValue + WordToHexValue_temp.substr(WordToHexValue_temp.length - 2, 2);
+        }
+        return WordToHexValue;
+    }
+
+    function Utf8Encode(string) {
+        string = string.replace(/\r\n/g, "\n");
+        var utftext = "";
+
+        for (var n = 0; n < string.length; n++) {
+
+            var c = string.charCodeAt(n);
+
+            if (c < 128) {
+                utftext += String.fromCharCode(c);
+            }
+            else if ((c > 127) && (c < 2048)) {
+                utftext += String.fromCharCode((c >> 6) | 192);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+            else {
+                utftext += String.fromCharCode((c >> 12) | 224);
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+
+        }
+
+        return utftext;
+    }
+
+    var x = Array();
+    var k, AA, BB, CC, DD, a, b, c, d;
+    var S11 = 7, S12 = 12, S13 = 17, S14 = 22;
+    var S21 = 5, S22 = 9, S23 = 14, S24 = 20;
+    var S31 = 4, S32 = 11, S33 = 16, S34 = 23;
+    var S41 = 6, S42 = 10, S43 = 15, S44 = 21;
+
+    string = Utf8Encode(string);
+
+    x = ConvertToWordArray(string);
+
+    a = 0x67452301;
+    b = 0xEFCDAB89;
+    c = 0x98BADCFE;
+    d = 0x10325476;
+
+    for (k = 0; k < x.length; k += 16) {
+        AA = a;
+        BB = b;
+        CC = c;
+        DD = d;
+        a = FF(a, b, c, d, x[k + 0], S11, 0xD76AA478);
+        d = FF(d, a, b, c, x[k + 1], S12, 0xE8C7B756);
+        c = FF(c, d, a, b, x[k + 2], S13, 0x242070DB);
+        b = FF(b, c, d, a, x[k + 3], S14, 0xC1BDCEEE);
+        a = FF(a, b, c, d, x[k + 4], S11, 0xF57C0FAF);
+        d = FF(d, a, b, c, x[k + 5], S12, 0x4787C62A);
+        c = FF(c, d, a, b, x[k + 6], S13, 0xA8304613);
+        b = FF(b, c, d, a, x[k + 7], S14, 0xFD469501);
+        a = FF(a, b, c, d, x[k + 8], S11, 0x698098D8);
+        d = FF(d, a, b, c, x[k + 9], S12, 0x8B44F7AF);
+        c = FF(c, d, a, b, x[k + 10], S13, 0xFFFF5BB1);
+        b = FF(b, c, d, a, x[k + 11], S14, 0x895CD7BE);
+        a = FF(a, b, c, d, x[k + 12], S11, 0x6B901122);
+        d = FF(d, a, b, c, x[k + 13], S12, 0xFD987193);
+        c = FF(c, d, a, b, x[k + 14], S13, 0xA679438E);
+        b = FF(b, c, d, a, x[k + 15], S14, 0x49B40821);
+        a = GG(a, b, c, d, x[k + 1], S21, 0xF61E2562);
+        d = GG(d, a, b, c, x[k + 6], S22, 0xC040B340);
+        c = GG(c, d, a, b, x[k + 11], S23, 0x265E5A51);
+        b = GG(b, c, d, a, x[k + 0], S24, 0xE9B6C7AA);
+        a = GG(a, b, c, d, x[k + 5], S21, 0xD62F105D);
+        d = GG(d, a, b, c, x[k + 10], S22, 0x2441453);
+        c = GG(c, d, a, b, x[k + 15], S23, 0xD8A1E681);
+        b = GG(b, c, d, a, x[k + 4], S24, 0xE7D3FBC8);
+        a = GG(a, b, c, d, x[k + 9], S21, 0x21E1CDE6);
+        d = GG(d, a, b, c, x[k + 14], S22, 0xC33707D6);
+        c = GG(c, d, a, b, x[k + 3], S23, 0xF4D50D87);
+        b = GG(b, c, d, a, x[k + 8], S24, 0x455A14ED);
+        a = GG(a, b, c, d, x[k + 13], S21, 0xA9E3E905);
+        d = GG(d, a, b, c, x[k + 2], S22, 0xFCEFA3F8);
+        c = GG(c, d, a, b, x[k + 7], S23, 0x676F02D9);
+        b = GG(b, c, d, a, x[k + 12], S24, 0x8D2A4C8A);
+        a = HH(a, b, c, d, x[k + 5], S31, 0xFFFA3942);
+        d = HH(d, a, b, c, x[k + 8], S32, 0x8771F681);
+        c = HH(c, d, a, b, x[k + 11], S33, 0x6D9D6122);
+        b = HH(b, c, d, a, x[k + 14], S34, 0xFDE5380C);
+        a = HH(a, b, c, d, x[k + 1], S31, 0xA4BEEA44);
+        d = HH(d, a, b, c, x[k + 4], S32, 0x4BDECFA9);
+        c = HH(c, d, a, b, x[k + 7], S33, 0xF6BB4B60);
+        b = HH(b, c, d, a, x[k + 10], S34, 0xBEBFBC70);
+        a = HH(a, b, c, d, x[k + 13], S31, 0x289B7EC6);
+        d = HH(d, a, b, c, x[k + 0], S32, 0xEAA127FA);
+        c = HH(c, d, a, b, x[k + 3], S33, 0xD4EF3085);
+        b = HH(b, c, d, a, x[k + 6], S34, 0x4881D05);
+        a = HH(a, b, c, d, x[k + 9], S31, 0xD9D4D039);
+        d = HH(d, a, b, c, x[k + 12], S32, 0xE6DB99E5);
+        c = HH(c, d, a, b, x[k + 15], S33, 0x1FA27CF8);
+        b = HH(b, c, d, a, x[k + 2], S34, 0xC4AC5665);
+        a = II(a, b, c, d, x[k + 0], S41, 0xF4292244);
+        d = II(d, a, b, c, x[k + 7], S42, 0x432AFF97);
+        c = II(c, d, a, b, x[k + 14], S43, 0xAB9423A7);
+        b = II(b, c, d, a, x[k + 5], S44, 0xFC93A039);
+        a = II(a, b, c, d, x[k + 12], S41, 0x655B59C3);
+        d = II(d, a, b, c, x[k + 3], S42, 0x8F0CCC92);
+        c = II(c, d, a, b, x[k + 10], S43, 0xFFEFF47D);
+        b = II(b, c, d, a, x[k + 1], S44, 0x85845DD1);
+        a = II(a, b, c, d, x[k + 8], S41, 0x6FA87E4F);
+        d = II(d, a, b, c, x[k + 15], S42, 0xFE2CE6E0);
+        c = II(c, d, a, b, x[k + 6], S43, 0xA3014314);
+        b = II(b, c, d, a, x[k + 13], S44, 0x4E0811A1);
+        a = II(a, b, c, d, x[k + 4], S41, 0xF7537E82);
+        d = II(d, a, b, c, x[k + 11], S42, 0xBD3AF235);
+        c = II(c, d, a, b, x[k + 2], S43, 0x2AD7D2BB);
+        b = II(b, c, d, a, x[k + 9], S44, 0xEB86D391);
+        a = AddUnsigned(a, AA);
+        b = AddUnsigned(b, BB);
+        c = AddUnsigned(c, CC);
+        d = AddUnsigned(d, DD);
+    }
+
+    var temp = WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
+
+    return temp.toLowerCase();
+};
+
+// core script
+var active_modal = "";
+var modal_delay = 300;
+var fnPositiveButton, fnNegativeButton;
+var csrfParam = '_token';
+var loadingStack = {};
+var coreAjaxCall = [];
+var scriptLoaded = [];
+
+function getBaseURL(param) {
+    param = typeof param === 'string' ? param : '';
+    var baseURL = $('meta[name=base-url]').attr('content');
+    var url = baseURL + '/' + param;
+    url = url.replace(baseURL + '//', baseURL + '/');
+    return url;
+}
+
+function getEHHeaderKey() {
+    var domain = $('meta[name=base-domain]').attr('content');
+    var now = new Date();
+    var year = now.getUTCFullYear();
+    var month = now.getUTCMonth() + 1;
+    var date = now.getUTCDate();
+    var hour = now.getUTCHours();
+    var combination = domain + '|' + year + '-' + month + '?' + date + '#' + hour;
+    return MD5(combination);
+}
+
+function getEHHeaderValue() {
+    var domain = $('meta[name=base-domain]').attr('content');
+    var now = new Date();
+    var year = now.getUTCFullYear();
+    var month = now.getUTCMonth() + 1;
+    var date = now.getUTCDate();
+    var hour = now.getUTCHours();
+    var combination = date + '=' + hour + '%' + year + '!' + domain + '@' + month;
+    return MD5(combination);
+}
+
+function getEhCsrfKey() {
+    try {
+        var requestToken = $('meta[name=request-token]').attr('content').split(':');
+        return requestToken[0];
+    } catch (e) {
+        return null;
+    }
+}
+
+function getEhCsrfToken() {
+    try {
+        var requestToken = $('meta[name=request-token]').attr('content').split(':');
+        return requestToken[1];
+    } catch (e) {
+        return null;
+    }
+}
+
+function ajaxTransfer(url, data, callback, asJson, loading) {
+    asJson = typeof asJson === 'undefined' ? false : asJson;
+    loading = typeof loading === 'undefined' ? true : loading;
+
+    if (asJson) {
+        ajaxAsJson(url, data, callback, loading);
+    } else {
+        ajaxAsXhr(url, data, callback, loading);
+    }
+}
+
+function ajaxAsJson(url, data, callback, loading) {
+    var response, csrfToken;
+    var loadingId = generateRandomString();
+    url = getBaseURL(url);
+    if (url.substring(0, 2) === '//') {
+        url = url.substring(1, url.length);
+    }
+
+    if ((data instanceof FormData)) {
+        data = Object.toFormData(data);
+        data = data.serializeArray();
+    }
+
+    csrfToken = $('input[name=' + csrfParam + ']').val();
+    data = {
+        json_data: JSON.stringify(data)
+    };
+    data[csrfParam] = csrfToken;
+    if (loading) {
+        showLoading(loadingId);
+    }
+
+    var header = {};
+    header[getEHHeaderKey()] = getEHHeaderValue();
+    header[getEhCsrfKey()] = getEhCsrfToken();
+
+    var request = $.ajax({
+        type: 'POST',
+        url: url,
+        data: data,
+        headers: header,
+        success: function (response) {
+            if (typeof callback === 'string') {
+                $(callback).html(response);
+            } else {
+                callback(response);
+            }
+
+            lazyLoadImage();
+            setInputPlaceholder();
+            validateRequiredInput();
+            modifyLinkOpener();
+
+            if (loading) {
+                hideLoading(loadingId);
+            }
+
+            try {
+                chosenConvert('.chosen-control, .chosen-select');
+                $('.btn, .title-tip').tooltip();
+            } catch (e) {
+
+            }
+
+            $(document).off('focusin.modal');
+            $('input').attr('autocomplete', 'off');
+            $('.btn-download').click(function () {
+                refineDownloadBtn();
+            });
+        },
+        error: function (e) {
+            if (typeof callback === 'string') {
+                $(callback).html(response);
+            }
+
+            console.log(e);
+            if (loading) {
+                hideLoading(loadingId);
+            }
+        }
+    });
+    coreAjaxCall.push(request);
+}
+
+function ajaxAsXhr(url, data, callback, loading) {
+    var response, csrfToken;
+    var loadingId = generateRandomString();
+
+    url = getBaseURL(url);
+    if (url.substring(0, 2) === '//') {
+        url = url.substring(1, url.length);
+    }
+
+    if (!(data instanceof FormData)) {
+        data = Object.toFormData(data);
+    }
+
+    csrfToken = $('input[name=' + csrfParam + ']').val();
+    data.append(csrfParam, csrfToken);
+
+    if (loading) {
+        showLoading(loadingId);
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader(getEHHeaderKey(), getEHHeaderValue());
+    xhr.setRequestHeader(getEhCsrfKey(), getEhCsrfToken());
+    xhr.onload = function () {
+        response = xhr.responseText;
+        if (xhr.status === 200) {
+            if (typeof callback === 'string') {
+                $(callback).html(response);
+            } else {
+                callback(response);
+            }
+
+            lazyLoadImage();
+            setInputPlaceholder();
+            validateRequiredInput();
+            modifyLinkOpener();
+
+            try {
+                chosenConvert('.chosen-control, .chosen-select');
+                $('.btn, .title-tip').tooltip();
+            } catch (e) {
+
+            }
+
+            $(document).off('focusin.modal');
+            $('input').attr('autocomplete', 'off');
+            $('.btn-download').click(function () {
+                refineDownloadBtn();
+            });
+        } else {
+            if (typeof callback === 'string') {
+                $(callback).html(response);
+            }
+
+            console.log('ajax error! status : ' + xhr.status);
+            console.log(xhr);
+        }
+
+        if (loading) {
+            hideLoading(loadingId);
+        }
+    };
+    xhr.send(data);
+    coreAjaxCall.push(xhr);
+}
+
+function modalAlert(title, message) {
+    $('.modal-backdrop, #modal-target.modal').remove();
+
+    var modal_box = "";
+    modal_box += "<div aria-hidden='true' aria-labelledby='myModalLabel' role='dialog' tabindex='-1' id='modal-target' class='modal fade' data-backdrop='static' data-keyboard='false' style='display: none;'>";
+    modal_box += "<div class='modal-dialog'>";
+    modal_box += "<div class='modal-content'>";
+    modal_box += "<div class='modal-header'>";
+    modal_box += "<button aria-hidden='true' data-dismiss='modal' class='close' onclick='removeModal(this)' rel='modal-target' type='button'>&#215;</button>";
+    modal_box += "<h4 class='modal-title'>" + title + "</h4>";
+    modal_box += "</div>";
+    modal_box += "<div id='modal-output' class='modal-body'>" + message + "</div>";
+    modal_box += "</div>";
+    modal_box += "</div>";
+    modal_box += "</div>";
+
+    $('html').append(modal_box);
+    $('#modal-target').modal('show');
+    $(document).off('focusin.modal');
+    $('input').attr('autocomplete', 'off');
+    $('.btn-download').click(function () {
+        refineDownloadBtn();
+    });
+}
+
+function modalConfirm(title, message, positiveButton, negativeButton) {
+    if (typeof(positiveButton) === 'function') {
+        fnPositiveButton = positiveButton;
+    }
+    if (typeof(negativeButton) === 'function') {
+        fnNegativeButton = negativeButton;
+    }
+
+    var modal_box = "";
+    var modalOpen = $('#modal-target').html();
+    if (modalOpen === undefined) {
+        $('.modal-backdrop, #modal-target.modal').remove();
+
+        modal_box += "<div aria-hidden='true' aria-labelledby='myModalLabel' role='dialog' tabindex='-1' id='modal-target' class='modal fade' data-backdrop='static' data-keyboard='false' style='display: none;'>";
+        modal_box += "<div class='modal-dialog'>";
+        modal_box += "<div class='modal-content'>";
+        modal_box += "<div class='modal-header'>";
+        modal_box += "<button aria-hidden='true' data-dismiss='modal' class='close' onclick='removeModal(this)' rel='modal-target' type='button'>&#215;</button>";
+        modal_box += "<h4 class='modal-title'>" + title + "</h4>";
+        modal_box += "</div>";
+        modal_box += "<div id='modal-output' class='modal-body'>" + message + "<div id='confirm-button-action'><a onclick='negativeButtonClick()' class='btn btn-danger btn-negative-response'>Cancel</a><a onclick='positiveButtonClick()' class='btn btn-primary btn-positive-response'>Ok</a></div></div>";
+        modal_box += "</div>";
+        modal_box += "</div>";
+        modal_box += "</div>";
+
+        $('html').append(modal_box);
+        $('#modal-target').modal('show');
+        $(document).off('focusin.modal');
+        $('input').attr('autocomplete', 'off');
+        $('.btn-download').click(function () {
+            refineDownloadBtn();
+        });
+    } else {
+        $('.modal-title').html(title);
+        $('#modal-output').html(message + "<div id='confirm-button-action'><a onclick='negativeButtonClick()' class='btn btn-danger btn-negative-response'>Cancel</a><a onclick='positiveButtonClick()' class='btn btn-primary btn-positive-response'>Ok</a></div></div>");
+        $('#modal-target').modal('show');
+        $(document).off('focusin.modal');
+        $('input').attr('autocomplete', 'off');
+        $('.btn-download').click(function () {
+            refineDownloadBtn();
+        });
+    }
+}
+
+function positiveButtonClick() {
+    if (typeof(fnPositiveButton) !== 'function') {
+        return false;
+    } else {
+        fnPositiveButton();
+    }
+}
+
+function negativeButtonClick() {
+    if (typeof(fnNegativeButton) !== 'function') {
+        closeModal();
+    } else {
+        fnNegativeButton();
+    }
+}
+
+function getModalTitle(t) {
+    var title = t.getAttribute('title');
+
+    if (typeof title === 'undefined') {
+        title = '';
+    }
+
+    if (title === null || title.length === 0) {
+        title = $(t).attr('data-original-title');
+    }
+    if (typeof title === 'undefined') {
+        title = '';
+    }
+
+    if (title === null || title.length === 0) {
+        title = $(t).html();
+    }
+    if (typeof title === 'undefined') {
+        title = '';
+    }
+
+    return title;
+}
+
+function loadModal(t) {
+    t.setAttribute('href', '#modal-target');
+    t.setAttribute('data-toggle', 'modal');
+
+    var title = getModalTitle(t);
+    $('.modal-backdrop, #modal-target.modal').remove();
+
+    var modal_box = "";
+    modal_box += "<div aria-hidden='true' aria-labelledby='myModalLabel' role='dialog' tabindex='-1' id='modal-target' class='modal fade' data-backdrop='static' data-keyboard='false' style='display: none;'>";
+    modal_box += "<div class='modal-dialog'>";
+    modal_box += "<div class='modal-content'>";
+    modal_box += "<div class='modal-header'>";
+    modal_box += "<button aria-hidden='true' data-dismiss='modal' class='close' onclick='removeModal(this)' rel='modal-target' type='button'>&#215;</button>";
+    modal_box += "<h4 class='modal-title'>" + title + "</h4>";
+    modal_box += "</div>";
+    modal_box += "<div id='modal-output' class='modal-body'></div>";
+    modal_box += "</div>";
+    modal_box += "</div>";
+    modal_box += "</div>";
+
+    $('html').append(modal_box);
+
+    var data = t.getAttribute('data');
+    var ajaxData = new FormData();
+    var ajaxUrl = t.getAttribute('target');
+
+    if (data === null) {
+        data = [];
+    } else {
+        data = data.split(';');
+    }
+
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].length === 0) continue;
+        else {
+            var temp = data[i].split('=');
+            var key = temp[0];
+            var value = temp[1];
+
+            ajaxData.append(key, value);
+        }
+    }
+    ajaxTransfer(ajaxUrl, ajaxData, '#modal-output');
+}
+
+function removeModal(t) {
+    var modal_id = t.getAttribute('rel');
+    $('#modal-target.modal, #modal-target .modal-overlay, .modal-backdrop').animate({opacity: 0}, modal_delay);
+    setTimeout(function () {
+        $('#modal-target.modal, #modal-target .modal-overlay, .modal-backdrop').remove();
+        $('body').removeClass('modal-open');
+    }, modal_delay);
+}
+
+function closeModal(timeout) {
+    $('body').removeAttr('style');
+    if (typeof timeout === 'undefined') $('.modal-header .close').click();
+    else {
+        timeout = parseInt(timeout);
+        setTimeout(function () {
+            $('.modal-header .close').click();
+        }, timeout);
+    }
+}
+
+function showLoading(id) {
+    if (Object.keys(loadingStack).length === 0) {
+        $('#loading-overlay').css({display: 'block'}).animate({opacity: '1'}, 100);
+    }
+    loadingStack[id] = id;
+
+    var loadingScreen = generateLoadingScreen(id);
+    $('body').append(loadingScreen);
+    $('#' + id).animate({opacity: '1'}, 100);
+}
+
+function hideLoading(id) {
+    $('#' + id).animate({opacity: '0'}, 100);
+    setTimeout(function () {
+        $('#' + id).remove();
+    }, 100);
+
+    delete loadingStack[id];
+    if (Object.keys(loadingStack).length === 0) {
+        $('#loading-overlay').animate({opacity: '0'}, 100);
+        setTimeout(function () {
+            $('#loading-overlay').css({display: 'none'});
+        }, 100);
+    }
+}
+
+function reload(timeout, cleanInternalLink) {
+    if (typeof cleanInternalLink === 'undefined') {
+        cleanInternalLink = 0;
+    } else {
+        cleanInternalLink = parseInt(cleanInternalLink);
+        if (isNaN(cleanInternalLink)) {
+            cleanInternalLink = 0;
+        }
+    }
+
+    var url = document.URL;
+    if (cleanInternalLink === 1) {
+        var index = url.indexOf('#');
+        if (index > -1) {
+            url = url.substring(0, index);
+        }
+    }
+
+    freezeScreen();
+    if (typeof timeout === 'undefined') {
+        history.pushState(null, '', url);
+        location.reload();
+    } else {
+        timeout = parseInt(timeout);
+        setTimeout(function () {
+            history.pushState(null, '', url);
+            location.reload();
+        }, timeout);
+    }
+}
+
+function generateLoadingScreen(id) {
+    var loadingScreen = "";
+    loadingScreen += "<div id='" + id + "' class='loading-screen'>";
+    loadingScreen += "<div id='loading-box'>";
+    loadingScreen += "<span>Sedang mengolah data, mohon tunggu...</span>";
+    loadingScreen += "</div>";
+    loadingScreen += "</div>";
+    return loadingScreen;
+}
+
+function getFormData(formId, asObject) {
+    if (typeof asObject === 'boolean' && asObject) {
+        var $form = $("#" + formId);
+        var unindexed_array = $form.serializeArray();
+        var indexed_array = {};
+
+        $.map(unindexed_array, function (n, i) {
+            indexed_array[n['name']] = n['value'];
+        });
+
+        return indexed_array;
+    }
+
+    var formData = new FormData();
+    var input = $('#' + formId + ' input');
+    var select = $('#' + formId + ' select');
+    var textarea = $('#' + formId + ' textarea');
+    var ignored = ['submit', 'button', 'reset'];
+    var i, j, inputType, inputName, inputValue, file, files;
+
+    for (i = 0; i < input.length; i++) {
+        inputType = input[i].getAttribute('type');
+        inputName = input[i].getAttribute('name');
+        inputValue = input[i].value;
+
+        if (ignored.indexOf(inputType) > -1) {
+            continue;
+        } else if (inputType === 'checkbox') {
+            if (!input[i].checked) {
+                inputValue = null;
+            }
+            formData.append(inputName, inputValue);
+        } else if (inputType === 'radio') {
+            inputValue = $('input[name="' + inputName + '"]:checked').val();
+            formData.append(inputName, inputValue);
+        } else if (inputType === 'file') {
+            files = input[i].files;
+            for (j = 0; j < files.length; j++) {
+                file = files[j];
+                formData.append(inputName, file, file.name);
+            }
+        } else {
+            formData.append(inputName, inputValue);
+        }
+    }
+
+    for (i = 0; i < select.length; i++) {
+        inputName = select[i].getAttribute('name');
+        inputValue = select[i].value;
+        formData.append(inputName, inputValue);
+    }
+
+    for (i = 0; i < textarea.length; i++) {
+        inputName = textarea[i].getAttribute('name');
+        inputValue = textarea[i].value;
+        formData.append(inputName, inputValue);
+    }
+
+    return formData;
+}
+
+function setInputPlaceholder() {
+    var labels = $('label');
+    var label, placeholder, currPlaceholder;
+
+    for (var i = 0; i < labels.length; i++) {
+        label = $(labels[i]).attr('for');
+        placeholder = $(labels[i]).html();
+        currPlaceholder = $(labels[i]).parents('form').find('*[name=' + label + ']').attr('placeholder');
+        if (typeof currPlaceholder === 'undefined') {
+            $(labels[i]).parents('form').find('*[name=' + label + ']').attr('placeholder', placeholder);
+        }
+    }
+}
+
+function pipelineDatatable(tableId, dataUrl, excludeFilter) {
+    $.fn.dataTable.pipeline = function (opts) {
+        var conf = $.extend({
+            pages: 5,
+            url: '',
+            data: null,
+            method: 'POST'
+        }, opts);
+
+        var cacheLower = -1;
+        var cacheUpper = null;
+        var cacheLastRequest = null;
+        var cacheLastJson = null;
+
+        return function (request, drawCallback, settings) {
+            var ajax = false;
+            var requestStart = request.start;
+            var drawStart = request.start;
+            var requestLength = request.length;
+            var requestEnd = requestStart + requestLength;
+
+            if (settings.clearCache) {
+                ajax = true;
+                settings.clearCache = false;
+            } else if (cacheLower < 0 || requestStart < cacheLower || requestEnd > cacheUpper) {
+                ajax = true;
+            } else if (JSON.stringify(request.order) !== JSON.stringify(cacheLastRequest.order) || JSON.stringify(request.columns) !== JSON.stringify(cacheLastRequest.columns) || JSON.stringify(request.search) !== JSON.stringify(cacheLastRequest.search)) {
+                ajax = true;
+            }
+
+            cacheLastRequest = $.extend(true, {}, request);
+            if (ajax) {
+                if (requestStart < cacheLower) {
+                    requestStart = requestStart - (requestLength * (conf.pages - 1));
+                    if (requestStart < 0) {
+                        requestStart = 0;
+                    }
+                }
+
+                cacheLower = requestStart;
+                cacheUpper = requestStart + (requestLength * conf.pages);
+
+                request.start = requestStart;
+                request.length = requestLength * conf.pages;
+
+                if ($.isFunction(conf.data)) {
+                    var d = conf.data(request);
+                    if (d) {
+                        $.extend(request, d);
+                    }
+                } else if ($.isPlainObject(conf.data)) {
+                    $.extend(request, conf.data);
+                }
+
+                settings.jqXHR = $.ajax({
+                    type: conf.method,
+                    url: conf.url,
+                    data: request,
+                    dataType: 'json',
+                    cache: false,
+                    success: function (json) {
+                        cacheLastJson = $.extend(true, {}, json);
+                        if (cacheLower !== drawStart) {
+                            json.data.splice(0, drawStart - cacheLower);
+                        }
+                        json.data.splice(requestLength, json.data.length);
+                        drawCallback(json);
+                    }
+                });
+            } else {
+                json = $.extend(true, {}, cacheLastJson);
+                json.draw = request.draw;
+                json.data.splice(0, requestStart - cacheLower);
+                json.data.splice(requestLength, json.data.length);
+                drawCallback(json);
+            }
+        }
+    };
+
+    $.fn.dataTable.Api.register('clearPipeline()', function () {
+        return this.iterator('table', function (settings) {
+            settings.clearCache = true;
+        });
+    });
+
+    $(tableId).append('<tfoot></tfoot>');
+    $(tableId + ' thead tr').clone().appendTo(tableId + ' tfoot');
+    $(tableId + ' thead tr').attr('id', 'head-order');
+    //$(tableId + ' thead tr').before("<tr id='head-filter'></tr>");
+
+    $(tableId + ' thead tr#head-order th').each(function () {
+        $(this).clone().appendTo(tableId + ' thead tr#head-filter');
+    });
+
+    if (typeof(excludeFilter) === "undefined") {
+        excludeFilter = [];
+    }
+
+    var index = 0;
+    $(tableId + ' thead tr#head-filter th').each(function () {
+        $(this).addClass('th-filter');
+        if (excludeFilter.indexOf(index) === -1) {
+            var title = $(this).text();
+            $(this).html('<input type="text" class="form-control input-sm" placeholder="Search ' + title + '" />');
+        } else {
+            $(this).html('');
+        }
+        index++;
+    });
+
+    var idx = 0;
+    $(tableId).DataTable({
+        processing: true,
+        serverSide: true,
+        iDisplayLength: 25,
+        ajax: $.fn.dataTable.pipeline({
+            url: getBaseURL(dataUrl),
+            pages: 5 // number of pages to cache
+        })
+    }).columns().every(function () {
+        var that = this;
+        var elem = $(this.header()).parent().parent().find('#head-filter th');
+        var input = $(elem[idx++]).find('input');
+        $(input).on('keyup change', function () {
+            if (that.search() !== this.value) {
+                that.search(this.value).draw();
+            }
+        });
+    });
+
+    $(tableId + ' thead tr#head-filter').appendTo('thead');
+    $('.dataTables_processing').html('');
+}
+
+function renderDataTable(selector, length) {
+    loadScript('datatables', function () {
+        $.fn.dataTableExt.oApi.fnPagingInfo = function (oSettings) {
+            return {
+                "iStart": oSettings._iDisplayStart,
+                "iEnd": oSettings.fnDisplayEnd(),
+                "iLength": oSettings._iDisplayLength,
+                "iTotal": oSettings.fnRecordsTotal(),
+                "iFilteredTotal": oSettings.fnRecordsDisplay(),
+                "iPage": Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
+                "iTotalPages": Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
+            };
+        };
+
+        if (typeof(length) === 'undefined') {
+            length = 25;
+        }
+
+        $(selector).DataTable({
+            'iDisplayLength': length,
+            'fnDrawCallback': function (x) {
+                var currentPage = this.fnPagingInfo().iPage;
+                var displayLength = this.fnPagingInfo().iLength;
+                var page = (currentPage * displayLength) + 1;
+                rearrangeDataTableNumbering(selector, page);
+            }
+        });
+    })
+}
+
+function rearrangeDataTableNumbering(selector, page) {
+    var firstField = $(selector).find('th:first-child').html().toLowerCase();
+    if (firstField === 'no') {
+        var trList = $(selector).find('tbody tr');
+        for (var i = 0; i < trList.length; i++) {
+            $(trList[i]).find('td:first-child').html(page + i);
+        }
+    }
+}
+
+function setActiveMenu(url) {
+    if (typeof(url) === 'undefined') {
+        url = document.URL;
+    }
+    var split = url.split('');
+    if (split[split.length - 1] === '/') {
+        delete split[split.length - 1];
+        url = split.join('');
+    }
+
+    $('a[href="' + url + '"]').parents('li').addClass('active');
+
+    // additional
+    var subActive = $('.sub-sidebar-wrapper').find('li.active');
+    for (var i = 0; i < subActive.length; i++) {
+        var parentId = $(subActive[i]).parents('ul.sub-nav-item').attr('id');
+        parentId = parentId.replace('sub-nav-', '');
+        activateSideMenu(parentId);
+    }
+}
+
+function validateRequiredInput() {
+    var required = $(':required');
+    for (var i = 0; i < required.length; i++) {
+        $(required[i]).blur(function (t) {
+            var element = t.currentTarget;
+            var value = $(element).val();
+            var parent = $(element).parent();
+
+            if (value.length === 0) {
+                $(parent).addClass('has-error');
+            } else {
+                $(parent).removeClass('has-error');
+            }
+        });
+    }
+}
+
+function scrollToTop(selector) {
+    var defaultScroll = 'html, body';
+    if (typeof selector !== 'undefined') {
+        defaultScroll += ', ' + selector;
+    }
+
+    $(defaultScroll).animate({
+        scrollTop: 0
+    }, 'slow');
+}
+
+function chevronActive(classname) {
+    $('.chevron-shapes li').removeClass('active');
+    $('.chevron-shapes li.' + classname).addClass('active');
+}
+
+function isValidDate(dateString) {
+    // First check for the pattern
+    if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
+        return false;
+
+    // Parse the date parts to integers
+    var parts = dateString.split("/");
+    var day = parseInt(parts[0], 10);
+    var month = parseInt(parts[1], 10);
+    var year = parseInt(parts[2], 10);
+
+    // Check the ranges of month and year
+    if (year < 1000 || year > 3000 || month === 0 || month > 12)
+        return false;
+
+    var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    // Adjust for leap years
+    if (year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0))
+        monthLength[1] = 29;
+
+    // Check the range of the day
+    return day > 0 && day <= monthLength[month - 1];
+}
+
+function isUrlValid(url) {
+    return /^(https?|s?ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
+}
+
+function pad(n, width, z) {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+
+function getCsrfToken() {
+    return $('input[name=' + csrfParam + ']').val();
+}
+
+function dateTimePicker(selector) {
+    loadScript('datetimepicker', function () {
+        try {
+            $(selector).attr('autocomplete', 'off').datetimepicker({
+                format: 'Y-m-d H:i:s'
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    });
+}
+
+function datePicker(selector) {
+    loadScript('datetimepicker', function () {
+        try {
+            $(selector).attr('autocomplete', 'off').datetimepicker({
+                timepicker: false,
+                format: 'Y-m-d',
+                scrollMonth: false,
+                scrollTime: false,
+                scrollInput: false,
+                yearStart: 1930
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    })
+}
+
+function timePicker(selector) {
+    loadScript('datetimepicker', function () {
+        try {
+            $(selector).attr('autocomplete', 'off').datetimepicker({
+                datepicker: false,
+                timepicker: true,
+                format: 'H:i'
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    })
+}
+
+function freezeScreen(timeout) {
+    $('body').append("<div id='freeze-layer'></div>");
+    if (!isNaN(timeout)) {
+        setTimeout(function () {
+            $('#freeze-layer').remove();
+        }, timeout);
+    }
+}
+
+function unfreezeScreen() {
+    $('#freeze-layer').remove();
+}
+
+function ajaxDataTable(selector, url, collumn, defaultOrder) {
+    loadScript('datatable', function () {
+        $.fn.dataTableExt.oApi.fnPagingInfo = function (oSettings) {
+            return {
+                "iStart": oSettings._iDisplayStart,
+                "iEnd": oSettings.fnDisplayEnd(),
+                "iLength": oSettings._iDisplayLength,
+                "iTotal": oSettings.fnRecordsTotal(),
+                "iFilteredTotal": oSettings.fnRecordsDisplay(),
+                "iPage": Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
+                "iTotalPages": Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
+            };
+        };
+
+        if (typeof defaultOrder === 'undefined') {
+            defaultOrder = [1, "asc"];
+        }
+
+        $(selector).DataTable({
+            processing: true,
+            serverSide: true,
+            iDisplayLength: 25,
+            ajax: getBaseURL(url),
+            columns: collumn,
+            order: [defaultOrder],
+            fnDrawCallback: function (x) {
+                var currentPage = this.fnPagingInfo().iPage;
+                var displayLength = this.fnPagingInfo().iLength;
+                var page = (currentPage * displayLength) + 1;
+                rearrangeDataTableNumbering(selector, page);
+            }
+        });
+    })
+}
+
+function getCurrentDate() {
+    return moment().format("YYYY-MM-DD");
+}
+
+function currencyFormat(value, curr) {
+    value = isNaN(value) ? 0 : value;
+    if (typeof curr === 'undefined') {
+        curr = '';
+    } else {
+        curr = curr.trim().toUpperCase();
+    }
+
+    try {
+        if (value < 0) {
+            value *= -1;
+            return '(' + accounting.formatMoney(value, curr + ' ', 2, ".", ",") + ')';
+        } else {
+            return accounting.formatMoney(value, curr + ' ', 2, ".", ",");
+        }
+    } catch (e) {
+
+    }
+
+    if (value < 0) {
+        value *= -1;
+        value = value.toLocaleString();
+        value = value.replace(/\./g, '-');
+        value = value.replace(/,/g, '.');
+        value = value.replace(/-/g, ',');
+
+        if (curr.length === 0) {
+            return '(' + value + ')';
+        } else {
+            return '(' + curr + ' ' + value + ')';
+        }
+    } else {
+        value = value.toLocaleString();
+        value = value.replace(/\./g, '-');
+        value = value.replace(/,/g, '.');
+        value = value.replace(/-/g, ',');
+
+        if (curr.length === 0) {
+            return value;
+        } else {
+            return curr + ' ' + value;
+        }
+    }
+}
+
+function setCleanPreview(source, destination) {
+    $(destination).html('').addClass('hidden');
+    var sourceComponents = $(source).find('input, textarea, select');
+    var i, j, value, type, activeComponent, parent, sourceClass, child, temp;
+
+    for (i = 0; i < sourceComponents.length; i++) {
+        activeComponent = $(sourceComponents[i]);
+        if (activeComponent.is("select")) {
+            value = $(sourceComponents[i]).val();
+            value = $(sourceComponents[i]).find('option[value=' + value + ']').html();
+            $(sourceComponents[i]).attr('preview-value', value);
+        } else if (activeComponent.is("input")) {
+            type = $(sourceComponents[i]).attr('type');
+            value = null;
+
+            if (type === 'text' || type === 'email' || type === 'number') {
+                value = $(sourceComponents[i]).val();
+            } else if (type === 'radio') {
+                if ($(sourceComponents[i]).prop('checked')) {
+                    value = $(sourceComponents[i]).attr('preview-value');
+                } else {
+                    value = null;
+                }
+            } else if (type === 'checkbox') {
+                if ($(sourceComponents[i]).is(':checked')) {
+                    value = '&#10003;';
+                } else {
+                    value = '&times;';
+                }
+            } else {
+                value = $(sourceComponents[i]).val();
+            }
+
+            $(sourceComponents[i]).attr('preview-value', value);
+        } else if (activeComponent.is("textarea")) {
+            value = $(sourceComponents[i]).val();
+            $(sourceComponents[i]).attr('preview-value', value);
+        }
+    }
+
+    var sourceHtml = $(source).html();
+    $(destination).html(sourceHtml);
+    var inputComponents = $(destination).find('input, textarea, select');
+
+    for (i = 0; i < inputComponents.length; i++) {
+        activeComponent = $(inputComponents[i]);
+        parent = $(inputComponents[i]).parent().attr('id');
+        if (parent === destination) {
+            continue;
+        }
+
+        if (activeComponent.is("input")) {
+            type = $(inputComponents[i]).attr('type');
+            parent = $(inputComponents[i]).parent().attr('class');
+
+            if (type === 'hidden') {
+                $(inputComponents[i]).remove();
+                continue;
+            } else if (typeof type === 'undefined') {
+                type = 'text';
+            }
+
+            value = $(inputComponents[i]).attr('preview-value');
+
+            if (typeof parent !== 'undefined' && parent.indexOf('input-group') !== -1) {
+                value = [];
+                child = $(inputComponents[i]).parent().children();
+                for (j = 0; j < child.length; j++) {
+                    temp = $(child[j]).attr('class');
+
+                    if ($(child[j]).is("input")) {
+                        value.push($(child[j]).attr('preview-value'));
+                    } else if (typeof temp !== 'undefined' && temp.indexOf('input-group-addon') !== -1) {
+                        value.push($(child[j]).html());
+                    }
+                }
+
+                value = value.join(' ');
+                $(inputComponents[i]).parent().parent().html(value);
+                continue;
+            } else if (type === 'radio') {
+                value = $(inputComponents[i]).attr('preview-value');
+            } else if (type === 'button' || type === 'submit') {
+                $(inputComponents[i]).remove();
+                continue;
+            }
+        } else if (activeComponent.is("select")) {
+            value = $(inputComponents[i]).attr('preview-value');
+        } else if (activeComponent.is("textarea")) {
+            value = $(inputComponents[i]).attr('preview-value');
+        }
+
+        $(inputComponents[i]).parent().html(value);
+        $(inputComponents[i]).remove();
+    }
+
+    var formGroupList = $(destination).find('.form-group');
+    for (i = 0; i < formGroupList.length; i++) {
+        $(formGroupList[i]).find('label').siblings('div').addClass('form-control-static');
+    }
+
+    sourceClass = $(source).attr('class');
+    $(destination).find('.btn').remove();
+    $(destination).find('.remove-on-preview').remove();
+    $(destination).find('.hidden').remove();
+    $(destination).find('.table').removeClass('tabel-small-padding');
+    $(destination).removeClass('hidden').attr('class', sourceClass);
+}
+
+function generateRandomString() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var unix = Math.round(+new Date() / 1000);
+
+    for (var i = 0; i < 10; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return unix + '-' + text;
+}
+
+function alertWarning(msg) {
+    return "<div class='alert alert-warning'>" + msg + "</div>";
+}
+
+function alertDanger(msg) {
+    return "<div class='alert alert-danger'>" + msg + "</div>";
+}
+
+function alertSuccess(msg) {
+    return "<div class='alert alert-success'>" + msg + "</div>";
+}
+
+function titleCase(str) {
+    return str.replace(/\w\S*/g, function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}
+
+function redirectTo(url, timeout) {
+    freezeScreen(timeout);
+    if (typeof timeout === 'undefined') {
+        timeout = 0;
+    }
+
+    setTimeout(function () {
+        location.href = url;
+    }, timeout);
+}
+
+function setTimezone() {
+    loadScript('jstz', function () {
+        try {
+            var timezone = jstz.determine().name();
+            var cookie = document.cookie.indexOf('timezone');
+            var setTimezone = (cookie === -1) ? true : false;
+            var domain = $('meta[name=base-domain]').attr('content');
+
+            if (timezone.length > 0 && setTimezone === true) {
+                document.cookie = "timezone=" + timezone + "; path=/; domain=" + domain;
+                console.log('timezone set to : ' + timezone);
+            }
+        } catch (e) {
+
+        }
+    })
+}
+
+function alias(str) {
+    str = str.toLowerCase();
+    str = str.replace(/[^a-zA-Z ]/g, "");
+    str = str.replace(/\s+/g, '-');
+    return str;
+}
+
+function getProvinsi() {
+    var negaraId = $('select[name=negara_id]').val();
+    ajaxTransfer('/lokasi/get-provinsi', {negara_id: negaraId}, function (result) {
+        var option = '';
+        result = JSON.parse(result);
+
+        for (var id in result) {
+            if (result.hasOwnProperty(id)) {
+                option += "<option value='" + id + "'>" + result[id] + "</option>";
+            }
+        }
+
+        $('select[name=provinsi_id]').html(option).trigger("chosen:updated");
+        if ($('select[name=kabupaten_id]').length) {
+            getKabupaten();
+        }
+    });
+}
+
+function getKabupaten() {
+    var provinsiId = $('select[name=provinsi_id]').val();
+    ajaxTransfer('/lokasi/get-kabupaten', {provinsi_id: provinsiId}, function (result) {
+        var option = '';
+        result = JSON.parse(result);
+
+        for (var id in result) {
+            if (result.hasOwnProperty(id)) {
+                option += "<option value='" + id + "'>" + result[id] + "</option>";
+            }
+        }
+
+        $('select[name=kabupaten_id]').html(option).trigger("chosen:updated");
+        if ($('select[name=kecamatan_id]').length) {
+            getKecamatan();
+        }
+    })
+}
+
+function getKecamatan() {
+    var kabupatenId = $('select[name=kabupaten_id]').val();
+    ajaxTransfer('/lokasi/get-kecamatan', {kabupaten_id: kabupatenId}, function (result) {
+        var option = '';
+        result = JSON.parse(result);
+
+        for (var id in result) {
+            if (result.hasOwnProperty(id)) {
+                option += "<option value='" + id + "'>" + result[id] + "</option>";
+            }
+        }
+
+        $('select[name=kecamatan_id]').html(option).trigger("chosen:updated")
+    })
+}
+
+function scrollToTop() {
+    $('html, body, #modal-target, .main-content').animate({
+        scrollTop: 0
+    }, 'slow');
+}
+
+function isValidDate(dateString) {
+    // First check for the pattern
+    if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
+        return false;
+
+    // Parse the date parts to integers
+    var parts = dateString.split("/");
+    var day = parseInt(parts[0], 10);
+    var month = parseInt(parts[1], 10);
+    var year = parseInt(parts[2], 10);
+
+    // Check the ranges of month and year
+    if (year < 1000 || year > 3000 || month === 0 || month > 12)
+        return false;
+
+    var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    // Adjust for leap years
+    if (year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0))
+        monthLength[1] = 29;
+
+    // Check the range of the day
+    return day > 0 && day <= monthLength[month - 1];
+}
+
+function chosenConvert(selectors) {
+    try {
+        if (selectors.indexOf('#') > -1 || selectors.indexOf('.') > -1) {
+            var selectorList = $(selectors);
+            for (var i = 0; i < selectorList.length; i++) {
+                $(selectorList[i]).chosenConvert();
+            }
+        } else {
+            var selectorList = selectors.split('|');
+            var selector = null;
+
+            for (var i = 0; i < selectorList.length; i++) {
+                selector = 'select[name=' + selectorList[i] + ']';
+                $(selector).chosenConvert();
+            }
+        }
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function setNomorTelepon(t) {
+    var output = $(t).attr('output');
+    var kode = $(t).attr('kode');
+    var target = $(t).attr('target');
+
+    $('#' + output + ' span').html(kode);
+    $('input[name=kode_' + target + ']').val(kode);
+}
+
+function lazyLoadImage() {
+    setTimeout(function () {
+        var components = $('.lazy-load');
+        var image;
+
+        for (var i = 0; i < components.length; i++) {
+            image = $(components[i]).attr('data-origin');
+            $(components[i]).css({'background-image': 'url(' + image + ')'})
+                .removeAttr('data-origin')
+                .removeClass('lazy-load');
+        }
+    }, 10);
+}
+
+function displayLokasiMap(t) {
+    var data = {
+        ip_address: $(t).attr('data-ip'),
+        user_agent: $(t).attr('data-ua')
+    };
+
+    modalAlert('Informasi Lokasi', '');
+    ajaxTransfer('/display-lokasi-map', data, '#modal-output');
+}
+
+function loadScript(type, callback, async) {
+    var scriptMap = JSON.parse(atob($('textarea[name=script_map]').val()));
+
+    if (typeof scriptMap[type] === 'undefined') {
+        return;
+    } else if (scriptLoaded.indexOf(type) !== -1) {
+        if (typeof callback === 'function') {
+            callback();
+        }
+        return;
+    } else {
+        try {
+            if (typeof async === 'undefined') {
+                async = true;
+            }
+            console.log('load script : ' + scriptMap[type]);
+
+            $.ajax({
+                url: scriptMap[type],
+                dataType: 'script',
+                success: function () {
+                    console.log('script ' + scriptMap[type] + ' loaded');
+                    scriptLoaded.push(type);
+                    if (typeof callback === 'function') {
+                        callback();
+                    }
+                },
+                async: async
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    }
+}
+
+function asyncLoadCSS() {
+    var cssList = $('link[rel=stylesheet]');
+    var href;
+
+    for (var i = 0; i < cssList.length; i++) {
+        href = $(cssList[i]).attr('data-href');
+        if (typeof href !== 'undefined' && href.length > 0) {
+            $(cssList[i]).removeAttr('data-href').attr('href', href);
+        }
+    }
+}
+
+$.fn.chosenConvert = function () {
+    var element = $(this);
+    loadScript('chosen', function () {
+        var style = $(element).attr('style');
+        if (style !== 'display: none;') {
+            $(element).chosen();
+        }
+    })
+};
+
+$.fn.isChecked = function () {
+    var checked = $(this).attr('checked');
+    if ($(this).is(":checked")) {
+        return true;
+    } else if ($(this).prop('checked')) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+$.fn.datetimePickerConvert = function (options) {
+    var element = $(this);
+    loadScript('datetimepicker', function () {
+        $(element).datetimepicker(options);
+    })
+};
+
+function ehMomentJS(params) {
+    loadScript('moment', null, false);
+    return moment(params);
+}
+
+function displayWatermark() {
+    console.log('built with :\n\n' +
+        '%c███████████████████████████████████████████████████\n' +
+        '█                                                 █\n' +
+        '█  █████  ████     █    █   █    █       █     █  █\n' +
+        '█  █      █   █   █ █   █   █   █ █      █     █  █\n' +
+        '█  █████  ████   █████  █████  █████     █     █  █\n' +
+        '█  █      █  █   █   █  █   █  █   █  █  █  █  █  █\n' +
+        '█  █████  █   █  █   █  █   █  █   █   ██    ██   █\n' +
+        '█                                                 █\n' +
+        '███████████████████████████████████████████████████\n\n' +
+        'https://erahajj.co.id\n\n', 'background: #000; color: #2c82c9');
+}
+
+function modifyLinkOpener() {
+    var links = $('a');
+    var i, rel;
+
+    for (i = 0; i < links.length; i++) {
+        rel = $(links[i]).attr('rel');
+        if (typeof rel !== 'undefined' && rel.length > 0) {
+            continue;
+        }
+        $(links[i]).attr('rel', 'noopener noreferrer');
+    }
+}
+
+function isObject(obj) {
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+}
+
+function iterationCopy(src) {
+    let target = {};
+    for (let prop in src) {
+        if (src.hasOwnProperty(prop)) {
+            if (isObject(src[prop])) {
+                target[prop] = iterationCopy(src[prop]);
+            } else {
+                target[prop] = src[prop];
+            }
+        }
+    }
+    return target;
+}
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
+function getDownloadID() {
+    var array = [];
+    var i, j, k;
+    for (i = 0; i < 9; i++) {
+        for (j = 0; j < 9; j++) {
+            for (k = 0; k < 9; k++) {
+                array.push(j);
+            }
+        }
+    }
+
+    array = shuffle(array);
+    array = array.join('-');
+
+    return MD5(array);
+}
+
+function refineDownloadBtn() {
+    var btn = $('.btn-download');
+    var i, url, dxid, temp, res;
+
+    for (i = 0; i < btn.length; i++) {
+        dxid = getDownloadID();
+        url = $(btn[i]).attr('href');
+        if (typeof url === 'undefined') {
+            continue;
+        } else if (url.length === 0) {
+            continue;
+        }
+
+        if (url.indexOf('dxid') === -1) {
+            if (url.indexOf('?') === -1) {
+                url += '?dxid=' + dxid;
+            } else {
+                url += '&dxid=' + dxid;
+            }
+        } else {
+            temp = url.split('dxid');
+            res = temp[1].substring(33);
+            url = temp[0] + 'dxid=' + dxid + res;
+        }
+
+        $(btn[i]).attr('href', url);
+    }
+}
+
+var modalPopupActive = {};
+
+function refineModalPopupLevel(level) {
+    if (typeof modalPopupActive[level] === 'undefined') {
+        return parseInt(level);
+    } else {
+        return refineModalPopupLevel(level + 1);
+    }
+}
+
+function showModalPopup(level, title, content) {
+    if (typeof level === 'undefined') {
+        level = 1;
+    }
+    level = parseInt(level);
+    level = isNaN(level) ? 1 : level;
+    level = refineModalPopupLevel(level);
+    var zindex = level * 9999;
+
+    if (typeof title === 'undefined') {
+        title = '';
+    }
+
+    if (typeof content === 'undefined') {
+        content = '';
+    }
+
+    modalPopupActive[level] = true;
+    var html = '<div style="z-index: ' + zindex + ' !important;" data-id="' + level + '" class="modal-popup-outer"><div class="modal-popup-inner"><div class="modal-popup-title" id="modal-popup-title-' + level + '">' + title + '<a class="modal-popup-close" onclick="hideModalPopup(this)">&times;</a></div><div class="modal-popup-content" id="modal-popup-content-' + level + '">' + content + '</div></div></div>';
+    $('body').append(html);
+    $('.modal-popup-outer[data-id="' + level + '"]').animate({opacity: '1'}, 250);
+}
+
+function hideModalPopup(t) {
+    var level = $(t).parents('.modal-popup-outer').attr('data-id');
+    delete modalPopupActive[level];
+    $(t).parents('.modal-popup-outer').animate({opacity: '0'}, 250);
+    setTimeout(function () {
+        $(t).parents('.modal-popup-outer').remove();
+    }, 1000);
+}
+
+function renderResponsiveTable() {
+    var table = $('.eh-responsive-table');
+    var i, id;
+
+    for(i=0; i<table.length; i++) {
+        id = $(table[i]).attr('id');
+        setTimeout(function () {
+            responsiveTable('#' + id);
+        }, 500);
+    }
+}
+
+function responsiveTable(selector) {
+    console.log('responsive table rendered!');
+    $(selector).addClass('eh-responsive-table');
+    var parent = $(selector).parents('div.outer-responsive-table');
+    var sibling;
+
+    try {
+        if(parent.length === 0){
+            $(selector).before('<div class="outer-responsive-table"></div>');
+            sibling = $(selector).siblings('div.outer-responsive-table');
+
+            var element = $(selector).detach();
+            $(sibling).append(element);
+        }
+    } catch (e) {
+        console.log(e);
+    }
+
+    $(selector + ' td').removeClass('hidden');
+    $(selector + ' th').removeClass('hidden');
+
+    var maxWidth = $(selector).parents('div.outer-responsive-table').outerWidth();
+    var preventHidden = $(selector + ' .prevent-hidden');
+    var thList = $(selector + ' thead th');
+    var i, widthLoop = 0, width, isHidden = false, eclass;
+
+    for (i=0; i<preventHidden.length; i++) {
+        width = $(preventHidden[i]).outerWidth();
+        maxWidth -= width;
+    }
+
+    for (i=0; i<thList.length; i++) {
+        width = $(thList[i]).outerWidth();
+        widthLoop += width;
+        if(widthLoop > maxWidth) {
+            isHidden = true;
+        }
+
+        eclass = $(thList[i]).attr('class');
+        if(typeof eclass !== 'undefined' && eclass.indexOf('prevent-hidden') != -1) {
+            isHidden = false;
+        }
+
+        if(isHidden){
+            $(selector + ' td:nth-child('+(i+1)+')').addClass('hidden');
+            $(selector + ' th:nth-child('+(i+1)+')').addClass('hidden');
+        } else {
+            $(selector + ' td:nth-child('+(i+1)+')').removeClass('hidden');
+            $(selector + ' th:nth-child('+(i+1)+')').removeClass('hidden');
+        }
+    }
+
+    $(window).resize(function () {
+        responsiveTable(selector);
+    });
+}
+
+$(document).ready(function () {
+    try {
+        displayWatermark();
+        asyncLoadCSS();
+        setTimezone();
+        setActiveMenu();
+        setInputPlaceholder();
+        validateRequiredInput();
+        chosenConvert('.chosen-control, .chosen-select');
+        $('.btn, .title-tip').tooltip();
+        modifyLinkOpener();
+        refineDownloadBtn();
+    } catch (e) {
+        console.log(e);
+    }
+
+    $(document).off('focusin.modal');
+    $('input').attr('autocomplete', 'off');
+    $('.btn-download').click(function () {
+        refineDownloadBtn();
+    });
+});

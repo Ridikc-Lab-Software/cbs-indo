@@ -1,0 +1,2 @@
+[24-Apr-2026 02:32:34 UTC] PHP Notice:  Undefined index: kode in /home/delsigna/cbs-indo.com/evoucher/qrcode/index.php on line 2
+[24-Apr-2026 02:32:34 UTC] PHP Notice:  Undefined index: kodeqr in /home/delsigna/cbs-indo.com/evoucher/qrcode/index.php on line 3

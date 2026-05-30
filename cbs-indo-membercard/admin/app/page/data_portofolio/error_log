@@ -1,0 +1,8 @@
+[26-Nov-2025 04:03:53 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_portofolio/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[20-May-2026 20:45:19 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[20-May-2026 20:45:19 Asia/Jakarta] PHP Notice:  Undefined index: foto in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_portofolio/edit.php on line 47
+[21-May-2026 03:09:38 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516

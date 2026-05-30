@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<humans>
+<!-- MASTER MENU -->
+<menu><id>Home1</id><s>0</s><t>s</t><i>fa fa-home</i><n>Beranda</n><l>?p=home</l></menu><!--
+<menu><id>Galery3</id><s>0</s><t>s</t><i>fa fa-home</i><n>Galery</n><l>?p=galery</l></menu>
+<menu><id>Berita4</id><s>0</s><t>s</t><i>fa fa-home</i><n>Berita</n><l>?p=berita</l></menu>-->
+<menu><id>Promo6</id><s>0</s><t>s</t><i>fa fa-home</i><n>Info Poin</n><l>?p=info_point</l></menu>
+<menu><id>Promo6</id><s>0</s><t>s</t><i>fa fa-home</i><n>Promo</n><l>?p=info_promo</l></menu>
+<menu><id>Profil2</id><s>0</s><t>s</t><i>fa fa-home</i><n>Poin Saya</n><l>?p=profil</l></menu>
+<menu><id>Profil2</id><s>0</s><t>s</t><i>fa fa-home</i><n>Riwayat</n><l>?p=riwayat</l></menu>
+<menu><id>Login7</id><s>0</s><t>s</t><i>fa fa-home</i><n>Masuk</n><l>?p=login</l></menu>
+<menu><id>Login7</id><s>0</s><t>s</t><i>fa fa-home</i><n>Daftar</n><l>index.php?p=daftar</l></menu>
+<menu><id>Login7</id><s>0</s><t>s</t><i>fa fa-home</i><n>Tentang Kami</n><l>http://cbs-indo.com</l></menu>
+<!-- MASTER MENU -->
+</humans>

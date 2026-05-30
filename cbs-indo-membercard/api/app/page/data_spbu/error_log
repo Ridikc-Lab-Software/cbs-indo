@@ -1,0 +1,7 @@
+[01-May-2026 06:27:23 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_databases_2021_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:637
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(637): PDO->__construct('mysql:host=loca...', 'delsigna_databa...', 'databases_2021_...')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_spbu/tampil.php(6): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 637

@@ -1,0 +1,91 @@
+[04-Nov-2025 11:18:50 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 100
+[04-Nov-2025 11:18:50 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 105
+[04-Nov-2025 11:18:50 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 110
+[04-Nov-2025 11:18:50 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[05-Nov-2025 13:43:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[05-Nov-2025 13:43:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[05-Nov-2025 13:44:28 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[05-Nov-2025 13:44:37 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[05-Nov-2025 15:22:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[11-Nov-2025 02:22:30 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 100
+[11-Nov-2025 02:22:30 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 105
+[11-Nov-2025 02:22:30 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 110
+[11-Nov-2025 09:22:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[11-Nov-2025 02:22:31 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 100
+[11-Nov-2025 02:22:31 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 105
+[11-Nov-2025 02:22:31 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 110
+[11-Nov-2025 09:22:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[24-Mar-2026 10:57:30 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[29-Mar-2026 06:22:58 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[09-Apr-2026 01:58:06 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[14-Apr-2026 20:54:50 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[14-Apr-2026 23:30:36 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[16-Apr-2026 03:50:38 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[16-Apr-2026 05:34:12 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[18-Apr-2026 10:04:24 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[18-Apr-2026 10:04:24 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 6
+[18-Apr-2026 10:04:24 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 10
+[18-Apr-2026 10:04:28 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[18-Apr-2026 10:04:42 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[18-Apr-2026 10:04:42 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 6
+[18-Apr-2026 10:04:42 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 10
+[18-Apr-2026 10:04:44 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[18-Apr-2026 10:05:01 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[18-Apr-2026 10:05:01 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 6
+[18-Apr-2026 10:05:01 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 10
+[23-Apr-2026 04:56:44 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[25-Apr-2026 00:48:05 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[29-Apr-2026 21:19:24 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[01-May-2026 00:43:46 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-May-2026 19:33:25 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-May-2026 20:40:21 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 10:08:33 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 10:08:33 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 6
+[11-May-2026 10:08:33 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 10
+[11-May-2026 11:59:59 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 11:59:59 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 6
+[11-May-2026 11:59:59 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 10
+[11-May-2026 12:00:02 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 12:00:09 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 12:00:09 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 6
+[11-May-2026 12:00:09 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 10
+[11-May-2026 12:00:15 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 12:00:22 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 12:00:22 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 6
+[11-May-2026 12:00:22 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 10
+[11-May-2026 12:40:51 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 12:40:51 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 6
+[11-May-2026 12:40:51 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_jenis_transaksi/tampil.php on line 10
+[14-May-2026 20:36:30 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516

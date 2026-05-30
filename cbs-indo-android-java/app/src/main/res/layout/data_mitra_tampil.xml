@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_mitra"/>
+	
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_mitra"
+        android:id="@+id/nama_mitra"/>
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nama_mitra"
+        android:id="@+id/alamat"/>
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/alamat"
+        android:id="@+id/no_telepon"/>
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/no_telepon"
+        android:id="@+id/nama_pemilik"/>
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nama_pemilik"
+        android:id="@+id/no_telepon_pemilik"/>
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/no_telepon_pemilik"
+        android:id="@+id/tanggal_daftar"/>
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tanggal_daftar"
+        android:id="@+id/username"/>
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:id="@+id/password"/>
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:id="@+id/status"/>
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/status"
+        android:id="@+id/gambar_logo"/>
+	
+
+
+	<Button
+        android:layout_below="@+id/foto_logo_bank"
+        android:layout_width="wrap_content"
+		android:layout_height="45dp"
+		android:backgroundTint="@color/color_edit"
+		android:textColor="#ffff"
+        android:text="Edit"
+		android:drawableLeft="@drawable/edit_putih"
+        android:id="@+id/tombol_edit" />
+
+    <Button
+        android:layout_width="wrap_content"
+		android:layout_height="45dp"
+		android:backgroundTint="@color/color_hapus"
+		android:textColor="#ffff"
+        android:text="Hapus"
+        android:layout_below="@+id/foto_logo_bank"
+        android:layout_toRightOf="@+id/tombol_edit"
+		android:drawableLeft="@drawable/delete_putih"
+        android:id="@+id/tombol_hapus" />
+
+</RelativeLayout>
+
+
+
+

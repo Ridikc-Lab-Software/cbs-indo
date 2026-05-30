@@ -1,0 +1,401 @@
+ROOT
+   - 401.html
+   - 403.html
+   - 404.html
+   - 500.html
+   - about.html
+   - about-v2.html
+   - agencies-listing.html
+   - agency-detail.html
+   - agent-detail.html
+   - agents-listing.html
+   - agents-listing-v2.html
+   - agents-listing-v3.html
+   - blog.html
+   - blog-v2.html
+   - blog-v3.html
+   - blog-detail.html
+   - blog-detail-full.html
+   - bookmarked.html
+   - comingsoon.html
+   - contact.html
+   - contact-v2.html
+   - contact-v3.html
+   - create-account.html
+   - create-agency.html
+   - faq.html
+   - gallery.html
+   - gallery-v2.html
+   - gallery-v3.html
+   - index-carousel.html
+   - index-carousel-v2.html
+   - index-carousel-v3.html
+   - index-carousel-v4.html
+   - index-carousel-v5.html
+   - index-map.html
+   - index-map-v2.html
+   - index-map-v3.html
+   - index-map-v4.html
+   - index-map-v5.html
+   - index-search.html
+   - index-search-v2.html
+   - index-search-v3.html
+   - index-search-v4.html
+   - index-search-v5.html
+   - index-property-slide.html
+   - invoice-print.html
+   - left-sidebar.html
+   - right-sidebar.html
+   - login.html
+   - sign-in.html
+   - my-properties.html
+   - new-property.html
+   - pricing.html
+   - pricing-v2.html
+   - profile.html
+   - properties-listing.html
+   - properties-listing-2c.html
+   - properties-listing-grid-lc.html
+   - properties-listing-grid-rc.html
+   - properties-listing-lines-lc.html
+   - properties-listing-lines-rc.html
+   - property-detail.html
+   - shortcodes.html
+   - terms-conditions.html
+   - timeline.html
+   - timeline-v2.html
+   - contact.php
+   - upload.php
+
+   - AJAX
+	- marker.json
+
+   - IMAGES
+	- arrow-right-white.png
+	- bloken-line.png
+	- broken-pin.png
+	- default-user-image.png
+	- icon-ads.png
+	- icon-ads-grey.png
+	- icon-property.png
+	- icon-slider.png
+	- icon-slider-large.png
+	- logo.png
+	- logo_x1.png
+	- logo_x1_w.png
+	- logo_x1-light.png
+	- logo_x2.png
+	- logo_x2-light.png
+	- logo-light.png
+	- mini-arrow.png
+	- mini-arrow-menu.png
+	- mini-logo.png
+	- mini-logo-x1.png
+	- property-selected.png
+	- separator.png
+
+	- FAVICON
+	    - apple-touch-icon.png
+	    - apple-touch-icon-57x57.png
+	    - apple-touch-icon-72x72.png
+	    - apple-touch-icon-76x76.png
+	    - apple-touch-icon-114x114.png
+	    - apple-touch-icon-120x120.png
+	    - apple-touch-icon-144x144.png
+	    - apple-touch-icon-152x152.png
+	    - favicon.ico
+	    - favicon.png
+
+	- MAPS
+	    - apartement-pin.png
+	    - apartement-hover-pin.png
+	    - building-area-pin.png
+	    - building-area-hover-pin.png
+	    - close.png
+	    - condominium-pin.png
+	    - condominium-hover-pin.png
+	    - cottage-pin.png
+	    - cottage-hover-pin.png
+	    - family-house-pin.png
+	    - family-house-hover-pin.png
+	    - m1.png
+	    - m2.png
+	    - m3.png
+	    - m4.png
+	    - m5.png
+	    - pin-drag.png
+	    - pin-maps.png
+	    - pin-maps-hover.png
+	    - single-home-pin.png
+	    - single-home-hover-pin.png
+	    - you-are-here.png
+
+	- PARALLAX
+	    - parallax-header1.png
+	    - parallax-header2.png
+	    - parallax-header-cloud.png
+	    - parallax-header-sun.png
+
+   - CSS
+	- bootstrap.css
+	- bootstrap.min.css
+	- custom.css
+	- media-query.css
+	- menu.css
+	- ui-spinner.css
+
+	- LESS
+	    - basic.less
+	    - breadcrumb.less
+	    - button.less
+	    - footer.less
+	    - function.less
+	    - home.less
+	    - info-box.less
+	    - maps.less
+	    - media-query.less
+	    - menu.less
+	    - modal.less
+	    - navbar.less
+	    - object.less
+	    - pagination.less
+	    - searcher.less
+	    - section.less
+	    - slider.less
+	    - slider-page.less
+	    - typography.less
+	    - ui-spinner.less
+	    - variable.less
+
+	    - COLOR
+		- 1ABC9C.less
+		- 1FB7A6.less
+		- 2C3E50.less
+		- 2ECC71.less
+		- 7F8C8D.less
+		- 8E44AD.less
+		- 9B59B6.less
+		- 16A085.less
+		- 27AE60.less
+		- 50C8B4.less
+		- 2980B9.less
+		- 3498DB.less
+		- 34495E.less
+		- 687475.less
+		- C0392B.less
+		- D35400.less
+		- E67E22.less
+		- E74C3C.less
+		- F1C40F.less
+		- F39C12.less
+		- DARK.less
+
+	    - PAGES
+		- about.less
+		- agency.less
+		- agent.less
+		- blog.less
+		- coming-soon.less
+		- contact.less
+		- create-agency.less
+		- error.less
+		- faq.less
+		- gallery.less
+		- header-page.less
+		- invoice.less
+		- listing-page.less
+		- my-property.less
+		- new-property.less
+		- pricing.less
+		- property-page.less
+		- shortcode.less
+		- sidebar.less
+		- sign-in.less
+		- term-condition.less
+		- timeline.less
+		- user-profile.less
+
+	- TEMPLATE
+	    - basic.css
+	    - breadcrumb.css
+	    - button.css
+	    - footer.css
+	    - home.css
+	    - info-box.css
+	    - maps.css
+	    - modal.css
+	    - navbar.css
+	    - object.css
+	    - pagination.css
+	    - searcher.css
+	    - section.css
+	    - slider.css
+	    - slider-page.css
+	    - typography.css
+
+	    - COLOR
+		- 1ABC9C.css
+		- 1FB7A6.css
+		- 2C3E50.css
+		- 2ECC71.css
+		- 7F8C8D.css
+		- 8E44AD.css
+		- 9B59B6.css
+		- 16A085.css
+		- 27AE60.css
+		- 50C8B4.css
+		- 2980B9.css
+		- 3498DB.css
+		- 34495E.css
+		- 687475.css
+		- C0392B.css
+		- D35400.css
+		- E67E22.css
+		- E74C3C.css
+		- F1C40F.css
+		- F39C12.css
+		- DARK.css
+
+	    -PAGES
+		- about.css
+		- agency.css
+		- agent.css
+		- blog.css
+		- coming-soon.css
+		- contact.css
+		- create-agency.css
+		- error.css
+		- faq.css
+		- gallery.css
+		- header-page.css
+		- invoice.css
+		- listing-page.css
+		- my-property.css
+		- new-property.css
+		- pricing.css
+		- property-page.css
+		- shortcode.css
+		- sidebar.css
+		- sign-in.css
+		- term-condition.css
+		- timeline.css
+		- user-profile.css
+
+	- VENDOR
+
+	    - ANIMATE-WOW
+	        - animate.css
+
+	    - DEATH
+	        - death.css
+
+	    - DROPZONE
+	        - dropzone.css
+
+	    - EASYDROPDOWN
+	        - easydropdown.css
+
+	    - FLIPCLOCK
+	        - flipclock.css
+
+	    - FONT-AWESOM
+	        - font-awesome.min.css
+
+		FONTS
+		    - FontAwesome.otf
+		    - fontawesome-webfont.eot
+		    - fontawesome-webfont.svg
+		    - fontawesome-webfont.ttf
+		    - fontawesome-webfont.woff
+		    - fontawesome-webfont.woff2
+
+		CSS
+		    - font-awesome.min.css
+
+	    - FOTORAMA
+	        - fotorama.css
+		- fotorama.png
+		- fotorama@2x.png
+
+	    - LABELAUTY
+	        - labelauty.css
+
+	    - MAGNIFIC-POPUP
+	        - magnific-popup.css
+
+	    - MMENU
+	        - jquery.mmenu.all.css
+
+	    - NOUISLIDER
+	        - nouislider.min.css
+
+	    - SKILL-BAR
+	        - skill-bars.css
+
+   - SCRIPT
+	- jquery.min.js
+	- jquery-ui.min.js
+	- bootstrap.min.js
+	- custom.js
+	- modernizr.min.js
+
+	- MMENU
+	    - mmenu.min.all.js
+
+	- ANIMATION-WOW
+	    - wow.min.js
+
+	- LABELAUTY
+	    - labelauty.js
+
+	- PARALLAX
+	    - parallax.js
+
+	- IMAGES-FILL
+	    - imagesloaded.min.js
+	    - imagefill.js
+
+	- EASYDROPDOWN
+	    - jquery.easydropdown.min.js
+
+	- MAPS
+	    - infobox.js
+	    - home-maps.js
+	    - markerclusterer.js
+
+	- CAROUSEL
+	    - responsiveCarousel.min.js
+
+	- NOUI-SLIDER
+	    - nouislider.all.js
+
+	- FOTORAMA
+	    - fotorama.min.js
+
+	- DEATH
+	    - death.js
+
+	- MAGNIFIC-POPUP
+	    - magnific-popup.min.js
+
+	- SKILL-BARS
+	    - custom.js
+
+	- CIRCLE-DIAGRAM
+	    - circle-diagram.js
+
+	- COUNTTO
+	    - countTo.min.js
+
+	- DROPZONE
+	    - dropzone.min.js
+
+	- GRID-A-LICIOUS
+	    - grid-a-licious.min.js
+
+	- SUFFLE
+	    - shuffle.min.js
+	    - ba-throttle-debounce.min.js
+
+	- FLIPCLOCK
+	    - flipclock.js

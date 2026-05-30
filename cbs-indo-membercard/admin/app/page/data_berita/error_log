@@ -1,0 +1,3 @@
+[20-May-2026 06:49:33 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[20-May-2026 06:49:33 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[23-May-2026 10:30:14 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516

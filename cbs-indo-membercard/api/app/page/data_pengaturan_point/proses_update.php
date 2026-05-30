@@ -1,0 +1,36 @@
+<?php 
+require_once('../../../include/all_include.php');
+
+$id_pengaturan_point=isset($_POST["id_pengaturan_point"]) ? $_POST["id_pengaturan_point"]:"";
+$nama_pengaturan=isset($_POST["nama_pengaturan"]) ? $_POST["nama_pengaturan"]:"";
+$id_kategori_member=isset($_POST["id_kategori_member"]) ? $_POST["id_kategori_member"]:"";
+$id_jenis_transaksi=isset($_POST["id_jenis_transaksi"]) ? $_POST["id_jenis_transaksi"]:"";
+$point=isset($_POST["point"]) ? $_POST["point"]:"";
+
+
+$sql = "UPDATE data_pengaturan_point SET 
+nama_pengaturan=?, 
+id_kategori_member=?, 
+id_jenis_transaksi=?, 
+point=? 
+
+WHERE id_pengaturan_point=?";
+
+$stmt = $dbh->prepare($sql);
+$stmt->execute([
+$nama_pengaturan, 
+$id_kategori_member, 
+$id_jenis_transaksi, 
+$point, 
+
+$id_pengaturan_point]);
+$resp = [];
+$resp["status"]="success";
+echo (json_encode($resp)) 
+?>
+
+
+
+
+
+

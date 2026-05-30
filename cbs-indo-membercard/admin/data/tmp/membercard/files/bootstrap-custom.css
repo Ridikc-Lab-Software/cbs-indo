@@ -1,0 +1,538 @@
+/* ========================================================= */
+/*           ULTRA MODERN UI KIT 2025 – FULL CSS             */
+/*           Ramping • Clean • Premium • No Framework        */
+/* ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ====================== CONTAINER & GRID ====================== */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.75rem;
+}
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0.75rem;
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0.75rem;
+}
+.g-4 {
+  gap: 1rem;
+}
+.d-flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-5 {
+  gap: 1.5rem;
+}
+
+/* ====================== TABEL MINIMAL ====================== */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.84rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06); */
+}
+
+.table th {
+  background: #f9f9fb;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  text-align: start;
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table td {
+  padding: 0.1rem 0.1rem;
+  color: #1e293b;
+  font-weight: 500;
+  margin-right: 20px;
+
+  /* border-bottom: 1px solid #f1f5f9; */
+}
+
+.table tbody tr:hover {
+  /* background: #f8faff; */
+}
+
+.table th:first-child {
+  border-top-left-radius: 12px;
+}
+.table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* ====================== FORM LABEL ====================== */
+.form-label {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* ====================== INPUT, SELECT, TEXTAREA ====================== */
+.form-control,
+.form-select,
+textarea.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.48rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0f172a;
+  background: #ffffff;
+  border: 1.4px solid #cbd5e1;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  height: 38px; /* tinggi seragam semua input! */
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 90px;
+  resize: vertical;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea.form-control:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #fafbff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.16);
+}
+
+/* File input tetap ikut gaya */
+.form-control[type="file"] {
+  padding: 0.35rem 0.75rem;
+}
+
+/* ====================== INPUT GROUP (dengan icon) ====================== */
+.input-group {
+  display: flex;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.input-group .input-group-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  background: #f8fafc;
+  border: 1.4px solid #cbd5e1;
+  border-right: none;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.input-group .form-control,
+.input-group .form-select {
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  padding-left: 0.6rem;
+}
+
+/* ====================== DATE INPUT + ICON KALENDER ====================== */
+.form-control[type="date"] {
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px;
+}
+
+/* ====================== CHECKBOX & RADIO CUSTOM ====================== */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form-check-input {
+  opacity: 0;
+  position: absolute;
+  width: 1.15rem;
+  height: 1.15rem;
+  cursor: pointer;
+}
+
+.form-check-label {
+  position: relative;
+  font-size: 0.89rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* Checkbox */
+.form-check-input[type="checkbox"] + .form-check-label::before {
+  content: "";
+  display: inline-block;
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 1.8px solid #cbd5e1;
+  border-radius: 6px;
+  background: white;
+  margin-right: 0.65rem;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+}
+
+.form-check-input[type="checkbox"]:checked + .form-check-label::before {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.5L4.5 9L11 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Radio */
+.form-check-input[type="radio"] + .form-check-label::before {
+  content: "";
+  display: inline-block;
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 1.8px solid #cbd5e1;
+  border-radius: 50%;
+  background: white;
+  margin-right: 0.65rem;
+  transition: all 0.2s ease;
+}
+
+.form-check-input[type="radio"]:checked + .form-check-label::before {
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 4px #3b82f6 inset;
+}
+
+/* ====================== BUTTON ULTRA MINIMAL ====================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-weight: 100rem;
+  font-size: 0.835rem;
+  padding: 0.42rem 0.9rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* ========== UPDATE WARNA SESUAI REQUEST ========== */
+
+.btn-primary {
+  background: #03a9f4;
+  color: white;
+}
+.btn-primary:hover {
+  background: #0286c3;
+}
+
+.btn-success {
+  background: #40978a;
+  color: white;
+}
+.btn-success:hover {
+  background: #327a6f;
+}
+
+.btn-danger {
+  background: #ef6e67;
+  color: white;
+}
+.btn-danger:hover {
+  background: #c42d3d;
+}
+
+.btn-warning {
+  background: #f7c346;
+  color: white;
+}
+.btn-warning:hover {
+  background: #d6a839;
+}
+
+.btn-secondary {
+  background: #f4f4f5;
+  color: #4b5675;
+}
+
+.btn-info {
+  background: #f4f4f5;
+  color: #4b5675;
+}
+
+.btn-default {
+  background: #d7d7d7;
+  color: #4b5675;
+}
+
+.btn-outline-primary {
+  background: transparent;
+  color: #03a9f4;
+  border: 1.4px solid #93bbfc;
+  box-shadow: none;
+}
+.btn-outline-primary:hover {
+  background: #03a9f4;
+  color: white;
+  border-color: #03a9f4;
+}
+/* WRAP SELECT UMUM */
+.form-control.selectpicker {
+  border-radius: 10px !important;
+  background-color: #fafafa !important;
+  border: 1px solid #d7d7d7 !important;
+  padding: 10px 14px !important;
+  height: auto !important;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.form-control.selectpicker:hover {
+  background-color: #f1f1f1 !important;
+}
+
+/* FOCUS EFFECT */
+.bootstrap-select .dropdown-toggle:focus,
+.form-control.selectpicker:focus {
+  border-color: #4c8bf5 !important;
+  box-shadow: 0 0 0 3px rgba(76, 139, 245, 0.25) !important;
+}
+
+/* DROPDOWN MENU */
+.bootstrap-select .dropdown-menu {
+  border-radius: 10px !important;
+  padding: 8px 0 !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* SEARCH BOX */
+.bootstrap-select .bs-searchbox input {
+  border-radius: 8px !important;
+  border: 1px solid #d1d1d1 !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  transition: all 0.25s ease;
+}
+
+.bootstrap-select .bs-searchbox input:focus {
+  border-color: #4c8bf5 !important;
+  box-shadow: 0 0 0 2px rgba(76, 139, 245, 0.25) !important;
+}
+
+/* ITEM LIST */
+.bootstrap-select .dropdown-menu li a {
+  font-size: 14px !important;
+  padding: 10px 14px !important;
+  border-radius: 6px !important;
+}
+
+/* HOVER ITEM */
+.bootstrap-select .dropdown-menu li a:hover {
+  background-color: #eef4ff !important;
+  color: #2a5bd7 !important;
+}
+
+/* ITEM TERPILIH */
+.bootstrap-select .dropdown-menu li.selected a {
+  background-color: #e5eeff !important;
+  color: #2457d3 !important;
+  font-weight: 600 !important;
+}
+
+.card-group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ini yang bikin kiri & kanan terpisah otomatis */
+  background: #f8f9fa;
+  padding: 12px 20px; /* lebih lega */
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Bagian kiri: icon + teks */
+.title-left {
+  display: flex;
+  align-items: center;
+  gap: 14px; /* jarak icon ↔ teks */
+}
+
+.title-left img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0; /* biar icon tidak mengecil */
+}
+
+/* Bagian kanan: tombol tambah */
+.title-right {
+  margin-left: auto; /* cadangan kalau tidak pakai justify-content */
+}
+
+/* Optional: kalau tombolnya pakai function btn_tambah() yang menghasilkan <button> atau <span> */
+.title-right a,
+.title-right button,
+.title-right .btn {
+  white-space: nowrap; /* biar teks "Tambah" tidak pecah baris */
+}
+
+/* Responsif untuk mobile – tetap rapi */
+@media (max-width: 640px) {
+  .card-group-title {
+    padding: 10px 15px;
+    font-size: 1.1rem;
+  }
+
+  .title-left img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .title-left {
+    gap: 10px;
+  }
+}
+.scroll-container {
+  overflow-x: auto;
+  max-width: calc(100vw - 390px);
+  margin-bottom: 21px;
+}
+
+@media (max-width: 1024px) {
+  .scroll-container {
+    max-width: calc(100vw - 105px);
+  }
+}
+
+@media (max-width: 640px) {
+  .scroll-container {
+    max-width: calc(100vw - 60px);
+    /* 20px kiri + 20px kanan */
+  }
+}
+
+/* ---------- MODAL BACKGROUND ---------- */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- CARD MODAL ---------- */
+.modal-card {
+  background: #ffffff;
+  width: 420px;
+  max-width: 92%;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: modalShow 0.3s ease-out;
+}
+
+@keyframes modalShow {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- HEADER MODAL ---------- */
+.modal-header {
+  background: linear-gradient(135deg, #40978a, #2c6b61);
+  color: white;
+  padding: 18px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+}
+
+.modal-header .close-btn {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 26px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.modal-header .close-btn:hover {
+  opacity: 1;
+}
+
+/* ---------- BODY MODAL ---------- */
+.modal-body {
+  padding: 30px 28px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .modal-card {
+    width: 95%;
+  }
+
+  .modal-body {
+    padding: 24px 20px;
+  }
+}

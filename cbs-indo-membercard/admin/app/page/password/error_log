@@ -1,0 +1,4 @@
+[31-Mar-2026 09:09:09 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[31-Mar-2026 09:09:09 Asia/Jakarta] PHP Notice:  Undefined index: admin in /home/delsigna/cbs-indo.com/membercard/admin/app/page/password/edit.php on line 12
+[31-Mar-2026 09:09:09 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type bool in /home/delsigna/cbs-indo.com/membercard/admin/app/page/password/edit.php on line 17
+[31-Mar-2026 09:09:09 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type bool in /home/delsigna/cbs-indo.com/membercard/admin/app/page/password/edit.php on line 31

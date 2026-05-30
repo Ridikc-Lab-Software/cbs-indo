@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<humans>
+<menu><id>B9</id><s>B</s><t>s</t><i>fa fa-copy</i><n>Data Header</n><l>../data_header/index.php</l></menu>
+
+<menu><id>B2</id><s>B</s><t>s</t><i>fa fa-users</i><n>Data Team</n><l>../data_team/index.php</l></menu>
+
+<menu><id>B2</id><s>B</s><t>s</t><i>fa fa-question-circle</i><n>Data FAQ</n><l>../data_faq/index.php</l></menu>
+
+<menu><id>B2</id><s>B</s><t>s</t><i>fa fa-briefcase</i><n>Data Pekerjaan</n><l>../data_pekerjaan/index.php</l></menu>
+
+<menu><id>B2</id><s>B</s><t>s</t><i>fa fa-newspaper</i><n>Data Berita</n><l>../data_berita/index.php</l></menu>
+
+<menu><id>B2</id><s>B</s><t>s</t><i>fa fa-image</i><n>Data Portofolio</n><l>../data_portofolio/index.php</l></menu>
+
+<menu><id>B4</id><s>B</s><t>s</t><i>fa fa-images</i><n>Data Galery</n><l>../data_galery/index.php</l></menu>
+
+<menu><id>B11</id><s>B</s><t>s</t><i>fa fa-user-shield</i><n>Data Petugas</n><l>../data_petugas/index.php</l></menu>
+
+<menu><id>B12</id><s>B</s><t>s</t><i>fa fa-trophy</i><n>Data Prestasi</n><l>../data_prestasi/index.php</l></menu>
+
+<menu><id>B12</id><s>B</s><t>s</t><i>fa fa-briefcase</i><n>Data Karir</n><l>../data_karir/index.php</l></menu>
+
+<menu><id>B12</id><s>B</s><t>s</t><i>fa fa-gas-pump</i><n>Data SPBU</n><l>../data_spbu/index.php</l></menu>
+
+
+</humans>

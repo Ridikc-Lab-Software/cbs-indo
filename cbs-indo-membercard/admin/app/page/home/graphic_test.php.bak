@@ -1,0 +1,944 @@
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<body class="bg-white font-sans text-gray-800">
+    <div id="loading-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-98">
+        <div class="flex flex-col items-center">
+            <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-red-500"></div>
+            <p class="mt-4 text-lg font-semibold text-red-500">Memuat Dashboard...</p>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="bg-white text-red-500 p-4 rounded-b-2xl mb-8 flex border border-red-500 justify-between items-center shadow-sm"
+            style="background-color: red;color: white;">
+            <h2 class="text-2xl font-bold m-0 ">DASHBOARD</h2>
+
+            <p class="text-xl m-0">Smart Membercard CBS</p>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="bg-white rounded-xl shadow-md border-2 border-red-500 mb-6 p-4">
+            <form action="" method="get" id='form-filter'>
+                <div class="flex justify-start items-center gap-4">
+                    <select name='spbu'
+                        class="bg-white text-red-500 rounded-lg px-4 py-2 font-medium border-2 border-red-500 focus:ring-2 focus:ring-red-500 focus:border-transparent shadow-sm">
+                        <option>SPBU</option>
+                        <?php combo_database_v2("data_spbu", "nama_spbu", "nama_spbu", ""); ?>
+                    </select>
+                    <input type="text" readonly id="date_trigger_input"
+                        class="bg-white text-gray-800 rounded-lg px-4 py-2 border-2 border-red-500 focus:ring-2 focus:ring-red-500 focus:border-transparent shadow-sm cursor-pointer hover:shadow-md transition-shadow"
+                        value="<?php
+                        if (isset($_GET['mulai']) && isset($_GET['sampai']) && !empty($_GET['mulai']) && !empty($_GET['sampai'])) {
+                            echo date('d/m/Y', strtotime($_GET['mulai'])) . ' - ' . date('d/m/Y', strtotime($_GET['sampai']));
+                        } else {
+                            echo 'Rentang Waktu';
+                        }
+                        ?>" placeholder="Rentang Waktu">
+
+                    <?php if (isset($_GET['spbu']) || isset($_GET['mulai']) || isset($_GET['sampai'])): ?>
+                        <button type="button" id="reset_filter"
+                            class="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-6 py-2 rounded-lg shadow-sm transition-all">
+                            Reset Filter
+                        </button>
+                    <?php endif; ?>
+
+                    <!-- Overlay + Modal Tailwind -->
+                    <div id="date_modal_overlay"
+                        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+                        <div
+                            class="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden">
+
+                            <!-- Header -->
+                            <div
+                                class="bg-gradient-to-r from-red-50 to-orange-50 px-6 py-5 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-2 h-8 bg-gradient-to-b from-red-500 to-orange-500 rounded-full">
+                                    </div>
+                                    <h5 class="text-xl font-bold text-gray-800 m-0">Pilih Rentang Waktu</h5>
+                                </div>
+                                <button id="close_date_modal" type="button"
+                                    class="text-gray-400 hover:text-red-600 hover:bg-red-100 w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                                    ✕
+                                </button>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="p-8 pt-6">
+                                <div class="space-y-5">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Tanggal
+                                            Mulai</label>
+                                        <div class="relative">
+                                            <input type="date" name="mulai"
+                                                class="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all">
+                                            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Tanggal
+                                            Sampai</label>
+                                        <div class="relative">
+                                            <input type="date" name="sampai"
+                                                class="w-full pl-10 pr-4 py-3 bg-white border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all">
+                                            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="mt-6 p-3 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-800 font-medium">
+                                    Rentang waktu akan berlaku setelah filter diterapkan
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="bg-gray-50 px-8 py-5 flex justify-end gap-3 border-t border-gray-200">
+                                <button type="button" id="cancel_date_modal"
+                                    class="px-6 py-2.5 bg-gray-200 text-gray-700 font-medium rounded-full hover:bg-gray-300 transition">
+                                    Batal
+                                </button>
+                                <button type="submit"
+                                    class="px-8 py-2.5 bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold rounded-full shadow-lg hover:shadow-red-500/30 hover:from-red-600 hover:to-orange-600 hover:-translate-y-0.5 flex items-center gap-2 transition-all">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                                    </svg>
+                                    Filter Data
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <!-- Tabs -->
+        <div class="mb-6 ">
+            <ul class="flex border-b border-gray-300 p-0">
+                <li class="">
+                    <a class="inline-block py-2 px-4 bg-red-500 text-white font-semibold rounded-t-lg"
+                        href="#">TRANSACTION SUMMARY</a>
+                </li>
+            </ul>
+        </div>
+        <!--------------------------Kerjakan Pertama------------------------------>
+
+
+        <!-- Transaction Summary Cards -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8" id='transaction_summary_cards'>
+            <!-- Transaction Card -->
+            <div class="bg-white border-2 border-red-500 rounded-2xl shadow-md overflow-hidden">
+                <div class="bg-red-500 text-white text-center py-2 font-bold">
+                    TRANSACTION
+                </div>
+                <div class="text-center py-6">
+                    <img src="../../../data/tmp/membercard/files/icon/report.png" width="50" class="mx-auto mb-2">
+                    <h4 class="text-3xl font-bold text-red-500" id="transaction_count">-</h4>
+                    <div class="text-lg">Transaksi</div>
+                </div>
+            </div>
+
+            <!-- Sales Card -->
+            <div class="bg-white border-2 border-red-500 rounded-2xl shadow-md overflow-hidden">
+                <div class="bg-red-500 text-white text-center py-2 font-bold">
+                    SALES
+                </div>
+                <div class="text-center py-6">
+                    <img src="../../../data/tmp/membercard/files/icon/promo.png" width="50" class="mx-auto mb-2">
+                    <h4 class="text-3xl font-bold text-red-500" id="sales_rupiah">-</h4>
+                    <div class="text-lg">Rupiah</div>
+                </div>
+            </div>
+
+            <!-- Volume Card -->
+            <div class="bg-white border-2 border-red-500 rounded-2xl shadow-md overflow-hidden">
+                <div class="bg-red-500 text-white text-center py-2 font-bold">
+                    VOLUME
+                </div>
+                <div class="text-center py-6">
+                    <img src="../../../data/tmp/membercard/files/icon/user_check.png" width="50" class="mx-auto mb-2">
+                    <h4 class="text-3xl font-bold text-red-500" id="volume_liter">-</h4>
+                    <div class="text-lg">Liter</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transaction Charts by BBM -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <!-- Chart 1: Transaksi By BBM -->
+            <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+                <p class="font-bold mb-4 bg-red-500 text-white px-3 py-2 rounded">Transaksi By BBM</p>
+                <div class="relative h-80">
+                    <canvas id="chartTransByBBM"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Sales SMC (Rupiah) -->
+            <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+                <p class="font-bold mb-4 bg-red-500 text-white px-3 py-2 rounded">Sales SMC (Rupiah)</p>
+                <div class="relative h-80">
+                    <canvas id="chartSalesByBBM"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 3: Sales SMC (Liter) -->
+            <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+                <p class="font-bold mb-4 bg-red-500 text-white px-3 py-2 rounded">Sales SMC (Liter)</p>
+                <div class="relative h-80">
+                    <canvas id="chartVolumeByBBM"></canvas>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb-6 ">
+            <ul class="flex border-b border-gray-300 p-0">
+                <li class="">
+                    <a class="inline-block py-2 px-4 bg-emerald-500 text-white font-semibold rounded-t-lg"
+                        href="#">MEMBER
+                        SUMMARY</a>
+                </li>
+            </ul>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 mb-8" id='cards_row'>
+            <!-- Total Member -->
+
+            <!-- Total Member Aktif -->
+
+            <!-- Promo Aktif SMC -->
+        </div>
+        <!----------------------------------------------------------------->
+    </div>
+
+
+    <div class="grid lg:grid-cols-12 gap-6 mb-8 ">
+        <!-- Left Side - Summary Table -->
+        <div class="lg:col-span-8 bg-gray-100">
+
+            <!-- Member Summary Section -->
+            <div class="w-full bg-gray-300">
+                <div class="bg-red-500 text-white px-3 py-2 font-bold">
+                    MEMBER SUMMARY
+                </div>
+                <table class=" bg-white w-full text-left">
+                    <tbody class='p-4' id='detail_info'>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Right Side - Promo & Mitra -->
+        <div class="lg:col-span-4 space-y-4">
+            <!-- Promo List -->
+            <div class="bg-emerald-700 text-white text-center rounded-2xl p-2 shadow-lg">
+                <h5 class="text-lg font-bold m-0">PROMO</h5>
+
+            </div>
+            <div id='body_promo'
+                class="max-h-56 overflow-y-auto p-4 bg-white rounded-lg border-2 border-gray-300 space-y-3 shadow-md">
+
+                <!-- <div class="flex justify-between items-center pb-2 border-b border-dashed border-gray-400">
+                        <span class="text-red-500 font-semibold">2</span>
+                        <div class="text-red-500 font-semibold">Diskon 5000 Allys Coffee</div>
+                    </div>
+                    <div class="flex justify-between items-center pb-2 border-b border-dashed border-gray-400">
+                        <span class="text-red-500 font-semibold">3</span>
+                        <div class="text-red-500 font-semibold">Diskon DRG</div>
+                    </div>
+                    <div class="flex justify-between items-center pb-2 border-b border-dashed border-gray-400">
+                        <span class="text-red-500 font-semibold">4</span>
+                        <div class="text-red-500 font-semibold">Diskon Kecantikan</div>
+                    </div>
+                    <div class="flex justify-between items-center pb-2 border-b border-dashed border-gray-400">
+                        <span class="text-red-500 font-semibold">5</span>
+                        <div class="text-red-500 font-semibold">Diskon belanja di abc supermarket</div>
+                    </div> -->
+            </div>
+
+            <!-- Sales Program -->
+            <div class="bg-emerald-700 text-white text-center rounded-2xl p-2 shadow-lg">
+                <h5 class="text-lg font-bold m-0">SALES PROGRAM</h5>
+
+            </div>
+            <div class="max-h-56 overflow-y-auto p-2 bg-white rounded-lg border-2 border-gray-300 space-y-3 shadow-md">
+                <div class="flex justify-between items-center ps-3 pb-2 border-b border-dashed border-gray-400">
+                    <span class="text-green-500 font-semibold">1</span>
+                    <div class="text-green-500 font-semibold">Potongan harga BBM Rp 5000</div>
+                </div>
+                <div class="flex justify-between items-center ps-3 pb-2 border-b border-dashed border-gray-400">
+                    <span class="text-green-500 font-semibold">2</span>
+                    <div class="text-green-500 font-semibold">Diskon 5000 Allys Coffee</div>
+                </div>
+                <div class="flex justify-between items-center ps-3 pb-2 border-b border-dashed border-gray-400">
+                    <span class="text-green-500 font-semibold">3</span>
+                    <div class="text-green-500 font-semibold">Diskon DRG</div>
+                </div>
+                <div class="flex justify-between items-center ps-3 pb-2 border-b border-dashed border-gray-400">
+                    <span class="text-green-500 font-semibold">4</span>
+                    <div class="text-green-500 font-semibold">Diskon Kecantikan</div>
+                </div>
+                <div class="flex justify-between items-center ps-3 pb-2 border-b border-dashed border-gray-400">
+                    <span class="text-green-500 font-semibold">5</span>
+                    <div class="text-green-500 font-semibold">Diskon belanja di abc supermarket</div>
+                </div>
+            </div>
+            <!-- Mitra -->
+            <div class="bg-red-500 text-white text-center rounded-2xl p-2 shadow-lg">
+                <h5 class="text-xl font-bold m-0">MITRA</h5>
+            </div>
+
+            <!-- Images Mitra -->
+            <div class="relative">
+                <div class="swiper mitraSlider">
+                    <div class="swiper-wrapper" id="body_mitra">
+                        <!-- Images akan diisi oleh JavaScript -->
+                        <!-- Contoh statis (akan diganti JS):
+            <div class="swiper-slide">
+                <img src="https://www.yoonpak.com/wp-content/uploads/2025/08/ice-coffee.webp" 
+                     alt="Mitra Ally's Coffee" 
+                     class="w-full h-48 object-cover rounded-2xl shadow-lg border-4 border-white">
+            </div>
+            -->
+                    </div>
+
+                    <!-- Navigation Arrows -->
+                    <div
+                        class="custom-next absolute top-1/2 -translate-y-1 right-2 z-10  !bg-red-600 hover:!bg-red-700 !text-white !rounded-full !w-10 !h-10 flex items-center justify-center !shadow-lg">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div
+                        class="custom-prev absolute top-1/2 -translate-y-1 left-2 z-10 !bg-red-600 hover:!bg-red-700 !text-white !rounded-full !w-10 !h-10 flex items-center justify-center !shadow-lg">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </div>
+
+                    <!-- Pagination Dots (opsional) -->
+                    <div class="swiper-pagination mt-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+
+        <!-- Sales SMC (Liter) -->
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="font-bold mb-4 bg-red-500 text-white px-3 py-2 rounded">Sales SMC (Liter)</p>
+            <div class="relative h-80 flex flex-col items-center justify-center">
+                <!-- Wrapper canvas dengan ukuran kecil & center -->
+                <div class="w-48 h-48 mx-auto">
+                    <!-- Ubah w-48 h-48 jadi ukuran yang kamu mau, misal w-40 h-40 untuk lebih kecil -->
+                    <canvas id="salesLiter" class='w-full flex-1'></canvas>
+                </div>
+
+                <!-- Legenda rapat di bawah -->
+                <div class="mt-1 w-full max-w-xs mx-auto"> <!-- mt-4 sesuaikan jarak -->
+                    <table class="w-full text-sm text-left">
+                        <tbody id="legend_salesLiter"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transaction by category (n) -->
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="font-bold mb-4 bg-red-500 text-white px-3 py-2 rounded">Transaction by category (n)</p>
+            <div class="relative h-80 flex flex-col items-center justify-center">
+                <div class="w-48 h-48 mx-auto">
+                    <canvas id="transCategory" class='w-full flex-1'></canvas>
+                </div>
+                <!-- Legenda Tabel -->
+                <div class="mt-1 w-full max-w-xs mx-auto">
+                    <table class="w-full text-sm">
+                        <tbody id="legend_transCategory">
+                            <!-- Diisi oleh JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active members -->
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="font-bold mb-4 bg-red-500 text-white px-3 py-2 rounded">Active members</p>
+            <div class="relative h-80 flex flex-col items-center justify-center">
+                <div class="w-48 h-48 mx-auto">
+                    <canvas id="activeMembers" class='w-full flex-1'></canvas>
+                </div>
+                <!-- Legenda Tabel -->
+                <div class="mt-1 w-full max-w-xs mx-auto">
+                    <table class="w-full text-sm">
+                        <tbody id="legend_activeMembers">
+                            <!-- Diisi oleh JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transaksi SMC (n) -->
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="font-bold mb-4 bg-red-500 text-white px-3 py-2 rounded">Transaksi SMC <span id='ntotal'>(n)</span>
+            </p>
+            <div class="relative h-80 flex flex-col items-center justify-center">
+                <div class="w-48 h-48 mx-auto">
+                    <canvas id="transaksiSmc" class='w-full flex-1'></canvas>
+                </div>
+                <!-- Legenda Tabel -->
+                <div class="mt-1 w-full max-w-xs mx-auto">
+                    <table class="w-full text-sm">
+                        <tbody id="legend_transaksiSmc">
+                            <!-- Diisi oleh JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Member category (n) -->
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="font-bold mb-4 bg-emerald-700 text-white px-3 py-2 rounded">Member category (n)</p>
+            <div class="relative h-80 flex flex-col items-center justify-center">
+                <div class="w-48 h-48 mx-auto">
+                    <canvas id="memberCategory" class='w-full flex-1'></canvas>
+                </div>
+                <!-- Legenda tanpa margin atas besar -->
+                <div class="w-full max-w-xs mx-auto">
+                    <table class="w-full text-sm text-left">
+                        <tbody id="legend_memberCategory"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Redeem point, Leaderboards, dll tetap sama -->
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="font-bold mb-4 bg-emerald-700 text-white px-2 py-2 rounded">Redeem point</p>
+            <div class="relative h-80">
+                <canvas id="redeemPoint" class='w-full flex-1'></canvas>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="font-bold mb-4 bg-red-500 text-white px-2 py-2 rounded">Transaction Leaderboard - operator</p>
+            <div class="relative h-80">
+                <canvas id="trans_leaderboard"></canvas>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="font-bold mb-4 bg-emerald-700 text-white px-2 py-2 rounded">Top 5 member - points</p>
+            <div class="relative h-80">
+                <canvas id="top5_memberpoints"></canvas>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="font-bold mb-4 bg-red-500 text-white px-2 py-2 rounded">Top 5 member - transaction</p>
+            <div class="relative h-80">
+                <canvas id="top5_member_transaction"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tren Charts -->
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="bg-red-500 text-white font-bold  mb-4 px-2 py-2 rounded">Tren Transaksi Bulanan</p>
+            <div class="relative h-80">
+                <canvas id="chartTransaksi"></canvas>
+            </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="bg-emerald-700 text-white font-bold  mb-4 px-2 py-2 rounded">Tren Jumlah Member Aktif Bulanan</p>
+            <div class="relative h-80">
+                <canvas id="chartMember"></canvas>
+            </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-2 border border-gray-200">
+            <p class="bg-red-500 text-white font-bold  mb-4 px-2 py-2 rounded">Tren Redeem Point</p>
+            <div class="relative h-80">
+                <canvas id="chartRedeem"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Tailwind CSS CDN (v3.4+) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // === VARIABEL GLOBAL ===
+        const loadingOverlay = document.getElementById('loading-overlay');
+        let charts = {}; // Simpan semua chart instance
+        let mitraSwiper = null; // Instance Swiper mitra
+
+        // === FUNGSI BANTU ===
+        function showNoData(containerId, message = "Tidak ada data untuk periode ini") {
+            const container = document.querySelector(`#${containerId}`).closest('.relative.h-80') ||
+                document.querySelector(`#${containerId}`).parentElement;
+            if (container) {
+                container.innerHTML = `<p class="text-center text-gray-600 text-lg mt-20">${message}</p>`;
+            }
+        }
+
+        function generateLegend(values, labels, colors, container, total, unit = '') {
+            container.innerHTML = '';
+            labels.forEach((label, i) => {
+                container.innerHTML += `
+            <tr>
+                <td class="py-1 font-medium">${label}</td>
+                <td class="py-1 px-3">:</td>
+                <td class="py-1 text-right font-bold" style="color:${colors[i]};">
+                    ${values[i].toLocaleString()} ${unit}
+                </td>
+            </tr>
+        `;
+            });
+            container.innerHTML += `
+        <tr class="border-t border-gray-400 mt-2 pt-2">
+            <td class="py-2 font-bold">Total</td>
+            <td class="py-2 px-3"></td>
+            <td class="py-2 text-right font-bold text-red-600">${total.toLocaleString()} ${unit}</td>
+        </tr>
+    `;
+        }
+
+        // === FETCH TRANSACTION SUMMARY ===
+        async function fetchTransactionSummary() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const params = {
+                spbu: urlParams.get('spbu') || '',
+                mulai: urlParams.get('mulai') || '',
+                sampai: urlParams.get('sampai') || ''
+            };
+
+            try {
+                const res = await fetch(`../data_grafik/get_grafik_data.php?spbu=${params.spbu}&mulai=${params.mulai}&sampai=${params.sampai}`);
+                const grafikData = await res.json();
+                console.log('Transaction Summary Data:', grafikData);
+
+                // Update Transaction Summary Cards
+                const transactionCount = grafikData.total_transaksi_count || 0;
+                const salesRupiah = grafikData.total_sales_rupiah || 0;
+                const volumeLiter = grafikData.total_volume_liter || 0;
+
+                document.getElementById('transaction_count').textContent = transactionCount.toLocaleString();
+                document.getElementById('sales_rupiah').textContent = salesRupiah.toLocaleString();
+                document.getElementById('volume_liter').textContent = volumeLiter.toLocaleString();
+
+                // Create BBM Bar Charts
+                console.log('BBM Labels:', grafikData.trans_by_bbm_labels);
+                console.log('BBM Data:', grafikData.trans_by_bbm_data);
+                if (grafikData.trans_by_bbm_labels && grafikData.trans_by_bbm_labels.length > 0) {
+                    console.log('Creating BBM charts...');
+                    createBarChart('chartTransByBBM', grafikData.trans_by_bbm_labels,
+                        grafikData.trans_by_bbm_data, 'Transaksi', '#ef4444');
+                    createBarChart('chartSalesByBBM', grafikData.trans_by_bbm_labels,
+                        grafikData.sales_by_bbm_data, 'Rupiah', '#ef4444');
+                    createBarChart('chartVolumeByBBM', grafikData.trans_by_bbm_labels,
+                        grafikData.volume_by_bbm_data, 'Liter', '#ef4444');
+                } else {
+                    console.log('No BBM data available');
+                }
+            } catch (err) {
+                console.error('Error loading transaction summary:', err);
+                document.getElementById('transaction_count').textContent = 'Error';
+                document.getElementById('sales_rupiah').textContent = 'Error';
+                document.getElementById('volume_liter').textContent = 'Error';
+            }
+        }
+
+        // === CREATE BAR CHART HELPER ===
+        function createBarChart(canvasId, labels, data, label, color) {
+            const ctx = document.getElementById(canvasId);
+            if (!ctx) return;
+
+            // Destroy existing chart if exists
+            if (charts[canvasId]) {
+                charts[canvasId].destroy();
+            }
+
+            charts[canvasId] = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        backgroundColor: color,
+                        borderColor: color,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // === MAIN FETCH DATA ===
+        async function loadDashboard() {
+            loadingOverlay.style.display = 'flex';
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const params = {
+                spbu: urlParams.get('spbu') || '',
+                mulai: urlParams.get('mulai') || '',
+                sampai: urlParams.get('sampai') || ''
+            };
+
+            try {
+                // Fetch transaction summary
+                await fetchTransactionSummary();
+
+                const res = await fetch(`get_dashboard_data.php?spbu=${params.spbu}&mulai=${params.mulai}&sampai=${params.sampai}`);
+                const data = await res.json();
+                console.log('Data dari server:', data);
+
+                loadingOverlay.style.display = 'none';
+
+                // === CARD ROW ===
+                document.getElementById('cards_row').innerHTML = `
+            <div class="bg-white border-2 border-emerald-500 rounded-2xl shadow-md overflow-hidden">
+                <div class="bg-emerald-500 text-white text-center py-2 font-bold">
+                    TOTAL MEMBER
+                </div>
+                <div class="text-center py-6">
+                    <img src="../../../data/tmp/membercard/files/icon/member.png" width="50" class="mx-auto mb-2">
+                    <h4 class="text-3xl font-bold text-emerald-500">${data.total_member.toLocaleString()}</h4>
+                    <div class="text-lg">Member</div>
+                </div>
+            </div>
+            <div class="bg-white border-2 border-emerald-500 rounded-2xl shadow-md overflow-hidden">
+                <div class="bg-emerald-500 text-white text-center py-2 font-bold">
+                    ACTIVE MEMBER
+                </div>
+                <div class="text-center py-6">
+                    <img src="../../../data/tmp/membercard/files/icon/user_check.png" width="50" class="mx-auto mb-2">
+                    <h4 class="text-3xl font-bold text-emerald-500">${data.member_aktif.toLocaleString()}</h4>
+                    <div class="text-lg">Member</div>
+                </div>
+            </div>
+            <div class="bg-white border-2 border-emerald-500 rounded-2xl shadow-md overflow-hidden">
+                <div class="bg-emerald-500 text-white text-center py-2 font-bold">
+                    NEW MEMBER
+                </div>
+                <div class="text-center py-6">
+                    <img src="../../../data/tmp/membercard/files/icon/member.png" width="50" class="mx-auto mb-2">
+                    <h4 class="text-3xl font-bold text-emerald-500">${data.new_member_count || 0}</h4>
+                    <div class="text-lg">Member</div>
+                </div>
+            </div>
+        `;
+
+                // === DETAIL INFO TABLE ===
+                document.getElementById('detail_info').innerHTML = `
+            <tr class="border-b border-red/30"><th class="p-3">Jumlah transaksi</th><td class="text-center font-bold">${data.total_transaksi.toLocaleString()}</td></tr>
+            <tr class="border-b border-red/30"><th class="p-3">Jumlah Redeem</th><td class="text-center font-bold">${data.total_redeem.toLocaleString()}</td></tr>
+            <tr class="border-b border-red/30"><th class="p-3">Member </th><td class="text-center font-bold">${data.total_member.toLocaleString()}</td></tr>
+            <tr class="border-b border-red/30"><th class="p-3">Member Aktif</th><td class="text-center font-bold">${data.member_aktif.toLocaleString()}</td></tr>
+        `;
+
+                // === CHARTS ===
+                destroyAllCharts();
+
+                renderSalesLiterChart(data);
+                renderTransaksiSmcChart(data);
+                renderTransCategoryChart(data);
+                renderActiveMembersChart(data);
+                renderMemberCategoryChart(data);
+                renderRedeemPointChart(data);
+                renderLeaderboards(data);
+                renderTrenCharts(data);
+
+                // === PROMO LIST ===
+                renderPromoList(data);
+
+                // === MITRA SLIDER ===
+                renderMitraSlider(data);
+
+                // Resize semua chart setelah DOM settle
+                setTimeout(() => {
+                    Object.values(charts).forEach(chart => chart?.resize());
+                }, 500);
+
+            } catch (err) {
+                console.error('Error loading dashboard:', err);
+                loadingOverlay.style.display = 'none';
+            }
+        }
+
+        function destroyAllCharts() {
+            Object.values(charts).forEach(chart => chart?.destroy());
+            charts = {};
+            if (mitraSwiper) {
+                mitraSwiper.destroy(true, true);
+                mitraSwiper = null;
+            }
+        }
+
+        // === RENDER CHARTS ===
+        function renderSalesLiterChart(data) {
+            const hitungLiter = arr => arr.reduce((sum, item) => sum + (parseInt(item.jumlah || 0) / parseInt(item.harga || 1)), 0);
+            const values = [
+                hitungLiter(data.jenis_liter.PERTAMAX || []),
+                hitungLiter(data.jenis_liter.TURBO || []),
+                hitungLiter(data.jenis_liter.DEXLITE || []),
+                hitungLiter(data.jenis_liter.PERTALITE || [])
+            ];
+            const total = values.reduce((a, b) => a + b, 0);
+
+            if (total === 0) return showNoData('salesLiter', 'Tidak ada penjualan liter di periode ini');
+
+            charts.salesLiter = new Chart(document.getElementById('salesLiter'), {
+                type: 'doughnut',
+                data: { labels: ['Pertamax', 'Turbo', 'Dexlite', 'Pertalite'], datasets: [{ data: values, backgroundColor: ['#ef4444', '#dc2626', '#b91c1c', '#991b1b'] }] },
+                options: { responsive: true, maintainAspectRatio: false, cutout: '60%', radius: '75%', plugins: { legend: { display: false } } }
+            });
+
+            generateLegend(values, ['Pertamax', 'Turbo', 'Dexlite', 'Pertalite'], ['#ef4444', '#dc2626', '#b91c1c', '#991b1b'],
+                document.getElementById('legend_salesLiter'), total, 'L');
+        }
+
+        function renderTransaksiSmcChart(data) {
+
+
+
+            const items = data.per_jenis_transaksi || [];
+            const total = items.reduce((sum, item) => sum + (parseInt(item.jml) || 0), 0);
+            document.getElementById('ntotal').textContent = `(${total.toLocaleString()})`;
+
+            if (total === 0) return showNoData('transaksiSmc');
+
+            charts.transaksiSmc = new Chart(document.getElementById('transaksiSmc'), {
+                type: 'doughnut',
+                data: { labels: ['Pertamax', 'Turbo', 'Dexlite', 'Pertalite'], datasets: [{ data: items.map(x => x.jml || 0), backgroundColor: ['#ef4444', '#dc2626', '#b91c1c', '#991b1b'] }] },
+                options: { responsive: true, maintainAspectRatio: false, cutout: '60%', radius: '75%', plugins: { legend: { display: false } } }
+            });
+
+            generateLegend(items.map(x => x.jml || 0), ['Pertamax', 'Turbo', 'Dexlite', 'Pertalite'],
+                ['#ef4444', '#dc2626', '#b91c1c', '#991b1b'], document.getElementById('legend_transaksiSmc'), total);
+        }
+
+        function renderTransCategoryChart(data) {
+            const vals = [data.jumlah_kategori.motor, data.jumlah_kategori.mobil, data.jumlah_kategori.jerigen, data.jumlah_kategori.niaga].map(v => v || 0);
+            const total = vals.reduce((a, b) => a + b, 0);
+            if (total === 0) return showNoData('transCategory');
+
+            charts.transCategory = new Chart(document.getElementById('transCategory'), {
+                type: 'doughnut',
+                data: { labels: ['Motor', 'Mobil', 'Drigen', 'Truck/Niaga'], datasets: [{ data: vals, backgroundColor: ['#059669', '#047857', '#065f46', '#064e3b'] }] },
+                options: { responsive: true, maintainAspectRatio: false, cutout: '60%', radius: '75%', plugins: { legend: { display: false } } }
+            });
+
+            generateLegend(vals, ['Motor', 'Mobil', 'Drigen', 'Truck/Niaga'], ['#059669', '#047857', '#065f46', '#064e3b'],
+                document.getElementById('legend_transCategory'), total);
+        }
+
+        function renderActiveMembersChart(data) {
+            const aktif = data.member_aktif || 0;
+            const tidak = data.member_tidak_aktif || 0;
+            if (aktif + tidak === 0) return showNoData('activeMembers');
+
+            charts.activeMembers = new Chart(document.getElementById('activeMembers'), {
+                type: 'pie',
+                data: { labels: ['Aktif', 'Tidak Aktif'], datasets: [{ data: [aktif, tidak], backgroundColor: ['#059669', '#ef4444'] }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
+
+            const legend = document.getElementById('legend_activeMembers');
+            legend.innerHTML = `
+        <tr><td class="py-1 font-medium">Aktif</td><td>:</td><td class="text-right font-bold text-green-600">${aktif.toLocaleString()}</td></tr>
+        <tr><td class="py-1 font-medium">Tidak Aktif</td><td>:</td><td class="text-right font-bold text-red-600">${tidak.toLocaleString()}</td></tr>
+    `;
+        }
+
+        function renderMemberCategoryChart(data) {
+            const items = data.per_kategori || [];
+            const total = items.reduce((sum, item) => sum + (parseInt(item.jml) || 0), 0);
+            if (total === 0) return showNoData('memberCategory');
+
+            charts.memberCategory = new Chart(document.getElementById('memberCategory'), {
+                type: 'doughnut',
+                data: { labels: ['Motor', 'Mobil', 'Drigen', 'Truck/Niaga'], datasets: [{ data: items.map(x => x.jml || 0), backgroundColor: ['#059669', '#047857', '#065f46', '#064e3b'] }] },
+                options: { responsive: true, maintainAspectRatio: false, cutout: '60%', radius: '75%', plugins: { legend: { display: false } } }
+            });
+
+            generateLegend(items.map(x => x.jml || 0), ['Motor', 'Mobil', 'Drigen', 'Truck/Niaga'],
+                ['#059669', '#047857', '#065f46', '#064e3b'], document.getElementById('legend_memberCategory'), total);
+        }
+
+        function renderRedeemPointChart(data) {
+            if (!data.top_redeem?.length) return showNoData('redeemPoint');
+            charts.redeemPoint = new Chart(document.getElementById('redeemPoint'), {
+                type: 'bar',
+                data: { labels: data.top_redeem.map(i => i.nama?.substring(0, 15) || ''), datasets: [{ data: data.top_redeem.map(i => i.jml), backgroundColor: '#dc2626' }] },
+                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
+        }
+
+        function renderLeaderboards(data) {
+            // Leaderboard Operator
+            if (!data.leader_operator?.length) showNoData('trans_leaderboard');
+            else {
+                charts.transLeaderboard = new Chart(document.getElementById('trans_leaderboard'), {
+                    type: 'bar',
+                    data: { labels: data.leader_operator.map(o => o.nama?.substring(0, 12) || ''), datasets: [{ data: data.leader_operator.map(o => o.jumlah_transaksi), backgroundColor: '#dc2626' }] },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                });
+            }
+
+            // Top Points & Transaction
+            ['top5_memberpoints', 'top5_member_transaction'].forEach(id => {
+                const key = id === 'top5_memberpoints' ? 'top_point' : 'top_transaksi';
+                if (!data[key]?.length) showNoData(id);
+                else {
+                    charts[id] = new Chart(document.getElementById(id), {
+                        type: 'bar',
+                        data: { labels: data[key].map(i => i.nama?.substring(0, 12) || ''), datasets: [{ data: data[key].map(i => i.point || i.jml), backgroundColor: '#dc2626' }] },
+                        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                    });
+                }
+            });
+        }
+
+        function renderTrenCharts(data) {
+            const bulan = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+
+            ['chartTransaksi', 'chartMember', 'chartRedeem'].forEach((id, idx) => {
+                const datasetKey = ['tren_trans_bulan', 'tren_mem_bulan', 'tren_redeem_bulan'][idx];
+                const values = data[datasetKey] || [];
+
+                charts[id] = new Chart(document.getElementById(id), {
+                    type: id === 'chartMember' ? 'bar' : 'line',
+                    data: { labels: bulan, datasets: [{ data: values, backgroundColor: id === 'chartMember' ? '#059669' : 'rgba(239,68,68,0.2)', borderColor: '#ef4444', fill: id !== 'chartMember' }] },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                });
+            });
+        }
+
+        // === PROMO LIST ===
+        function renderPromoList(data) {
+            const container = document.getElementById('body_promo');
+            container.innerHTML = '';
+
+            if (!data.promo_list?.length) {
+                container.innerHTML = '<p class="text-center text-gray-500 py-6">Tidak ada promo aktif</p>';
+                return;
+            }
+
+            data.promo_list.forEach((promo, i) => {
+                container.innerHTML += `
+            <div class="flex justify-between items-center pb-2 border-b border-dashed border-gray-400">
+                <span class="text-red-500 font-semibold">${i + 1}</span>
+                <div class="text-red-500 font-semibold">${promo.nama_promo || ''}</div>
+            </div>
+        `;
+            });
+        }
+
+        // === MITRA SLIDER ===
+        function renderMitraSlider(data) {
+            const wrapper = document.querySelector('.mitraSlider');
+            const container = document.getElementById('body_mitra');
+            if (!container || !wrapper) return;
+
+            container.innerHTML = '';
+
+            if (!data.mitra_list?.length) {
+                container.innerHTML = '<p class="text-center text-gray-500 py-8">Tidak ada mitra</p>';
+                return;
+            }
+
+            data.mitra_list.forEach(mitra => {
+                container.innerHTML += `
+            <div class="swiper-slide px-4">
+                <img src="../../../upload/${mitra.gambar_logo}" alt="${mitra.nama_mitra || 'Mitra'}" 
+                     class="w-full max-h-32 object-contain rounded-2xl shadow-xl border-4 border-white mx-auto">
+            </div>
+        `;
+            });
+
+            // Destroy instance lama
+            if (mitraSwiper) {
+                mitraSwiper.destroy(true, true);
+            }
+
+            // Init ulang dengan delay kecil
+            setTimeout(() => {
+                mitraSwiper = new Swiper('.mitraSlider', {
+                    loop: data.mitra_list.length > 1,
+                    autoplay: { delay: 3000, disableOnInteraction: false },
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
+                    centeredSlides: true,
+                    pagination: { el: '.swiper-pagination', clickable: true },
+                    navigation: { nextEl: '.custom-next', prevEl: '.custom-prev' },
+                    breakpoints: {
+                        320: { slidesPerView: 1, centeredSlides: false },
+                        640: { slidesPerView: 2 },
+                        768: { slidesPerView: 2.5 },
+                        1024: { slidesPerView: 3 }
+                    }
+                });
+            }, 150);
+        }
+
+        // === MODAL FILTER TANGGAL ===
+        document.getElementById('date_trigger_input')?.addEventListener('click', () => {
+            document.getElementById('date_modal_overlay').classList.remove('hidden');
+        });
+
+        ['close_date_modal', 'cancel_date_modal'].forEach(id => {
+            document.getElementById(id)?.addEventListener('click', () => {
+                document.getElementById('date_modal_overlay').classList.add('hidden');
+            });
+        });
+
+        document.getElementById('date_modal_overlay')?.addEventListener('click', e => {
+            if (e.target.id === 'date_modal_overlay') {
+                e.target.classList.add('hidden');
+            }
+        });
+
+        // === RESET FILTER BUTTON ===
+        document.getElementById('reset_filter')?.addEventListener('click', () => {
+            // Clear URL parameters and reload page
+            window.location.href = window.location.pathname;
+        });
+
+        // === JALANKAN SAAT PAGE LOAD ===
+        document.addEventListener('DOMContentLoaded', loadDashboard);
+    </script>
+</body>

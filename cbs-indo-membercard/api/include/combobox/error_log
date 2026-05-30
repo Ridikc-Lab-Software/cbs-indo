@@ -1,0 +1,1 @@
+[20-Nov-2025 05:03:54 UTC] PHP Warning:  mysqli_connect(): (HY000/1040): Too many connections in /home/ridikcco/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 154

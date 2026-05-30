@@ -1,0 +1,213 @@
+[08-Nov-2025 13:52:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[12-Nov-2025 12:31:14 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[14-Nov-2025 15:17:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[14-Nov-2025 15:18:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[18-Nov-2025 09:21:26 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 72
+[18-Nov-2025 09:21:26 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 72
+[18-Nov-2025 09:21:26 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 179
+[18-Nov-2025 09:21:26 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 179
+[18-Nov-2025 09:21:26 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 191
+[18-Nov-2025 09:21:26 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 191
+[18-Nov-2025 09:21:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_promo/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[31-Mar-2026 05:59:25 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[09-Apr-2026 11:46:25 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 09:13:34 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:17:50 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:17:59 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:17:59 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:17:59 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:17:59 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:17:59 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:17:59 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:17:59 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:17:59 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:17:59 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:18:03 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:18:03 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[10-Apr-2026 15:18:17 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:18:17 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:18:17 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:18:17 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:18:17 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:18:17 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:18:17 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:18:17 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:18:17 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:18:44 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_point_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 36
+[10-Apr-2026 15:18:44 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_value_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 39
+[10-Apr-2026 15:18:44 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:18:44 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[10-Apr-2026 15:18:55 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:18:55 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:18:55 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:18:55 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:18:55 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:18:55 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:18:55 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:18:55 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:18:55 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:19:07 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:19:07 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[10-Apr-2026 15:19:49 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:19:49 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:19:49 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:19:49 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:19:49 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:19:49 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:19:49 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:19:49 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:19:49 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:19:57 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_point_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 36
+[10-Apr-2026 15:19:57 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_value_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 39
+[10-Apr-2026 15:19:57 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:19:57 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[10-Apr-2026 15:20:16 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:20:16 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:20:16 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:20:16 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:20:16 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:20:16 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:20:16 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:20:16 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:20:16 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:20:29 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:20:29 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[10-Apr-2026 15:20:41 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:20:41 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:20:41 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:20:41 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:20:41 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:20:41 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:20:41 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:20:41 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:20:41 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:21:05 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_point_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 36
+[10-Apr-2026 15:21:05 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_value_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 39
+[10-Apr-2026 15:21:05 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:21:05 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[10-Apr-2026 15:21:35 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:21:35 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:21:35 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:21:35 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:21:35 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:21:35 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:21:35 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:21:35 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:21:35 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:21:39 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:21:39 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[10-Apr-2026 15:21:48 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:21:48 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:21:48 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:21:48 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:21:48 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:21:48 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:21:48 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:21:48 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:21:48 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:22:05 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_point_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 36
+[10-Apr-2026 15:22:05 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_value_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 39
+[10-Apr-2026 15:22:05 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:22:05 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[10-Apr-2026 15:22:19 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:22:19 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:22:19 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[10-Apr-2026 15:22:19 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:22:19 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:22:19 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[10-Apr-2026 15:22:19 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:22:19 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[10-Apr-2026 15:22:19 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[10-Apr-2026 15:22:38 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_point_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 36
+[10-Apr-2026 15:22:38 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_value_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 39
+[10-Apr-2026 15:22:38 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[10-Apr-2026 15:22:38 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[13-Apr-2026 00:18:20 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[20-Apr-2026 10:30:01 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[20-Apr-2026 18:42:03 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[20-Apr-2026 18:43:12 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[21-Apr-2026 14:15:59 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[23-Apr-2026 09:56:28 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[23-Apr-2026 09:56:36 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[23-Apr-2026 09:56:36 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[23-Apr-2026 09:56:36 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[25-Apr-2026 09:59:49 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[25-Apr-2026 11:08:56 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[27-Apr-2026 13:24:02 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[28-Apr-2026 08:57:34 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[28-Apr-2026 09:42:11 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[28-Apr-2026 09:42:11 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[28-Apr-2026 15:44:24 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[08-May-2026 08:00:30 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[15-May-2026 14:14:05 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[15-May-2026 14:14:25 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[15-May-2026 14:14:25 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[15-May-2026 14:14:25 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[15-May-2026 14:14:25 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[15-May-2026 14:14:25 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[15-May-2026 14:14:25 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[15-May-2026 14:14:25 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[15-May-2026 14:14:25 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[15-May-2026 14:14:25 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[15-May-2026 14:14:46 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_point_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 36
+[15-May-2026 14:14:46 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_value_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 39
+[15-May-2026 14:14:46 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[15-May-2026 14:14:46 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[15-May-2026 14:15:10 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[15-May-2026 14:15:10 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[15-May-2026 14:15:10 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[15-May-2026 14:15:10 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[15-May-2026 14:15:10 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[15-May-2026 14:15:10 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[15-May-2026 14:15:10 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[15-May-2026 14:15:10 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[15-May-2026 14:15:10 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[15-May-2026 14:15:27 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_point_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 36
+[15-May-2026 14:15:27 Asia/Jakarta] PHP Notice:  Undefined index: jumlah_value_Truck atau niaga in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/proses_update.php on line 39
+[15-May-2026 14:15:27 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[15-May-2026 14:15:27 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[21-May-2026 04:00:17 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[21-May-2026 21:05:31 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[21-May-2026 21:05:31 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[22-May-2026 03:41:57 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[22-May-2026 03:41:57 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[22-May-2026 03:41:57 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[22-May-2026 03:41:57 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[22-May-2026 03:41:57 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[22-May-2026 03:41:57 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[22-May-2026 03:41:57 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[22-May-2026 03:41:57 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[22-May-2026 03:41:57 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[22-May-2026 11:49:49 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[22-May-2026 11:49:49 Asia/Jakarta] PHP Notice:  Undefined index: isi in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/tampil.php on line 217
+[22-May-2026 21:21:49 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[22-May-2026 21:21:49 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[22-May-2026 21:21:49 Asia/Jakarta] PHP Warning:  Use of undefined constant aktifkan_pembatasan_waktu - assumed 'aktifkan_pembatasan_waktu' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 71
+[22-May-2026 21:21:49 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[22-May-2026 21:21:49 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[22-May-2026 21:21:49 Asia/Jakarta] PHP Warning:  Use of undefined constant id_mitra - assumed 'id_mitra' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 177
+[22-May-2026 21:21:49 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[22-May-2026 21:21:49 Asia/Jakarta] PHP Warning:  Use of undefined constant status - assumed 'status' (this will throw an Error in a future version of PHP) in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_promo/edit.php on line 189
+[22-May-2026 21:21:49 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[23-May-2026 05:42:56 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[23-May-2026 14:54:35 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516

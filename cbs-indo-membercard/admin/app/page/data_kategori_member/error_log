@@ -1,0 +1,12 @@
+[14-Apr-2026 16:25:53 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[14-Apr-2026 16:25:53 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_kategori_member/tampil.php on line 7
+[14-Apr-2026 16:25:53 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_kategori_member/tampil.php on line 12
+[18-Apr-2026 10:03:43 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[18-Apr-2026 10:03:43 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_kategori_member/tampil.php on line 7
+[18-Apr-2026 10:03:43 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_kategori_member/tampil.php on line 12
+[29-Apr-2026 22:18:55 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[29-Apr-2026 22:18:55 Asia/Jakarta] PHP Notice:  Undefined variable: selectDropdown in /home/delsigna/cbs-indo.com/membercard/admin/include/function/all.php on line 198
+[03-May-2026 11:44:04 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[17-May-2026 03:43:50 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[17-May-2026 07:57:38 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[21-May-2026 23:54:52 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<humans>
+
+<menu><id>C8</id><s>C</s><t>s</t><i>fa fa-users</i><n>Laporan Member</n><l>../data_member/index.php?input=cetak</l></menu>
+<menu><id>C9</id><s>C</s><t>s</t><i>fa fa-handshake</i><n>Laporan Mitra</n><l>../data_mitra/index.php?input=cetak</l></menu>
+<menu><id>C13</id><s>C</s><t>s</t><i>fa fa-tags</i><n>Laporan Promo</n><l>../data_promo/index.php?input=cetak</l></menu>
+<menu><id>C14</id><s>C</s><t>s</t><i>fa fa-gift</i><n>Laporan Redeem</n><l>../data_redeem/index.php?input=cetak</l></menu>
+<menu><id>C15</id><s>C</s><t>s</t><i>fa fa-receipt</i><n>Laporan Transaksi</n><l>../data_transaksi/index.php?input=cetak</l></menu>
+<menu><id>C15</id><s>C</s><t>s</t><i>fa fa-exclamation-triangle</i><n>Member Problem</n><l>../data_member_problem/cetak.php?preview=</l></menu>
+
+</humans>

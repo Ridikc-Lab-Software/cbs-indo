@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+	android:background="@drawable/info"
+    tools:context=".data_transaksi.data_transaksi_tambah">
+
+	<LinearLayout
+		android:id="@+id/judul_Scrool"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_marginTop="15dp"
+		tools:ignore="MissingConstraints"
+		android:layout_marginBottom="20dp"
+		tools:layout_editor_absoluteX="20dp">
+
+		<ImageView
+			android:id="@+id/imageView5"
+			android:layout_width="150dp"
+			android:layout_height="120dp"
+			android:layout_gravity="center"
+			android:layout_marginTop="10dp"
+			android:background="@drawable/transaction" />
+
+
+		<androidx.cardview.widget.CardView
+			android:layout_width="match_parent"
+
+			android:id="@+id/card1"
+
+			app:cardCornerRadius="10dp"
+
+			android:layout_marginLeft="15dp"
+			android:layout_marginTop="10dp"
+			android:layout_marginRight="15dp"
+			android:layout_marginBottom="10dp"
+
+			android:clickable="true"
+			android:clipToPadding="false"
+			android:focusable="true"
+			android:paddingLeft="4dp"
+			android:paddingRight="4dp"
+			android:paddingBottom="10dp"
+
+			app:cardElevation="8dp"
+
+			android:layout_height="wrap_content" >
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:weightSum="12">
+
+				<LinearLayout
+					android:id="@+id/linearNomor"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:background="@drawable/border_left_background_blue"
+					android:gravity="center"
+					android:visibility="gone">
+
+					<TextView
+
+						android:id="@+id/txt_nomor"
+						android:layout_width="20dp"
+						android:layout_height="match_parent"
+						android:gravity="center"
+						android:minHeight="50dp"
+						android:text=""
+						android:textSize="20dp"
+						android:textStyle="bold" />
+
+				</LinearLayout>
+
+				<LinearLayout
+
+					android:layout_width="match_parent"
+					android:layout_height="70dp"
+					android:layout_marginTop="10dp"
+					android:layout_weight="9"
+					android:orientation="vertical"
+					android:padding="5dp">
+
+
+
+
+
+					<TextView
+						android:id="@+id/namas"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+android:textAlignment="center"
+						android:layout_gravity="center"
+						android:text="PERTAMAX Penambahan 4 Point/Liter"
+
+
+						/>
+
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:id="@+id/linearEdit"
+					android:layout_width="70dp"
+					android:layout_height="30dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginBottom="3dp"
+					android:layout_weight="1"
+					android:background="@color/grey"
+					android:clickable="true"
+					android:foreground="?selectableItemBackground"
+					android:visibility="gone">
+
+					<TextView
+
+						android:id="@+id/tombol_edit"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:background="@color/color_edit"
+						android:gravity="center"
+						android:minWidth="60dp"
+						android:text="Edit"
+						android:textColor="@color/putih"
+						android:textSize="16dp"
+						android:textStyle="bold" />
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:id="@+id/linearHapus"
+					android:layout_width="70dp"
+					android:layout_height="30dp"
+					android:layout_marginLeft="2dp"
+					android:layout_marginTop="3dp"
+					android:layout_marginRight="3dp"
+					android:layout_marginBottom="3dp"
+					android:layout_weight="1"
+					android:background="@color/grey"
+					android:clickable="true"
+					android:foreground="?selectableItemBackground"
+					android:visibility="gone">
+
+					<TextView
+						android:id="@+id/tombol_hapus"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:background="@color/color_hapus"
+						android:gravity="center"
+						android:minWidth="60dp"
+						android:text="Hapus"
+						android:textColor="@color/putih"
+						android:textSize="16dp"
+						android:textStyle="bold" />
+
+				</LinearLayout>
+
+
+			</LinearLayout>
+		</androidx.cardview.widget.CardView>
+
+
+		<androidx.cardview.widget.CardView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="15dp"
+			android:layout_marginTop="3dp"
+			android:layout_marginRight="15dp"
+			android:layout_marginBottom="20dp"
+			android:padding="10dp"
+			android:clickable="true"
+			android:clipToPadding="false"
+			android:focusable="true"
+			android:paddingLeft="4dp"
+			android:paddingRight="4dp"
+			android:paddingBottom="10dp"
+			app:cardCornerRadius="8dp"
+			app:cardElevation="8dp"
+			app:layout_columnWeight="1"
+			tools:ignore="MissingConstraints">
+
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical">
+
+
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dp"
+						android:orientation="vertical">
+
+						<com.google.android.material.textfield.TextInputLayout
+							android:id="@+id/layout_id_kategori_member"
+							style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_below="@+id/layout_id_petugas"
+							android:visibility="gone">
+
+							<com.google.android.material.textfield.TextInputEditText
+								android:id="@+id/id_kategori_member"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:drawableLeft="@drawable/icon_email"
+								android:hint="Id kategori member" />
+						</com.google.android.material.textfield.TextInputLayout>
+
+						<com.google.android.material.textfield.TextInputLayout
+							android:id="@+id/layout_id_jenis_transaksi"
+							style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_below="@+id/layout_id_kategori_member"
+							android:visibility="gone">
+
+							<com.google.android.material.textfield.TextInputEditText
+								android:id="@+id/id_jenis_transaksi"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:drawableLeft="@drawable/icon_email"
+								android:hint="Id jenis transaksi" />
+						</com.google.android.material.textfield.TextInputLayout>
+
+						<com.google.android.material.textfield.TextInputLayout
+							android:id="@+id/layout_point"
+							style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_below="@+id/layout_id_jenis_transaksi"
+							android:visibility="gone">
+
+							<com.google.android.material.textfield.TextInputEditText
+								android:id="@+id/point"
+								android:layout_width="2dp"
+								android:layout_height="6dp"
+								android:drawableLeft="@drawable/icon_email"
+								android:hint="Point" />
+						</com.google.android.material.textfield.TextInputLayout>
+
+						<com.google.android.material.textfield.TextInputLayout
+							android:id="@+id/layout_id_member"
+							style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_below="@+id/layout_jam"
+							android:visibility="gone">
+
+							<com.google.android.material.textfield.TextInputEditText
+								android:id="@+id/id_member"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:drawableLeft="@drawable/icon_email"
+								android:hint="Id member" />
+						</com.google.android.material.textfield.TextInputLayout>
+
+						<com.google.android.material.textfield.TextInputLayout
+							android:id="@+id/layout_jam"
+							style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_below="@+id/layout_tanggal"
+							android:visibility="gone">
+
+							<com.google.android.material.textfield.TextInputEditText
+								android:id="@+id/jam"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:drawableLeft="@drawable/icon_email"
+								android:hint="Jam" />
+						</com.google.android.material.textfield.TextInputLayout>
+
+						<com.google.android.material.textfield.TextInputLayout
+							android:id="@+id/layout_tanggal"
+							style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_below="@+id/layout_id_transaksi"
+							android:visibility="gone">
+
+							<com.google.android.material.textfield.TextInputEditText
+								android:id="@+id/tanggal"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:drawableLeft="@drawable/icon_email"
+								android:hint="Tanggal" />
+						</com.google.android.material.textfield.TextInputLayout>
+
+						<com.google.android.material.textfield.TextInputLayout
+							android:id="@+id/layout_id_transaksi"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:visibility="gone">
+
+							<com.google.android.material.textfield.TextInputEditText
+								android:id="@+id/id_transaksi"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:hint="Id transaksi" />
+						</com.google.android.material.textfield.TextInputLayout>
+
+						<LinearLayout
+							android:id="@+id/group"
+							android:focusable="false"
+							android:focusableInTouchMode="true"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal"
+							android:weightSum="1">
+
+							<LinearLayout
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginTop="10dp"
+								android:layout_marginRight="10dp"
+								android:layout_marginBottom="10dp"
+								android:layout_weight="1"
+								android:orientation="vertical">
+
+
+								<com.google.android.material.textfield.TextInputLayout
+									android:id="@+id/layout_id_petugas"
+									style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									app:boxBackgroundColor="#ACE5EE"
+									android:layout_below="@+id/layout_id_member"
+									>
+
+									<Spinner
+									android:id="@+id/combo_data_petugas"
+									android:layout_width="match_parent"
+									android:layout_height="50dp"
+									android:background="#E7E8E8"
+									android:layout_centerVertical="true"
+									android:layout_gravity="center"
+
+									android:layout_alignParentLeft="true"
+									android:popupBackground="#ACE5EE"
+
+									android:gravity="center"
+									android:spinnerMode="dropdown" />
+
+
+									<RadioGroup
+										android:layout_width="match_parent"
+										android:id="@+id/jml"
+										android:layout_height="wrap_content"
+										android:orientation="horizontal">
+
+										<RadioButton
+											android:id="@+id/rb_liter"
+											android:layout_width="wrap_content"
+											android:checked="true"
+											android:layout_height="wrap_content"
+											android:text="Dalam Liter "
+											android:onClick="onRadioButtonClicked"/>
+
+										<RadioButton
+											android:id="@+id/rb_rupiah"
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:text="Dalam Rupiah"
+											android:onClick="onRadioButtonClicked"/>
+									</RadioGroup>
+
+									<com.google.android.material.textfield.TextInputEditText
+										android:id="@+id/id_petugas"
+										android:layout_width="match_parent"
+										android:layout_height="wrap_content"
+										android:drawableLeft="@drawable/icon_email"
+										android:hint="Petugas"
+										tools:visibility="gone" />
+								</com.google.android.material.textfield.TextInputLayout>
+
+								<com.google.android.material.textfield.TextInputLayout
+									android:id="@+id/layout_jumlah"
+									style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_below="@+id/layout_point">
+
+									<com.google.android.material.textfield.TextInputEditText
+										android:id="@+id/jumlah"
+										android:layout_width="match_parent"
+										android:layout_height="wrap_content"
+										android:drawableLeft="@drawable/icon_email"
+										android:hint="Jumlah " />
+								</com.google.android.material.textfield.TextInputLayout>
+
+
+									<Button
+										android:id="@+id/tombol_simpan"
+										android:layout_width="match_parent"
+										android:layout_height="wrap_content"
+										android:layout_marginBottom="10dp"
+										android:backgroundTint="@color/color_detail"
+										android:drawableLeft="@drawable/simpan_putih"
+										android:text="     PROSES DAN CETAK     "
+										android:textColor="#ffff"></Button>
+
+
+							</LinearLayout>
+
+
+						</LinearLayout>
+					</LinearLayout>
+
+			</LinearLayout>
+		</androidx.cardview.widget.CardView>
+	</LinearLayout>
+
+    <!-- LOADING OVERLAY -->
+    <FrameLayout
+        android:id="@+id/loading_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AB000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="12dp"
+                android:text="Memproses transaksi..."
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:layout_height="100dp"
+                 android:layout_width="200dp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+[03-Nov-2025 05:21:19 UTC] PHP Warning:  include(../data/tmp/tmp 4/login.php): failed to open stream: No such file or directory in /home/ridikcco/cbs-indo.com/membercard/admin/login/index.php on line 13
+[03-Nov-2025 05:21:19 UTC] PHP Warning:  include(../data/tmp/tmp 4/login.php): failed to open stream: No such file or directory in /home/ridikcco/cbs-indo.com/membercard/admin/login/index.php on line 13
+[03-Nov-2025 05:21:19 UTC] PHP Warning:  include(): Failed opening '../data/tmp/tmp 4/login.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/ridikcco/cbs-indo.com/membercard/admin/login/index.php on line 13
+[03-Nov-2025 05:21:21 UTC] PHP Warning:  include(../data/tmp/tmp 4/login.php): failed to open stream: No such file or directory in /home/ridikcco/cbs-indo.com/membercard/admin/login/index.php on line 13
+[03-Nov-2025 05:21:21 UTC] PHP Warning:  include(../data/tmp/tmp 4/login.php): failed to open stream: No such file or directory in /home/ridikcco/cbs-indo.com/membercard/admin/login/index.php on line 13
+[03-Nov-2025 05:21:21 UTC] PHP Warning:  include(): Failed opening '../data/tmp/tmp 4/login.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/ridikcco/cbs-indo.com/membercard/admin/login/index.php on line 13
+[03-Nov-2025 05:21:24 UTC] PHP Warning:  include(../data/tmp/tmp 4/login.php): failed to open stream: No such file or directory in /home/ridikcco/cbs-indo.com/membercard/admin/login/index.php on line 13
+[03-Nov-2025 05:21:24 UTC] PHP Warning:  include(../data/tmp/tmp 4/login.php): failed to open stream: No such file or directory in /home/ridikcco/cbs-indo.com/membercard/admin/login/index.php on line 13
+[03-Nov-2025 05:21:24 UTC] PHP Warning:  include(): Failed opening '../data/tmp/tmp 4/login.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/ridikcco/cbs-indo.com/membercard/admin/login/index.php on line 13
+[04-Nov-2025 09:39:29 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 100
+[04-Nov-2025 09:39:29 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 105
+[04-Nov-2025 09:39:29 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 110
+[11-Nov-2025 06:39:58 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 100
+[11-Nov-2025 06:39:58 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 105
+[11-Nov-2025 06:39:58 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 110
+[11-Nov-2025 06:40:07 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 100
+[11-Nov-2025 06:40:07 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 105
+[11-Nov-2025 06:40:07 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 110

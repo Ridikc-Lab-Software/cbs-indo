@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<humans>
+<!-- MASTER MENU -->
+<menu><id>Home</id><s>0</s><t>s</t><i>fa fa-home</i><n>Home</n><l>?p=home</l></menu>
+<menu><id>Profil</id><s>0</s><t>m</t><i>fa fa-home</i><n>Profil</n><l>?p=profil</l></menu>
+<menu><id>Berita</id><s>0</s><t>m</t><i>fa fa-home</i><n>Berita</n><l>?p=berita</l></menu>
+<menu><id>Prestasi</id><s>0</s><t>s</t><i>fa fa-home</i><n>Penghargaan</n><l>?p=penghargaan</l></menu>
+<menu><id>Galery</id><s>0</s><t>s</t><i>fa fa-home</i><n>Galeri</n><l>?p=galeri</l></menu>
+<menu><id>Career</id><s>0</s><t>s</t><i>fa fa-home</i><n>Karir</n><l>?p=karir</l></menu>
+<menu><id>Portofolio</id><s>0</s><t>s</t><i>fa fa-home</i><n>Portofolio</n><l>?p=portofolio</l></menu>
+
+<menu><id>Login</id><s>0</s><t>s</t><i>fa fa-home</i><n>Smart Member</n><l>http://membercard.cbs-indo.com/</l></menu>
+<menu><id>Login</id><s>0</s><t>s</t><i>fa fa-home</i><n>E-Voucher</n><l>http://e-voucher.cbs-indo.com/</l></menu>
+<!--<menu><id>Web Terkait</id><s>0</s><t>s</t><i>fa fa-home</i><n>Web Terkait</n><l>?p=Web Terkait</l></menu>
+
+
+
+ <menu><id>Penduduk</id><s>0</s><t>s</t><i>fa fa-home</i><n>Penduduk</n><l>?p=Penduduk</l></menu>
+<menu><id>Kelahiran</id><s>0</s><t>s</t><i>fa fa-home</i><n>Kelahiran</n><l>?p=Kelahiran</l></menu>
+<menu><id>Kematian</id><s>0</s><t>s</t><i>fa fa-home</i><n>Kematian</n><l>?p=Kematian</l></menu>
+<menu><id>Perpindahan</id><s>0</s><t>s</t><i>fa fa-home</i><n>Perpindahan</n><l>?p=Perpindahan</l></menu>
+<menu><id>Kedatangan</id><s>0</s><t>s</t><i>fa fa-home</i><n>Kedatangan</n><l>?p=Kedatangan</l></menu> -->
+
+
+<menu><id>B1</id><s>Pemerintahan</s><t>sm</t><n>Kelembagaan</n><l>index.php?p=kelembagaan</l></menu>
+<menu><id>B1</id><s>Pemerintahan</s><t>sm</t><n>Administrasi Pemerintahan</n><l>index.php?p=administrasi_pemerintahan</l></menu>
+
+
+
+<menu><id>B1</id><s>Sarana</s><t>sm</t><i></i><n>Sarana Pendidikan</n><l>index.php?p=saranaxxxBerdasarkan=kategorixxxisi=Sarana%20Pendidikan</l></menu>
+<menu><id>B1</id><s>Sarana</s><t>sm</t><i></i><n>Sarana Kesehatan</n><l>index.php?p=saranaxxxBerdasarkan=kategorixxxisi=Sarana%20Kesehatan</l></menu>
+<menu><id>B1</id><s>Sarana</s><t>sm</t><i></i><n>Sarana Peribadatan</n><l>index.php?p=saranaxxxBerdasarkan=kategorixxxisi=Sarana%20Peribadatan</l></menu>
+<menu><id>B1</id><s>Sarana</s><t>sm</t><i></i><n>Infrastruktur</n><l>index.php?p=saranaxxxBerdasarkan=kategorixxxisi=Infrastruktur</l></menu>
+<menu><id>B1</id><s>Sarana</s><t>sm</t><i></i><n>Koperasi</n><l>index.php?p=saranaxxxBerdasarkan=kategorixxxisi=Koperasi</l></menu>
+
+<menu><id>B1</id><s>Ekonomi</s><t>sm</t><n>Peluang Investasi</n><l>index.php?p=peluang_investasi</l></menu>
+<menu><id>B1</id><s>Ekonomi</s><t>sm</t><n>Pertumbuhan Ekonomi</n><l>index.php?p=pertumbuhan_ekonomi</l></menu>
+<menu><id>B1</id><s>Ekonomi</s><t>sm</t><n>PDRD</n><l>index.php?p=pdrd</l></menu>
+
+<!--<menu><id>B1</id><s>Profil</s><t>sm</t><n>Lambang Daerah</n><l>index.php?p=lambang_daerah</l></menu>-->
+<!--<menu><id>B1</id><s>Profil</s><t>sm</t><n>Selayang Pandang</n><l>index.php?p=selayang_pandang</l></menu>-->
+<!--<menu><id>B1</id><s>Profil</s><t>sm</t><n>Wilayah Administrasi</n><l>index.php?p=wilayah_adminstrasi</l></menu>-->
+<!--<menu><id>B1</id><s>Profil</s><t>sm</t><n>Demografi </n><l>index.php?p=demografi</l></menu>-->
+<menu><id>B1</id><s>Profil</s><t>sm</t><n>Visi dan Misi</n><l>index.php?p=Visi%20Misi</l></menu>
+<menu><id>B1</id><s>Profil</s><t>sm</t><n>Tentang Kami</n><l>index.php?p=Tentang%20Kami</l></menu>
+
+<menu><id>B1</id><s>Berita</s><t>sm</t><n>Informasi Pertamina</n><l>index.php?p=berita&amp;Berdasarkan=kategori_berita&amp;isi=Informasi+Pertamina</l></menu>
+<menu><id>B1</id><s>Berita</s><t>sm</t><n>SPBU Activity</n><l>index.php?p=berita&amp;Berdasarkan=kategori_berita&amp;isi=SPBU+Activity</l></menu>
+
+<!--<menu><id>B1</id><s>Profil</s><t>sm</t><n>Pimpinan Daerah</n><l>index.php?p=pimpinan_daerah</l></menu>-->
+
+
+<!--<menu><id>B1</id><s>Berita</s><t>sm</t><i>fa fa-alert</i><n>Berita</n><l>index.php?p=berita</l></menu>-->
+<!--<menu><id>B1</id><s>Berita</s><t>sm</t><i>fa fa-papper</i><n>Pengumuman</n><l>index.php?p=pengumuman</l></menu>-->
+<!--<menu><id>B1</id><s>Berita</s><t>sm</t><i>fa fa-papper</i><n>Agenda</n><l>index.php?p=agenda</l></menu>-->
+
+<!--<menu><id>B1</id><s>Berita</s><t>sm</t><i>fa fa-photo</i><n>Galery Foto</n><l>index.php?p=galery_foto</l></menu>-->
+<!--<menu><id>B1</id><s>Berita</s><t>sm</t><i>fa fa-play</i><n>Galery Video</n><l>index.php?p=galery_video</l></menu>-->
+<!-- MASTER MENU -->
+</humans>

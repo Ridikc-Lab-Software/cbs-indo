@@ -1,0 +1,48 @@
+[14-Nov-2025 15:18:30 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_mitra/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[14-Nov-2025 15:18:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_mitra/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[14-Nov-2025 15:18:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_mitra/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[14-Nov-2025 15:23:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_mitra/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[17-Nov-2025 12:45:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_mitra/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[22-Nov-2025 21:14:14 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 100
+[22-Nov-2025 21:14:14 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 105
+[22-Nov-2025 21:14:14 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 110
+[22-Nov-2025 21:14:14 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_mitra/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[26-Mar-2026 06:50:28 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[26-Mar-2026 06:50:28 Asia/Jakarta] PHP Notice:  Undefined index: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_mitra/detail.php on line 101
+[06-Apr-2026 03:17:21 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[06-Apr-2026 03:17:21 Asia/Jakarta] PHP Notice:  Undefined index: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_mitra/detail.php on line 101
+[09-Apr-2026 12:58:10 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[09-Apr-2026 12:58:10 Asia/Jakarta] PHP Notice:  Undefined index: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_mitra/detail.php on line 101
+[18-Apr-2026 10:04:21 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[20-Apr-2026 18:39:00 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[20-Apr-2026 18:39:00 Asia/Jakarta] PHP Notice:  Undefined index: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_mitra/detail.php on line 101
+[20-Apr-2026 18:40:54 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[25-Apr-2026 11:08:33 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[27-Apr-2026 11:14:12 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[27-Apr-2026 11:14:12 Asia/Jakarta] PHP Notice:  Undefined index: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_mitra/detail.php on line 101
+[28-Apr-2026 13:29:36 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[28-Apr-2026 13:29:36 Asia/Jakarta] PHP Notice:  Undefined index: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_mitra/detail.php on line 101

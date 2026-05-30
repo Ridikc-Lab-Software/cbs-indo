@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<humans>
+
+<menu><id>B1</id><s>B</s><t>s</t><i>fa fa-users</i><n>Pengaturan Admin</n><l>../data_admin/index.php</l></menu>
+<menu><id>B1</id><s>B</s><t>s</t><i>fa fa-user-cog</i><n>Pengaturan Mitra</n><l>../data_mitra/index.php</l></menu>
+
+<menu><id>B6</id><s>B</s><t>s</t><i>fa fa-tags</i><n>Pengaturan Jenis</n><l>../data_jenis_transaksi/index.php</l></menu>
+
+<menu><id>B6</id><s>B</s><t>s</t><i>fa fa-random</i><n>Pengaturan Transaksi</n><l>../data_pengaturan_jenis_transaksi/index.php</l></menu>
+
+<menu><id>B7</id><s>B</s><t>s</t><i>fa fa-list-alt</i><n>Pengaturan Kategori</n><l>../data_kategori_member/index.php</l></menu>
+
+<menu><id>B12</id><s>B</s><t>s</t><i>fa fa-id-card</i><n>Pengaturan Profil</n><l>../data_profil/index.php</l></menu>
+
+<menu><id>B12</id><s>B</s><t>s</t><i>fa fa-sliders-h</i><n>Pengaturan Slide Company</n><l>../data_slide/index.php</l></menu>
+
+
+
+</humans>

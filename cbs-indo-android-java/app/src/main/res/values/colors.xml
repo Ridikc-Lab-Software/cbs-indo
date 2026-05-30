@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#3968FF</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorsplash">#008577</color>
+    <color name="grey">#e4e4e4</color>
+    <color name="putih">#FFFFFF</color>
+    <color name="green">#00c853</color>
+    <color name="red">#A8C30000</color>
+    <color name="color_tambah">#2196F3</color>
+    <color name="color_lihat">#2196F3</color>
+    <color name="color_refresh">#2196F3</color>
+    <color name="color_detail">#2196F3</color>
+    <color name="color_edit">#2196F3</color>
+    <color name="color_hapus">#2196F3</color>
+    <color name="proses">#FF9800</color>
+    <color name="ditolak">#d50000</color>
+    <color name="proses_pengajuan">#FF9800</color>
+    <color name="disetujui">#00c853</color>
+</resources>

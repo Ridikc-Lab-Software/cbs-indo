@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.project.aplikasi.petugas_cbs">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.bluetooth" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- Permission for using NFC hardware -->
+    <uses-permission android:name="android.permission.NFC" /> <!-- Forcing device to have NFC hardware -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo_kotak"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/logo_kotak"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".data_member.print_member"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LoginQRActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.TransaksiVoucherActivity"
+            android:exported="false" />
+        <activity android:name=".tag_rfid_redeem" />
+        <activity android:name=".tag_rfid_transaksi" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".activity.splashscreen_activity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.lokasianda_activity"
+            android:label="@string/title_activity_lokasianda_"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".activity.webview_activity"
+            android:label="Webview"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".activity.loading"
+            android:label="Loading"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".activity.panduan_activity" />
+        <activity
+            android:name=".activity.qrcode_activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.qrcode2_activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.qrcode_camera"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            tools:ignore="MissingClass" />
+        <activity
+            android:name=".activity.profile_activity"
+            android:label="Profile"
+            android:parentActivityName=".home.home_activity" />
+        <activity android:name=".activity.login_activity" />
+        <activity
+            android:name=".home.home_activity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- ACTIVITY API -->
+        <activity android:name=".config.devicelist" />
+        <activity android:name=".data_transaksi.print_transaksi" />
+        <activity android:name=".data_redeem.print_redeem" />
+        <activity
+            android:name=".data_berita.data_berita_edit"
+            android:label="Edit Data berita"
+            android:parentActivityName=".data_berita.data_berita_activity" />
+        <activity
+            android:name=".data_berita.data_berita_tambah"
+            android:label="Tambah Data berita"
+            android:parentActivityName=".data_berita.data_berita_activity" />
+        <activity
+            android:name=".data_berita.data_berita_tambah_v2"
+            android:label="Tambah Data berita"
+            android:parentActivityName=".data_berita.data_berita_activity" />
+        <activity
+            android:name=".data_berita.data_berita_activity"
+            android:label="Data berita"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_berita.data_berita_activity_v2"
+            android:label="Data berita"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_event.data_event_edit"
+            android:label="Edit Data event"
+            android:parentActivityName=".data_event.data_event_activity" />
+        <activity
+            android:name=".data_event.data_event_tambah"
+            android:label="Tambah Data event"
+            android:parentActivityName=".data_event.data_event_activity" />
+        <activity
+            android:name=".data_event.data_event_tambah_v2"
+            android:label="Tambah Data event"
+            android:parentActivityName=".data_event.data_event_activity" />
+        <activity
+            android:name=".data_event.data_event_activity"
+            android:label="Data event"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_event.data_event_activity_v2"
+            android:label="Data event"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_galery.data_galery_edit"
+            android:label="Edit Data galery"
+            android:parentActivityName=".data_galery.data_galery_activity" />
+        <activity
+            android:name=".data_galery.data_galery_tambah"
+            android:label="Tambah Data galery"
+            android:parentActivityName=".data_galery.data_galery_activity" />
+        <activity
+            android:name=".data_galery.data_galery_tambah_v2"
+            android:label="Tambah Data galery"
+            android:parentActivityName=".data_galery.data_galery_activity" />
+        <activity
+            android:name=".data_galery.data_galery_activity"
+            android:label="Data galery"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_galery.data_galery_activity_v2"
+            android:label="Data galery"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_group_jenis_transaksi.data_group_jenis_transaksi_edit"
+            android:label="Edit Data group jenis transaksi"
+            android:parentActivityName=".data_group_jenis_transaksi.data_group_jenis_transaksi_activity" />
+        <activity
+            android:name=".data_group_jenis_transaksi.data_group_jenis_transaksi_tambah"
+            android:label="Tambah Data group jenis transaksi"
+            android:parentActivityName=".data_group_jenis_transaksi.data_group_jenis_transaksi_activity" />
+        <activity
+            android:name=".data_group_jenis_transaksi.data_group_jenis_transaksi_tambah_v2"
+            android:label="Tambah Data group jenis transaksi"
+            android:parentActivityName=".data_group_jenis_transaksi.data_group_jenis_transaksi_activity" />
+        <activity
+            android:name=".data_group_jenis_transaksi.data_group_jenis_transaksi_activity"
+            android:label="Data group jenis transaksi"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_group_jenis_transaksi.data_group_jenis_transaksi_activity_v2"
+            android:label="Data group jenis transaksi"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_jenis_transaksi.data_jenis_transaksi_edit"
+            android:label="Edit Data jenis transaksi"
+            android:parentActivityName=".data_jenis_transaksi.data_jenis_transaksi_activity" />
+        <activity
+            android:name=".data_jenis_transaksi.data_jenis_transaksi_tambah"
+            android:label="Tambah Data jenis transaksi"
+            android:parentActivityName=".data_jenis_transaksi.data_jenis_transaksi_activity" />
+        <activity
+            android:name=".data_jenis_transaksi.data_jenis_transaksi_tambah_v2"
+            android:label="Tambah Data jenis transaksi"
+            android:parentActivityName=".data_jenis_transaksi.data_jenis_transaksi_activity" />
+        <activity
+            android:name=".data_jenis_transaksi.data_jenis_transaksi_activity"
+            android:label="Data jenis transaksi"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_jenis_transaksi.data_jenis_transaksi_activity_v2"
+            android:label="Data jenis transaksi"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_kategori_member.data_kategori_member_edit"
+            android:label="Edit Data kategori member"
+            android:parentActivityName=".data_kategori_member.data_kategori_member_activity" />
+        <activity
+            android:name=".data_kategori_member.data_kategori_member_tambah"
+            android:label="Tambah Data kategori member"
+            android:parentActivityName=".data_kategori_member.data_kategori_member_activity" />
+        <activity
+            android:name=".data_kategori_member.data_kategori_member_tambah_v2"
+            android:label="Tambah Data kategori member"
+            android:parentActivityName=".data_kategori_member.data_kategori_member_activity" />
+        <activity
+            android:name=".data_kategori_member.data_kategori_member_activity"
+            android:label="Data kategori member"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_kategori_member.data_kategori_member_activity_v2"
+            android:label="Data kategori member"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_member.data_member_edit"
+            android:label="Edit Data member"
+            android:parentActivityName=".data_member.data_member_activity" />
+        <activity
+            android:name=".data_member.data_member_tambah"
+            android:label="Tambah Data member"
+            android:parentActivityName=".data_member.data_member_activity" />
+        <activity
+            android:name=".data_member.data_member_tambah_v2"
+            android:label="Tambah Data member"
+            android:parentActivityName=".data_member.data_member_activity" />
+        <activity
+            android:name=".data_member.data_member_activity"
+            android:label="Data member"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_member.data_member_activity_v2"
+            android:label="Data member"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_mitra.data_mitra_edit"
+            android:label="Edit Data mitra"
+            android:parentActivityName=".data_mitra.data_mitra_activity" />
+        <activity
+            android:name=".data_mitra.data_mitra_tambah"
+            android:label="Tambah Data mitra"
+            android:parentActivityName=".data_mitra.data_mitra_activity" />
+        <activity
+            android:name=".data_mitra.data_mitra_tambah_v2"
+            android:label="Tambah Data mitra"
+            android:parentActivityName=".data_mitra.data_mitra_activity" />
+        <activity
+            android:name=".data_mitra.data_mitra_activity"
+            android:label="Data mitra"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_mitra.data_mitra_activity_v2"
+            android:label="Data mitra"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_pengaturan_point.data_pengaturan_point_edit"
+            android:label="Edit Data pengaturan point"
+            android:parentActivityName=".data_pengaturan_point.data_pengaturan_point_activity" />
+        <activity
+            android:name=".data_pengaturan_point.data_pengaturan_point_tambah"
+            android:label="Tambah Data pengaturan point"
+            android:parentActivityName=".data_pengaturan_point.data_pengaturan_point_activity" />
+        <activity
+            android:name=".data_pengaturan_point.data_pengaturan_point_tambah_v2"
+            android:label="Tambah Data pengaturan point"
+            android:parentActivityName=".data_pengaturan_point.data_pengaturan_point_activity" />
+        <activity
+            android:name=".data_pengaturan_point.data_pengaturan_point_activity"
+            android:label="Data pengaturan point"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_pengaturan_point.data_pengaturan_point_activity_v2"
+            android:label="Data pengaturan point"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_petugas.data_petugas_edit"
+            android:label="Edit Data petugas"
+            android:parentActivityName=".data_petugas.data_petugas_activity" />
+        <activity
+            android:name=".data_petugas.data_petugas_tambah"
+            android:label="Tambah Data petugas"
+            android:parentActivityName=".data_petugas.data_petugas_activity" />
+        <activity
+            android:name=".data_petugas.data_petugas_tambah_v2"
+            android:label="Tambah Data petugas"
+            android:parentActivityName=".data_petugas.data_petugas_activity" />
+        <activity
+            android:name=".data_petugas.data_petugas_activity"
+            android:label="Data petugas"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_petugas.data_petugas_activity_v2"
+            android:label="Data petugas"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_profil.data_profil_edit"
+            android:label="Edit Data profil"
+            android:parentActivityName=".data_profil.data_profil_activity" />
+        <activity
+            android:name=".data_profil.data_profil_tambah"
+            android:label="Tambah Data profil"
+            android:parentActivityName=".data_profil.data_profil_activity" />
+        <activity
+            android:name=".data_profil.data_profil_tambah_v2"
+            android:label="Tambah Data profil"
+            android:parentActivityName=".data_profil.data_profil_activity" />
+        <activity
+            android:name=".data_profil.data_profil_activity"
+            android:label="Data profil"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_profil.data_profil_activity_v2"
+            android:label="Data profil"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_promo.data_promo_edit"
+            android:label="Edit Data promo"
+            android:parentActivityName=".data_promo.data_promo_activity" />
+        <activity
+            android:name=".data_promo.data_promo_tambah"
+            android:label="Tambah Data promo"
+            android:parentActivityName=".data_promo.data_promo_activity" />
+        <activity
+            android:name=".data_promo.data_promo_tambah_v2"
+            android:label="Tambah Data promo"
+            android:parentActivityName=".data_promo.data_promo_activity" />
+        <activity
+            android:name=".data_promo.data_promo_activity"
+            android:label="Data promo"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_promo.data_promo_activity_v2"
+            android:label="Data promo"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_redeem.data_redeem_edit"
+            android:label="Edit Data redeem"
+            android:parentActivityName=".data_redeem.data_redeem_activity" />
+        <activity
+            android:name=".data_redeem.data_redeem_tambah"
+            android:label="Tambah Data redeem"
+            android:parentActivityName=".data_redeem.data_redeem_activity" />
+        <activity
+            android:name=".data_redeem.data_redeem_tambah_v2"
+            android:label="Tambah Data redeem"
+            android:parentActivityName=".data_redeem.data_redeem_activity" />
+        <activity
+            android:name=".data_redeem.data_redeem_activity"
+            android:label="Data redeem"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_redeem.data_redeem_activity_v2"
+            android:label="Data redeem"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_transaksi.data_transaksi_edit"
+            android:label="Edit Data transaksi"
+            android:parentActivityName=".data_transaksi.data_transaksi_activity" />
+        <activity
+            android:name=".data_transaksi.data_transaksi_tambah"
+            android:label="Tambah Data transaksi"
+            android:parentActivityName=".data_transaksi.data_transaksi_activity" />
+        <activity
+            android:name=".data_transaksi.data_transaksi_tambah_v2"
+            android:label="Tambah Data transaksi"
+            android:parentActivityName=".data_transaksi.data_transaksi_activity" />
+        <activity
+            android:name=".data_transaksi.data_transaksi_activity"
+            android:label="Data transaksi"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_transaksi.data_transaksi_activity_v2"
+            android:label="Data transaksi"
+            android:parentActivityName=".home.home_activity" /> <!-- ACTIVITY SQLITE -->
+        <activity
+            android:name=".data_berita_sqlite.data_berita_sqlite_edit"
+            android:label="Edit Data berita"
+            android:parentActivityName=".data_berita_sqlite.data_berita_sqlite_activity" />
+        <activity
+            android:name=".data_berita_sqlite.data_berita_sqlite_tambah"
+            android:label="Tambah Data berita"
+            android:parentActivityName=".data_berita_sqlite.data_berita_sqlite_activity" />
+        <activity
+            android:name=".data_berita_sqlite.data_berita_sqlite_activity"
+            android:label="Data berita"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_event_sqlite.data_event_sqlite_edit"
+            android:label="Edit Data event"
+            android:parentActivityName=".data_event_sqlite.data_event_sqlite_activity" />
+        <activity
+            android:name=".data_event_sqlite.data_event_sqlite_tambah"
+            android:label="Tambah Data event"
+            android:parentActivityName=".data_event_sqlite.data_event_sqlite_activity" />
+        <activity
+            android:name=".data_event_sqlite.data_event_sqlite_activity"
+            android:label="Data event"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_galery_sqlite.data_galery_sqlite_edit"
+            android:label="Edit Data galery"
+            android:parentActivityName=".data_galery_sqlite.data_galery_sqlite_activity" />
+        <activity
+            android:name=".data_galery_sqlite.data_galery_sqlite_tambah"
+            android:label="Tambah Data galery"
+            android:parentActivityName=".data_galery_sqlite.data_galery_sqlite_activity" />
+        <activity
+            android:name=".data_galery_sqlite.data_galery_sqlite_activity"
+            android:label="Data galery"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_group_jenis_transaksi_sqlite.data_group_jenis_transaksi_sqlite_edit"
+            android:label="Edit Data group jenis transaksi"
+            android:parentActivityName=".data_group_jenis_transaksi_sqlite.data_group_jenis_transaksi_sqlite_activity" />
+        <activity
+            android:name=".data_group_jenis_transaksi_sqlite.data_group_jenis_transaksi_sqlite_tambah"
+            android:label="Tambah Data group jenis transaksi"
+            android:parentActivityName=".data_group_jenis_transaksi_sqlite.data_group_jenis_transaksi_sqlite_activity" />
+        <activity
+            android:name=".data_group_jenis_transaksi_sqlite.data_group_jenis_transaksi_sqlite_activity"
+            android:label="Data group jenis transaksi"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_jenis_transaksi_sqlite.data_jenis_transaksi_sqlite_edit"
+            android:label="Edit Data jenis transaksi"
+            android:parentActivityName=".data_jenis_transaksi_sqlite.data_jenis_transaksi_sqlite_activity" />
+        <activity
+            android:name=".data_jenis_transaksi_sqlite.data_jenis_transaksi_sqlite_tambah"
+            android:label="Tambah Data jenis transaksi"
+            android:parentActivityName=".data_jenis_transaksi_sqlite.data_jenis_transaksi_sqlite_activity" />
+        <activity
+            android:name=".data_jenis_transaksi_sqlite.data_jenis_transaksi_sqlite_activity"
+            android:label="Data jenis transaksi"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_kategori_member_sqlite.data_kategori_member_sqlite_edit"
+            android:label="Edit Data kategori member"
+            android:parentActivityName=".data_kategori_member_sqlite.data_kategori_member_sqlite_activity" />
+        <activity
+            android:name=".data_kategori_member_sqlite.data_kategori_member_sqlite_tambah"
+            android:label="Tambah Data kategori member"
+            android:parentActivityName=".data_kategori_member_sqlite.data_kategori_member_sqlite_activity" />
+        <activity
+            android:name=".data_kategori_member_sqlite.data_kategori_member_sqlite_activity"
+            android:label="Data kategori member"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_member_sqlite.data_member_sqlite_edit"
+            android:label="Edit Data member"
+            android:parentActivityName=".data_member_sqlite.data_member_sqlite_activity" />
+        <activity
+            android:name=".data_member_sqlite.data_member_sqlite_tambah"
+            android:label="Tambah Data member"
+            android:parentActivityName=".data_member_sqlite.data_member_sqlite_activity" />
+        <activity
+            android:name=".data_member_sqlite.data_member_sqlite_activity"
+            android:label="Data member"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".config.print_transaksi"
+            android:exported="false" />
+        <activity
+            android:name=".data_mitra_sqlite.data_mitra_sqlite_edit"
+            android:label="Edit Data mitra"
+            android:parentActivityName=".data_mitra_sqlite.data_mitra_sqlite_activity" />
+        <activity
+            android:name=".data_mitra_sqlite.data_mitra_sqlite_tambah"
+            android:label="Tambah Data mitra"
+            android:parentActivityName=".data_mitra_sqlite.data_mitra_sqlite_activity" />
+        <activity
+            android:name=".data_mitra_sqlite.data_mitra_sqlite_activity"
+            android:label="Data mitra"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_pengaturan_point_sqlite.data_pengaturan_point_sqlite_edit"
+            android:label="Edit Data pengaturan point"
+            android:parentActivityName=".data_pengaturan_point_sqlite.data_pengaturan_point_sqlite_activity" />
+        <activity
+            android:name=".data_pengaturan_point_sqlite.data_pengaturan_point_sqlite_tambah"
+            android:label="Tambah Data pengaturan point"
+            android:parentActivityName=".data_pengaturan_point_sqlite.data_pengaturan_point_sqlite_activity" />
+        <activity
+            android:name=".data_pengaturan_point_sqlite.data_pengaturan_point_sqlite_activity"
+            android:label="Data pengaturan point"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_petugas_sqlite.data_petugas_sqlite_edit"
+            android:label="Edit Data petugas"
+            android:parentActivityName=".data_petugas_sqlite.data_petugas_sqlite_activity" />
+        <activity
+            android:name=".data_petugas_sqlite.data_petugas_sqlite_tambah"
+            android:label="Tambah Data petugas"
+            android:parentActivityName=".data_petugas_sqlite.data_petugas_sqlite_activity" />
+        <activity
+            android:name=".data_petugas_sqlite.data_petugas_sqlite_activity"
+            android:label="Data petugas"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_profil_sqlite.data_profil_sqlite_edit"
+            android:label="Edit Data profil"
+            android:parentActivityName=".data_profil_sqlite.data_profil_sqlite_activity" />
+        <activity
+            android:name=".data_profil_sqlite.data_profil_sqlite_tambah"
+            android:label="Tambah Data profil"
+            android:parentActivityName=".data_profil_sqlite.data_profil_sqlite_activity" />
+        <activity
+            android:name=".data_profil_sqlite.data_profil_sqlite_activity"
+            android:label="Data profil"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_promo_sqlite.data_promo_sqlite_edit"
+            android:label="Edit Data promo"
+            android:parentActivityName=".data_promo_sqlite.data_promo_sqlite_activity" />
+        <activity
+            android:name=".data_promo_sqlite.data_promo_sqlite_tambah"
+            android:label="Tambah Data promo"
+            android:parentActivityName=".data_promo_sqlite.data_promo_sqlite_activity" />
+        <activity
+            android:name=".data_promo_sqlite.data_promo_sqlite_activity"
+            android:label="Data promo"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_redeem_sqlite.data_redeem_sqlite_edit"
+            android:label="Edit Data redeem"
+            android:parentActivityName=".data_redeem_sqlite.data_redeem_sqlite_activity" />
+        <activity
+            android:name=".data_redeem_sqlite.data_redeem_sqlite_tambah"
+            android:label="Tambah Data redeem"
+            android:parentActivityName=".data_redeem_sqlite.data_redeem_sqlite_activity" />
+        <activity
+            android:name=".data_redeem_sqlite.data_redeem_sqlite_activity"
+            android:label="Data redeem"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_transaksi_sqlite.data_transaksi_sqlite_edit"
+            android:label="Edit Data transaksi"
+            android:parentActivityName=".data_transaksi_sqlite.data_transaksi_sqlite_activity" />
+        <activity
+            android:name=".data_transaksi_sqlite.data_transaksi_sqlite_tambah"
+            android:label="Tambah Data transaksi"
+            android:parentActivityName=".data_transaksi_sqlite.data_transaksi_sqlite_activity" />
+        <activity
+            android:name=".data_transaksi_sqlite.data_transaksi_sqlite_activity"
+            android:label="Data transaksi"
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_pengaturan_voucher.data_pengaturan_voucher_edit"
+            android:label="Edit Data Pengaturan Voucher "
+            android:parentActivityName=".data_pengaturan_voucher.data_pengaturan_voucher_activity" />
+        <activity
+            android:name=".data_pengaturan_voucher.data_pengaturan_voucher_tambah"
+            android:label="Tambah Data Pengaturan Voucher "
+            android:parentActivityName=".data_pengaturan_voucher.data_pengaturan_voucher_activity" />
+        <activity
+            android:name=".data_pengaturan_voucher.data_pengaturan_voucher_tambah_v2"
+            android:label="Tambah Data Pengaturan Voucher "
+            android:parentActivityName=".data_pengaturan_voucher.data_pengaturan_voucher_activity" />
+        <activity
+            android:name=".data_pengaturan_voucher.data_pengaturan_voucher_activity"
+            android:label="Data Pengaturan Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_pengaturan_voucher.data_pengaturan_voucher_activity_v2"
+            android:label="Data Pengaturan Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_penjualan_voucher.data_penjualan_voucher_edit"
+            android:label="Edit Data Penjualan Voucher "
+            android:parentActivityName=".data_penjualan_voucher.data_penjualan_voucher_activity" />
+        <activity
+            android:name=".data_penjualan_voucher.data_penjualan_voucher_tambah"
+            android:label="Tambah Data Penjualan Voucher "
+            android:parentActivityName=".data_penjualan_voucher.data_penjualan_voucher_activity" />
+        <activity
+            android:name=".data_penjualan_voucher.data_penjualan_voucher_tambah_v2"
+            android:label="Tambah Data Penjualan Voucher "
+            android:parentActivityName=".data_penjualan_voucher.data_penjualan_voucher_activity" />
+        <activity
+            android:name=".data_penjualan_voucher.data_penjualan_voucher_activity"
+            android:label="Data Penjualan Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_penjualan_voucher.data_penjualan_voucher_activity_v2"
+            android:label="Data Penjualan Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_relasi.data_relasi_edit"
+            android:label="Edit Data Relasi "
+            android:parentActivityName=".data_relasi.data_relasi_activity" />
+        <activity
+            android:name=".data_relasi.data_relasi_tambah"
+            android:label="Tambah Data Relasi "
+            android:parentActivityName=".data_relasi.data_relasi_activity" />
+        <activity
+            android:name=".data_relasi.data_relasi_tambah_v2"
+            android:label="Tambah Data Relasi "
+            android:parentActivityName=".data_relasi.data_relasi_activity" />
+        <activity
+            android:name=".data_relasi.data_relasi_activity"
+            android:label="Data Relasi "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_relasi.data_relasi_activity_v2"
+            android:label="Data Relasi "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_transaksi_voucher.data_transaksi_voucher_edit"
+            android:label="Edit Data Transaksi Voucher "
+            android:parentActivityName=".data_transaksi_voucher.data_transaksi_voucher_activity" />
+        <activity
+            android:name=".data_transaksi_voucher.data_transaksi_voucher_tambah"
+            android:label="Tambah Data Transaksi Voucher "
+            android:parentActivityName=".data_transaksi_voucher.data_transaksi_voucher_activity" />
+        <activity
+            android:name=".data_transaksi_voucher.data_transaksi_voucher_tambah_v2"
+            android:label="Tambah Data Transaksi Voucher "
+            android:parentActivityName=".data_transaksi_voucher.data_transaksi_voucher_activity" />
+        <activity
+            android:name=".data_transaksi_voucher.data_transaksi_voucher_activity"
+            android:label="Data Transaksi Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_transaksi_voucher.data_transaksi_voucher_activity_v2"
+            android:label="Data Transaksi Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_voucher.data_voucher_edit"
+            android:label="Edit Data Voucher "
+            android:parentActivityName=".data_voucher.data_voucher_activity" />
+        <activity
+            android:name=".data_voucher.data_voucher_tambah"
+            android:label="Tambah Data Voucher "
+            android:parentActivityName=".data_voucher.data_voucher_activity" />
+        <activity
+            android:name=".data_voucher.data_voucher_tambah_v2"
+            android:label="Tambah Data Voucher "
+            android:parentActivityName=".data_voucher.data_voucher_activity" />
+        <activity
+            android:name=".data_voucher.data_voucher_activity"
+            android:label="Data Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_voucher.data_voucher_activity_v2"
+            android:label="Data Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_pengaturan_voucher_sqlite.data_pengaturan_voucher_sqlite_edit"
+            android:label="Edit Data Pengaturan Voucher "
+            android:parentActivityName=".data_pengaturan_voucher_sqlite.data_pengaturan_voucher_sqlite_activity" />
+        <activity
+            android:name=".data_pengaturan_voucher_sqlite.data_pengaturan_voucher_sqlite_tambah"
+            android:label="Tambah Data Pengaturan Voucher "
+            android:parentActivityName=".data_pengaturan_voucher_sqlite.data_pengaturan_voucher_sqlite_activity" />
+        <activity
+            android:name=".data_pengaturan_voucher_sqlite.data_pengaturan_voucher_sqlite_activity"
+            android:label="Data Pengaturan Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_penjualan_voucher_sqlite.data_penjualan_voucher_sqlite_edit"
+            android:label="Edit Data Penjualan Voucher "
+            android:parentActivityName=".data_penjualan_voucher_sqlite.data_penjualan_voucher_sqlite_activity" />
+        <activity
+            android:name=".data_penjualan_voucher_sqlite.data_penjualan_voucher_sqlite_tambah"
+            android:label="Tambah Data Penjualan Voucher "
+            android:parentActivityName=".data_penjualan_voucher_sqlite.data_penjualan_voucher_sqlite_activity" />
+        <activity
+            android:name=".data_penjualan_voucher_sqlite.data_penjualan_voucher_sqlite_activity"
+            android:label="Data Penjualan Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_relasi_sqlite.data_relasi_sqlite_edit"
+            android:label="Edit Data Relasi "
+            android:parentActivityName=".data_relasi_sqlite.data_relasi_sqlite_activity" />
+        <activity
+            android:name=".data_relasi_sqlite.data_relasi_sqlite_tambah"
+            android:label="Tambah Data Relasi "
+            android:parentActivityName=".data_relasi_sqlite.data_relasi_sqlite_activity" />
+        <activity
+            android:name=".data_relasi_sqlite.data_relasi_sqlite_activity"
+            android:label="Data Relasi "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_transaksi_voucher_sqlite.data_transaksi_voucher_sqlite_edit"
+            android:label="Edit Data Transaksi Voucher "
+            android:parentActivityName=".data_transaksi_voucher_sqlite.data_transaksi_voucher_sqlite_activity" />
+        <activity
+            android:name=".data_transaksi_voucher_sqlite.data_transaksi_voucher_sqlite_tambah"
+            android:label="Tambah Data Transaksi Voucher "
+            android:parentActivityName=".data_transaksi_voucher_sqlite.data_transaksi_voucher_sqlite_activity" />
+        <activity
+            android:name=".data_transaksi_voucher_sqlite.data_transaksi_voucher_sqlite_activity"
+            android:label="Data Transaksi Voucher "
+            android:parentActivityName=".home.home_activity" />
+        <activity
+            android:name=".data_voucher_sqlite.data_voucher_sqlite_edit"
+            android:label="Edit Data Voucher "
+            android:parentActivityName=".data_voucher_sqlite.data_voucher_sqlite_activity" />
+        <activity
+            android:name=".data_voucher_sqlite.data_voucher_sqlite_tambah"
+            android:label="Tambah Data Voucher "
+            android:parentActivityName=".data_voucher_sqlite.data_voucher_sqlite_activity" />
+        <activity
+            android:name=".data_voucher_sqlite.data_voucher_sqlite_activity"
+            android:label="Data Voucher "
+            android:parentActivityName=".home.home_activity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.project.aplikasi.petugas_cbs.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

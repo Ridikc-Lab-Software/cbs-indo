@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="Menu">
+    <menu>
+
+        <item
+                android:id="@+id/nav_kiri5"
+                android:icon="@drawable/nav5"
+                android:title="@string/menu_kiri5" />
+        </menu>
+    </item>
+
+
+</menu>
+

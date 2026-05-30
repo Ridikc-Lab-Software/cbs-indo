@@ -1,0 +1,14 @@
+[11-Nov-2025 02:22:42 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 100
+[11-Nov-2025 02:22:42 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 105
+[11-Nov-2025 02:22:42 UTC] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/ridikcco/cbs-indo.com/membercard/admin/include/function/all.php on line 110
+[11-Nov-2025 09:22:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php:817
+Stack trace:
+#0 /home/ridikcco/cbs-indo.com/membercard/admin/app/page/data_pengaturan_jenis_transaksi/index.php(13): include()
+#1 {main}
+  thrown in /home/ridikcco/cbs-indo.com/membercard/admin/data/tmp/tmp 100/index.php on line 817
+[11-Apr-2026 10:12:48 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-Apr-2026 10:12:48 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pengaturan_jenis_transaksi/tampil.php on line 6
+[11-Apr-2026 10:12:48 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pengaturan_jenis_transaksi/tampil.php on line 10
+[18-Apr-2026 10:03:39 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[18-Apr-2026 10:03:39 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pengaturan_jenis_transaksi/tampil.php on line 6
+[18-Apr-2026 10:03:39 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pengaturan_jenis_transaksi/tampil.php on line 10

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<humans>
+<!-- MASTER MENU -->
+<menu><id>A</id><s>0</s><t>s</t><i>fa fa-database</i><n>Backup</n><l>../backuprestore/index.php?input=backup</l></menu>
+<menu><id>A</id><s>0</s><t>s</t><i>fa fa-database</i><n>Restore</n><l>../backuprestore/index.php?input=restore</l></menu>
+
+</humans>

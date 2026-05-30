@@ -1,0 +1,16 @@
+[11-May-2026 10:16:51 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 10:16:51 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pekerjaan/tampil.php on line 6
+[11-May-2026 10:16:51 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pekerjaan/tampil.php on line 10
+[11-May-2026 10:16:59 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 10:16:59 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pekerjaan/tampil.php on line 6
+[11-May-2026 10:16:59 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pekerjaan/tampil.php on line 10
+[11-May-2026 10:17:02 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 10:17:05 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 10:17:05 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pekerjaan/tampil.php on line 6
+[11-May-2026 10:17:05 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pekerjaan/tampil.php on line 10
+[11-May-2026 10:17:07 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[11-May-2026 10:17:07 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pekerjaan/tampil.php on line 6
+[11-May-2026 10:17:07 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pekerjaan/tampil.php on line 10
+[16-May-2026 01:40:54 Asia/Jakarta] PHP Notice:  Undefined variable: hak_akses in /home/delsigna/cbs-indo.com/membercard/admin/data/tmp/membercard/index.php on line 516
+[16-May-2026 01:40:54 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pekerjaan/tampil.php on line 6
+[16-May-2026 01:40:54 Asia/Jakarta] PHP Notice:  Undefined variable: status_pakaiperperiode in /home/delsigna/cbs-indo.com/membercard/admin/app/page/data_pekerjaan/tampil.php on line 10

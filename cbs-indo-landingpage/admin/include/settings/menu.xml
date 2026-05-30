@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<humans>
+<menu><id>B1</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Admin</n><l>../data_admin/index.php</l></menu>
+<menu><id>B2</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Berita</n><l>../data_berita/index.php</l></menu>
+<menu><id>B3</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Event</n><l>../data_event/index.php</l></menu>
+<menu><id>B4</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Faq</n><l>../data_faq/index.php</l></menu>
+<menu><id>B5</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Galery</n><l>../data_galery/index.php</l></menu>
+<menu><id>B6</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Group Jenis Transaksi</n><l>../data_group_jenis_transaksi/index.php</l></menu>
+<menu><id>B7</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Header</n><l>../data_header/index.php</l></menu>
+<menu><id>B8</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Jenis Transaksi</n><l>../data_jenis_transaksi/index.php</l></menu>
+<menu><id>B9</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Kategori Member</n><l>../data_kategori_member/index.php</l></menu>
+<menu><id>B10</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Member</n><l>../data_member/index.php</l></menu>
+<menu><id>B11</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Mitra</n><l>../data_mitra/index.php</l></menu>
+<menu><id>B12</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Pelanggan</n><l>../data_pelanggan/index.php</l></menu>
+<menu><id>B13</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Pengaturan Point</n><l>../data_pengaturan_point/index.php</l></menu>
+<menu><id>B14</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Petugas</n><l>../data_petugas/index.php</l></menu>
+<menu><id>B15</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Prestasi</n><l>../data_prestasi/index.php</l></menu>
+<menu><id>B16</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Profil</n><l>../data_profil/index.php</l></menu>
+<menu><id>B17</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Promo</n><l>../data_promo/index.php</l></menu>
+<menu><id>B18</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Redeem</n><l>../data_redeem/index.php</l></menu>
+<menu><id>B19</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Team</n><l>../data_team/index.php</l></menu>
+<menu><id>B20</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Tenant</n><l>../data_tenant/index.php</l></menu>
+<menu><id>B21</id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Transaksi</n><l>../data_transaksi/index.php</l></menu>
+</humans>

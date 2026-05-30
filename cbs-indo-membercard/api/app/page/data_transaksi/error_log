@@ -1,0 +1,407 @@
+[11-May-2026 22:03:37 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[11-May-2026 22:03:37 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[11-May-2026 22:03:37 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[12-May-2026 09:24:32 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[12-May-2026 09:24:32 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[12-May-2026 09:24:32 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[12-May-2026 10:08:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function fastcgi_finish_request() in /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/proses_simpan.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/proses_simpan.php on line 26
+[12-May-2026 10:08:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function fastcgi_finish_request() in /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/proses_simpan.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/proses_simpan.php on line 26
+[13-May-2026 08:55:41 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[13-May-2026 08:55:41 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[13-May-2026 18:08:29 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[13-May-2026 20:33:31 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[13-May-2026 20:33:31 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[15-May-2026 09:14:29 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[15-May-2026 16:35:46 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[16-May-2026 07:30:24 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[16-May-2026 07:30:24 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[16-May-2026 15:07:42 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[16-May-2026 15:07:42 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[16-May-2026 16:52:21 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[17-May-2026 05:58:10 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[17-May-2026 23:11:19 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[18-May-2026 02:24:12 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[18-May-2026 02:24:12 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[18-May-2026 02:24:12 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[18-May-2026 07:42:27 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[18-May-2026 11:20:06 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[18-May-2026 11:20:06 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[18-May-2026 11:20:06 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[18-May-2026 14:23:33 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[18-May-2026 14:23:33 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[19-May-2026 14:34:53 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[19-May-2026 22:03:49 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[20-May-2026 15:36:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[20-May-2026 15:36:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[20-May-2026 17:21:12 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[20-May-2026 17:21:12 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[20-May-2026 17:21:12 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[21-May-2026 00:48:08 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[21-May-2026 00:48:08 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[21-May-2026 00:48:08 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[21-May-2026 00:48:08 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[21-May-2026 07:04:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[21-May-2026 07:04:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[21-May-2026 07:04:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[21-May-2026 07:04:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[21-May-2026 07:04:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[21-May-2026 07:04:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[21-May-2026 07:47:04 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[21-May-2026 07:47:04 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[21-May-2026 07:47:04 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[22-May-2026 02:15:34 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[23-May-2026 08:00:11 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643
+[23-May-2026 08:56:59 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[23-May-2026 08:56:59 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[23-May-2026 08:57:00 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[23-May-2026 08:57:00 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[23-May-2026 08:57:00 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php:138
+Stack trace:
+#0 [internal function]: PDO->__construct('mysql:dbname=de...', 'delsigna_cbs_in...', 'cbs_indo', Array)
+#1 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(138): ReflectionClass->newInstanceArgs(Array)
+#2 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php(110): Viocon\Container->instanciate('\\PDO', Array)
+#3 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/Mysql.php(28): Viocon\Container->build('\\PDO', Array)
+#4 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/src/Pixie/ConnectionAdapters/BaseAdapter.php(28): Pixie\ConnectionAdapters\Mysql-> in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/pixie/vendor/usmanhalalit/viocon/src/Viocon/Container.php on line 138
+[23-May-2026 10:48:12 Asia/Jakarta] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1203] User delsigna_cbs_indo already has more than 'max_user_connections' active connections in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php:643
+Stack trace:
+#0 /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php(643): PDO->__construct('mysql:host=loca...', 'delsigna_cbs_in...', 'cbs_indo')
+#1 /home/delsigna/cbs-indo.com/membercard/api/include/all_include.php(7): include('/home/delsigna/...')
+#2 /home/delsigna/cbs-indo.com/membercard/api/app/page/data_transaksi/tampil.php(9): require_once('/home/delsigna/...')
+#3 {main}
+  thrown in /home/delsigna/cbs-indo.com/membercard/admin/include/koneksi/koneksi.php on line 643

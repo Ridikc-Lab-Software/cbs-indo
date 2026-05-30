@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_input"
+    tools:context=".data_promo.data_promo_tambah_v2">
+
+    <LinearLayout
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Silahkan Inputkan data Dibawah ini :"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            tools:ignore="MissingConstraints">
+
+
+            <LinearLayout
+                android:background="@drawable/border_left_background_blue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <ScrollView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+							android:id="@+id/group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+								android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+								<com.google.android.material.textfield.TextInputLayout
+									android:layout_width="match_parent"
+									android:visibility="gone"
+									android:id="@+id/layout_id_promo"
+									android:layout_height="wrap_content">
+								<com.google.android.material.textfield.TextInputEditText
+									android:layout_width="match_parent"
+									android:id="@+id/id_promo"
+									android:layout_height="wrap_content"
+									android:hint="Id promo" />
+								</com.google.android.material.textfield.TextInputLayout>
+								
+                                <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+				android:layout_below="@+id/layout_id_promo"
+                android:id="@+id/layout_tanggal_mulai_berlaku"
+                android:layout_height="wrap_content">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/tanggal_mulai_berlaku"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal mulai berlaku" />
+			</com.google.android.material.textfield.TextInputLayout>
+                                <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+				android:layout_below="@+id/layout_tanggal_mulai_berlaku"
+                android:id="@+id/layout_tanggal_batas_berlaku"
+                android:layout_height="wrap_content">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/tanggal_batas_berlaku"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal batas berlaku" />
+			</com.google.android.material.textfield.TextInputLayout>
+                                <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+				android:layout_below="@+id/layout_tanggal_batas_berlaku"
+                android:id="@+id/layout_nama_promo"
+                android:layout_height="wrap_content">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/nama_promo"
+                    android:layout_height="wrap_content"
+                    android:hint="Nama promo" />
+			</com.google.android.material.textfield.TextInputLayout>
+                                <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+				android:layout_below="@+id/layout_nama_promo"
+                android:id="@+id/layout_keterangan"
+                android:layout_height="wrap_content">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/keterangan"
+                    android:layout_height="wrap_content"
+                    android:hint="Keterangan" />
+			</com.google.android.material.textfield.TextInputLayout>
+                                <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+				android:layout_below="@+id/layout_keterangan"
+                android:id="@+id/layout_syarat_dan_ketentuan"
+                android:layout_height="wrap_content">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/syarat_dan_ketentuan"
+                    android:layout_height="wrap_content"
+                    android:hint="Syarat dan ketentuan" />
+			</com.google.android.material.textfield.TextInputLayout>
+                                <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+				android:layout_below="@+id/layout_syarat_dan_ketentuan"
+                android:id="@+id/layout_foto_promo"
+                android:layout_height="wrap_content">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/foto_promo"
+                    android:layout_height="wrap_content"
+                    android:hint="Foto promo" />
+			</com.google.android.material.textfield.TextInputLayout>
+                                <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+				android:layout_below="@+id/layout_foto_promo"
+                android:id="@+id/layout_jumlah_point"
+                android:layout_height="wrap_content">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/jumlah_point"
+                    android:layout_height="wrap_content"
+                    android:hint="Jumlah point" />
+			</com.google.android.material.textfield.TextInputLayout>
+                                <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+				android:layout_below="@+id/layout_jumlah_point"
+                android:id="@+id/layout_status"
+                android:layout_height="wrap_content">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/status"
+                    android:layout_height="wrap_content"
+                    android:hint="Status" />
+			</com.google.android.material.textfield.TextInputLayout>
+                                
+								
+                            </LinearLayout>
+
+<!--
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+							
+								%tambahxml_v2_2%
+                                
+                            </LinearLayout>
+-->
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnTambah"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/simpan_putih"
+            android:backgroundTint="@color/color_detail"
+            android:textColor="#ffff"
+            android:text="  Tambah   " />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data Yang Telah Diinputkan :"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        tools:ignore="MissingConstraints">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/border_left_background_blue"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ScrollView
+
+
+            android:layout_width="match_parent"
+            android:layout_height="170dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <HorizontalScrollView
+                        android:layout_marginLeft="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp">
+
+                        <LinearLayout
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TableLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tablelayoutid"
+                                >
+
+                            <TableRow
+                                android:id="@+id/rowlay"
+                                android:background="@android:color/holo_blue_light"
+                                android:padding="5dp">
+                                <TextView
+                                    android:layout_width="40dp"
+                                    android:textColor="#ffff"
+                                    android:layout_height="wrap_content"
+                                    android:text="#"/>
+									
+                                <TextView
+									android:visibility="gone"
+                                    android:width="100dp"
+                                    android:textColor="#ffff"
+                                    android:layout_height="wrap_content"
+                                    android:text="Id promo" />
+									
+								<TextView
+    android:width="100dp"
+    android:textColor="#ffff"
+    android:layout_height="wrap_content"
+    android:text="Tanggal mulai berlaku" /><TextView
+    android:width="100dp"
+    android:textColor="#ffff"
+    android:layout_height="wrap_content"
+    android:text="Tanggal batas berlaku" /><TextView
+    android:width="100dp"
+    android:textColor="#ffff"
+    android:layout_height="wrap_content"
+    android:text="Nama promo" /><TextView
+    android:width="100dp"
+    android:textColor="#ffff"
+    android:layout_height="wrap_content"
+    android:text="Keterangan" /><TextView
+    android:width="100dp"
+    android:textColor="#ffff"
+    android:layout_height="wrap_content"
+    android:text="Syarat dan ketentuan" /><TextView
+    android:width="100dp"
+    android:textColor="#ffff"
+    android:layout_height="wrap_content"
+    android:text="Foto promo" /><TextView
+    android:width="100dp"
+    android:textColor="#ffff"
+    android:layout_height="wrap_content"
+    android:text="Jumlah point" /><TextView
+    android:width="100dp"
+    android:textColor="#ffff"
+    android:layout_height="wrap_content"
+    android:text="Status" />
+								
+								
+                            </TableRow>
+
+                            <ListView                                
+                                android:id="@+id/cvdata_promo"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                            </TableLayout>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+            <Button
+                android:id="@+id/tombol_simpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:drawableLeft="@drawable/simpan_putih"
+                android:backgroundTint="@color/color_detail"
+                android:textColor="#ffff"
+                android:text="      Selesai     "></Button>
+        </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+[04-Feb-2026 15:13:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function json_encode() in /home/delsigna/cbs-indo.com/evoucher/admin/data/tmp/metronic87/file/search.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/delsigna/cbs-indo.com/evoucher/admin/data/tmp/metronic87/file/search.php on line 22
+[04-Feb-2026 15:13:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function json_encode() in /home/delsigna/cbs-indo.com/evoucher/admin/data/tmp/metronic87/file/search.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/delsigna/cbs-indo.com/evoucher/admin/data/tmp/metronic87/file/search.php on line 22
+[04-Feb-2026 15:14:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function json_encode() in /home/delsigna/cbs-indo.com/evoucher/admin/data/tmp/metronic87/file/search.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/delsigna/cbs-indo.com/evoucher/admin/data/tmp/metronic87/file/search.php on line 22
+[04-Feb-2026 15:43:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function json_encode() in /home/delsigna/cbs-indo.com/evoucher/admin/data/tmp/metronic87/file/search.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/delsigna/cbs-indo.com/evoucher/admin/data/tmp/metronic87/file/search.php on line 22

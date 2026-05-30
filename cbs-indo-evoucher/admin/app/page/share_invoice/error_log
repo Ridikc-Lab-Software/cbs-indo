@@ -1,0 +1,4 @@
+[22-Apr-2026 14:31:39 Asia/Jakarta] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/delsigna/cbs-indo.com/evoucher/admin/include/function/all.php on line 268
+[22-Apr-2026 14:31:39 Asia/Jakarta] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/delsigna/cbs-indo.com/evoucher/admin/include/function/all.php on line 273
+[22-Apr-2026 14:31:39 Asia/Jakarta] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/delsigna/cbs-indo.com/evoucher/admin/include/function/all.php on line 279
+[22-Apr-2026 14:31:39 Asia/Jakarta] PHP Notice:  Undefined index: proses in /home/delsigna/cbs-indo.com/evoucher/admin/app/page/share_invoice/send_mail.php on line 75

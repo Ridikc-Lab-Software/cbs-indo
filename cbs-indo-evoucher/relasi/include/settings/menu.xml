@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<humans>
+<!-- MASTER MENU -->
+<menu><id>A</id><s>0</s><t>s</t><i>fa fa-home</i><n>Home</n><l>../home/index.php</l></menu>
+<!-- SETTING -->
+<menu><id>B</id><s>0</s><t>m</t><i>fa fa-edit</i><n>Master Data</n><l>#</l></menu>
+<menu><id>C</id><s>0</s><t>m</t><i>fa fa-calendar</i><n>Laporan</n><l>#</l></menu>
+
+<!-- MASTERDATA -->
+<menu><id></id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Admin </n><l>../data_admin/index.php</l></menu>
+<!-- <menu><id></id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Kategori Member </n><l>../data_kategori_member/index.php</l></menu> -->
+<!-- <menu><id></id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Member </n><l>../data_member/index.php</l></menu> -->
+<!-- <menu><id></id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Pekerjaan </n><l>../data_pekerjaan/index.php</l></menu> -->
+<menu><id></id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Pengaturan Voucher </n><l>../data_pengaturan_voucher/index.php</l></menu>
+<menu><id></id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Penjualan Voucher </n><l>../data_penjualan_voucher/index.php</l></menu>
+<menu><id></id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Relasi </n><l>../data_relasi/index.php</l></menu>
+<!-- <menu><id></id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Spbu </n><l>../data_spbu/index.php</l></menu> -->
+<menu><id></id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Transaksi Voucher </n><l>../data_transaksi_voucher/index.php</l></menu>
+<menu><id></id><s>B</s><t>sm</t><i>fa fa-edit</i><n>Data Voucher </n><l>../data_voucher/index.php</l></menu>
+
+<!-- LAPORAN -->
+<menu><id></id><s>C</s><t>sm</t><i>fa fa-calendar</i><n>Data Admin </n><l>../data_admin/index.php?input=cetak</l></menu>
+<!-- <menu><id></id><s>C</s><t>sm</t><i>fa fa-calendar</i><n>Data Kategori Member </n><l>../data_kategori_member/index.php?input=cetak</l></menu> -->
+<!-- <menu><id></id><s>C</s><t>sm</t><i>fa fa-calendar</i><n>Data Member </n><l>../data_member/index.php?input=cetak</l></menu> -->
+<!-- <menu><id></id><s>C</s><t>sm</t><i>fa fa-calendar</i><n>Data Pekerjaan </n><l>../data_pekerjaan/index.php?input=cetak</l></menu> -->
+<menu><id></id><s>C</s><t>sm</t><i>fa fa-calendar</i><n>Data Pengaturan Voucher </n><l>../data_pengaturan_voucher/index.php?input=cetak</l></menu>
+<menu><id></id><s>C</s><t>sm</t><i>fa fa-calendar</i><n>Data Penjualan Voucher </n><l>../data_penjualan_voucher/index.php?input=cetak</l></menu>
+<menu><id></id><s>C</s><t>sm</t><i>fa fa-calendar</i><n>Data Relasi </n><l>../data_relasi/index.php?input=cetak</l></menu>
+<!-- <menu><id></id><s>C</s><t>sm</t><i>fa fa-calendar</i><n>Data Spbu </n><l>../data_spbu/index.php?input=cetak</l></menu> -->
+<menu><id></id><s>C</s><t>sm</t><i>fa fa-calendar</i><n>Data Transaksi Voucher </n><l>../data_transaksi_voucher/index.php?input=cetak</l></menu>
+<menu><id></id><s>C</s><t>sm</t><i>fa fa-calendar</i><n>Data Voucher </n><l>../data_voucher/index.php?input=cetak</l></menu>
+
+
+</humans>
