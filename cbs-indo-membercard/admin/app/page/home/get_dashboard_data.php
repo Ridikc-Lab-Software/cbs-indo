@@ -56,6 +56,15 @@ if ($spbu != '') {
 
     // Filter Operator Leaderboard & Mitra
     $where_operator .= " AND p.nama_spbu LIKE '$spbu_prefix%'";
+} else {
+    // Overall view: restrict to valid SPBU prefixes (Sarolangun and Singkut)
+    $where_member .= " AND (spbu LIKE '24.373.27%' OR spbu LIKE '24.373.32%')";
+    
+    $sub_petugas = "SELECT id_petugas FROM data_petugas WHERE nama_spbu LIKE '24.373.27%' OR nama_spbu LIKE '24.373.32%'";
+    $where_trans .= " AND t.id_petugas IN ($sub_petugas)";
+    $where_redeem .= " AND r.id_petugas IN ($sub_petugas)";
+    
+    $where_operator .= " AND (p.nama_spbu LIKE '24.373.27%' OR p.nama_spbu LIKE '24.373.32%')";
 }
 
 if ($kategori != '') {
@@ -116,20 +125,35 @@ $total_mitra = getSingle("SELECT COUNT(*) FROM data_mitra $where_rentang_mitra")
 $ref_date = !empty($tanggal_sampai) ? $tanggal_sampai : date('Y-m-d');
 $three_months_ago = date('Y-m-d', strtotime('-3 months', strtotime($ref_date)));
 
-// === OVERALL STATISTICS (UNFILTERED FOR MEMBER SUMMARY CARDS) ===
-$total_member_overall = getSingle("SELECT COUNT(*) FROM data_member");
+// Filter SPBU for member summary cards
+$where_spbu_only = "WHERE 1=1";
+$spbu_prefix = '';
+if ($spbu != '') {
+    $spbu_prefix = $spbu;
+    if (preg_match('/^([\d\.]+)/', $spbu, $matches)) {
+        $spbu_prefix = $matches[1];
+    }
+    $where_spbu_only .= " AND spbu LIKE '$spbu_prefix%'";
+} else {
+    $where_spbu_only .= " AND (spbu LIKE '24.373.27%' OR spbu LIKE '24.373.32%')";
+}
+
+// === OVERALL STATISTICS (FILTERED FOR MEMBER SUMMARY CARDS BY SPBU) ===
+$total_member_overall = getSingle("SELECT COUNT(*) FROM data_member $where_spbu_only");
 $member_aktif_overall = getSingle("
     SELECT COUNT(DISTINCT m.id_member)
     FROM data_member m
     INNER JOIN data_transaksi t ON m.id_member = t.id_member
+    INNER JOIN data_petugas p ON t.id_petugas = p.id_petugas
     WHERE t.tanggal >= '$three_months_ago'
     AND t.tanggal <= '$ref_date'
+    " . ($spbu != '' ? " AND m.spbu LIKE '$spbu_prefix%' AND p.nama_spbu LIKE '$spbu_prefix%'" : " AND ((m.spbu LIKE '24.373.27%' AND p.nama_spbu LIKE '24.373.27%') OR (m.spbu LIKE '24.373.32%' AND p.nama_spbu LIKE '24.373.32%'))") . "
 ");
 $one_month_ago = date('Y-m-d', strtotime('-1 month', strtotime($ref_date)));
 $new_member_count_overall = getSingle("
     SELECT COUNT(*) 
     FROM data_member 
-    WHERE tanggal_terdaftar >= '$one_month_ago'
+    $where_spbu_only AND tanggal_terdaftar >= '$one_month_ago'
 ");
 
 // === FILTERED ACTIVE / INACTIVE MEMBERS AND CATEGORY COUNTS (OPTIMIZED SINGLE PASS) ===
@@ -141,11 +165,22 @@ $jumlah_kategori = [
     'niaga' => 0
 ];
 
+$where_q_trans = "WHERE 1=1";
+if (!empty($tanggal_mulai) && !empty($tanggal_sampai)) {
+    $where_q_trans .= " AND t.tanggal BETWEEN '$tanggal_mulai' AND '$tanggal_sampai 23:59:59'";
+}
+if ($spbu != '') {
+    $where_q_trans .= " AND p.nama_spbu LIKE '$spbu_prefix%'";
+} else {
+    $where_q_trans .= " AND (p.nama_spbu LIKE '24.373.27%' OR p.nama_spbu LIKE '24.373.32%')";
+}
+
 $q_trans_members = mysql_query("
-    SELECT t.id_member, t.id_kategori_member
+    SELECT t.id_member, t.id_kategori_member, m.spbu AS member_spbu, p.nama_spbu AS trans_spbu, m.id_member AS member_exists
     FROM data_transaksi t
     LEFT JOIN data_petugas p ON t.id_petugas = p.id_petugas
-    $where_rentang_trans
+    LEFT JOIN data_member m ON t.id_member = m.id_member
+    $where_q_trans
 ");
 
 if ($q_trans_members) {
@@ -154,20 +189,28 @@ if ($q_trans_members) {
         $cat = !empty($row['id_kategori_member']) ? $row['id_kategori_member'] : 'Lainnya';
         $cat_lower = strtolower($cat);
         
-        // 1. Transaction category counts
-        if (strpos($cat_lower, 'motor') !== false) {
-            $jumlah_kategori['motor']++;
-        } elseif (strpos($cat_lower, 'mobil') !== false) {
-            $jumlah_kategori['mobil']++;
-        } elseif (strpos($cat_lower, 'drigen') !== false || strpos($cat_lower, 'jerigen') !== false) {
-            $jumlah_kategori['jerigen']++;
-        } elseif (strpos($cat_lower, 'truck') !== false || strpos($cat_lower, 'niaga') !== false) {
-            $jumlah_kategori['niaga']++;
+        // 1. Transaction category counts (only count if the transaction occurred at the selected SPBU)
+        if ($spbu == '' || (isset($row['trans_spbu']) && strpos($row['trans_spbu'], $spbu_prefix) === 0)) {
+            if (strpos($cat_lower, 'motor') !== false) {
+                $jumlah_kategori['motor']++;
+            } elseif (strpos($cat_lower, 'mobil') !== false) {
+                $jumlah_kategori['mobil']++;
+            } elseif (strpos($cat_lower, 'drigen') !== false || strpos($cat_lower, 'jerigen') !== false) {
+                $jumlah_kategori['jerigen']++;
+            } elseif (strpos($cat_lower, 'truck') !== false || strpos($cat_lower, 'niaga') !== false) {
+                $jumlah_kategori['niaga']++;
+            }
         }
         
-        // 2. Track unique member categories
-        if (!empty($id_member)) {
-            $member_categories[$id_member] = $cat;
+        // 2. Track unique member categories (only if member exists in data_member)
+        if (!empty($id_member) && !empty($row['member_exists'])) {
+            $t_spbu_code = isset($row['trans_spbu']) ? explode(' ', $row['trans_spbu'])[0] : '';
+            $m_spbu_code = isset($row['member_spbu']) ? explode(' ', $row['member_spbu'])[0] : '';
+            if ($t_spbu_code === $m_spbu_code && !empty($t_spbu_code)) {
+                if ($spbu == '' || $m_spbu_code === $spbu_prefix) {
+                    $member_categories[$id_member] = $cat;
+                }
+            }
         }
     }
 }
@@ -201,7 +244,12 @@ $per_kategori = [
 
 // 4. Active & Inactive members (for Active Members chart)
 $member_aktif_filtered = count($member_categories);
-$member_tidak_aktif_filtered = 0;
+
+$member_tidak_aktif_filtered = $total_member_overall - $member_aktif_filtered;
+if ($member_tidak_aktif_filtered < 0) {
+    $member_tidak_aktif_filtered = 0;
+}
+
 
 // === PER KATEGORI AKTIF/TIDAK AKTIF (keseluruhan) ===
 $per_kategori_aktif = [];

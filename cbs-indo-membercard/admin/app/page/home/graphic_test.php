@@ -898,7 +898,7 @@ $current_sampai = (!empty($_GET['sampai'])) ? $_GET['sampai'] : $default_end;
                 </div>
                 <div class="text-center py-6">
                     <img src="../../../data/tmp/membercard/files/icon/member.png" width="50" class="mx-auto mb-2">
-                    <h4 class="text-3xl font-bold text-red-500">${data.total_member_overall.toLocaleString()}</h4>
+                    <h4 class="text-3xl font-bold text-red-500" id="print_total_member">${data.total_member_overall.toLocaleString()}</h4>
                     <div class="text-lg">Member</div>
                 </div>
             </div>
@@ -908,7 +908,7 @@ $current_sampai = (!empty($_GET['sampai'])) ? $_GET['sampai'] : $default_end;
                 </div>
                 <div class="text-center py-6">
                     <img src="../../../data/tmp/membercard/files/icon/user_check.png" width="50" class="mx-auto mb-2">
-                    <h4 class="text-3xl font-bold text-red-500">${data.member_aktif_overall.toLocaleString()}</h4>
+                    <h4 class="text-3xl font-bold text-red-500" id="print_active_member">${data.member_aktif_filtered.toLocaleString()}</h4>
                     <div class="text-lg">Member</div>
                 </div>
             </div>
@@ -918,7 +918,7 @@ $current_sampai = (!empty($_GET['sampai'])) ? $_GET['sampai'] : $default_end;
                 </div>
                 <div class="text-center py-6">
                     <img src="../../../data/tmp/membercard/files/icon/member.png" width="50" class="mx-auto mb-2">
-                    <h4 class="text-3xl font-bold text-red-500">${data.new_member_count_overall || 0}</h4>
+                    <h4 class="text-3xl font-bold text-red-500" id="print_new_member">${data.new_member_count_overall || 0}</h4>
                     <div class="text-lg">Member</div>
                 </div>
             </div>
@@ -929,7 +929,7 @@ $current_sampai = (!empty($_GET['sampai'])) ? $_GET['sampai'] : $default_end;
             <tr class="border-b border-red/30"><th class="p-3">Jumlah transaksi</th><td class="text-center font-bold">${data.total_transaksi.toLocaleString()}</td></tr>
             <tr class="border-b border-red/30"><th class="p-3">Jumlah Redeem</th><td class="text-center font-bold">${data.total_redeem.toLocaleString()}</td></tr>
             <tr class="border-b border-red/30"><th class="p-3">Member </th><td class="text-center font-bold">${data.total_member_overall.toLocaleString()}</td></tr>
-            <tr class="border-b border-red/30"><th class="p-3">Member Aktif</th><td class="text-center font-bold">${data.member_aktif_overall.toLocaleString()}</td></tr>
+            <tr class="border-b border-red/30"><th class="p-3">Member Aktif</th><td class="text-center font-bold">${data.member_aktif_filtered.toLocaleString()}</td></tr>
         `;
 
                 // === CHARTS ===
@@ -1062,13 +1062,32 @@ $current_sampai = (!empty($_GET['sampai'])) ? $_GET['sampai'] : $default_end;
             charts.activeMembers = new Chart(document.getElementById('activeMembers'), {
                 type: 'pie',
                 data: { labels: ['Aktif', 'Tidak Aktif'], datasets: [{ data: [aktif, tidak], backgroundColor: ['#1d4ed8', '#93c5fd'] }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        datalabels: {
+                            formatter: (value, ctx) => {
+                                const total = aktif + tidak;
+                                if (total === 0) return '';
+                                const percentage = (value / total) * 100;
+                                return value.toLocaleString('id-ID') + ' (' + percentage.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%)';
+                            },
+                            color: '#ffffff',
+                            font: {
+                                weight: 'bold',
+                                size: 10
+                            }
+                        }
+                    }
+                }
             });
 
             const legend = document.getElementById('legend_activeMembers');
             legend.innerHTML = `
-        <tr><td class="py-1 font-medium">Aktif</td><td>:</td><td class="text-right font-bold text-blue-700">${aktif.toLocaleString()}</td></tr>
-        <tr><td class="py-1 font-medium">Tidak Aktif</td><td>:</td><td class="text-right font-bold text-blue-300">${tidak.toLocaleString()}</td></tr>
+        <tr><td class="py-1 font-medium">Aktif</td><td>:</td><td class="text-right font-bold text-blue-700">${aktif.toLocaleString('id-ID')}</td></tr>
+        <tr><td class="py-1 font-medium">Tidak Aktif</td><td>:</td><td class="text-right font-bold text-blue-300">${tidak.toLocaleString('id-ID')}</td></tr>
     `;
         }
 
@@ -1477,6 +1496,11 @@ $current_sampai = (!empty($_GET['sampai'])) ? $_GET['sampai'] : $default_end;
             const valSales = document.getElementById('sales_rupiah')?.innerText || '0';
             const valVol   = document.getElementById('volume_liter')?.innerText || '0';
 
+            // Ambil data member summary dari DOM
+            const valTotalMem  = document.getElementById('print_total_member')?.innerText || '0';
+            const valActiveMem = document.getElementById('print_active_member')?.innerText || '0';
+            const valNewMem    = document.getElementById('print_new_member')?.innerText || '0';
+
             // Ambil filter range dari URL
             const urlP    = new URLSearchParams(window.location.search);
             const fMulai  = urlP.get('mulai') || '';
@@ -1530,7 +1554,8 @@ $current_sampai = (!empty($_GET['sampai'])) ? $_GET['sampai'] : $default_end;
 <h1>Laporan Grafik Dashboard CBS</h1>
 <p class="sub">Dicetak: ${now}${filterInfo ? ' &nbsp;|&nbsp; <span style="color:#ef4444;font-weight:bold;">' + filterInfo + '</span>' : ''}</p><hr>
 
-<!-- SUMMARY CARDS -->
+<!-- TRANSACTION SUMMARY -->
+<h2 style="margin:0 0 6px; font-size:10pt;">Transaction Summary</h2>
 <div class="summary-grid">
   <div class="sum-card">
     <div class="sum-head">TRANSACTION</div>
@@ -1556,6 +1581,33 @@ $current_sampai = (!empty($_GET['sampai'])) ? $_GET['sampai'] : $default_end;
 </div>
 
 <div class="row">${makeRow(chartImages.slice(0, 3))}</div>
+
+<!-- MEMBER SUMMARY -->
+<h2 style="margin:10px 0 4px; font-size:10pt;">Member Summary</h2>
+<div class="summary-grid">
+  <div class="sum-card">
+    <div class="sum-head">TOTAL MEMBER</div>
+    <div class="sum-body">
+      <div class="sum-val">${valTotalMem}</div>
+      <div class="sum-lbl">Member</div>
+    </div>
+  </div>
+  <div class="sum-card">
+    <div class="sum-head">ACTIVE MEMBER</div>
+    <div class="sum-body">
+      <div class="sum-val">${valActiveMem}</div>
+      <div class="sum-lbl">Member</div>
+    </div>
+  </div>
+  <div class="sum-card">
+    <div class="sum-head">NEW MEMBER</div>
+    <div class="sum-body">
+      <div class="sum-val">${valNewMem}</div>
+      <div class="sum-lbl">Member</div>
+    </div>
+  </div>
+</div>
+
 <div class="row">${makeRow(chartImages.slice(3, 6))}</div>`;
 
             // chart 6 (Redeem) full width

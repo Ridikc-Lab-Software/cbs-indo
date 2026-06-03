@@ -92,12 +92,14 @@ if (isset($_GET['input'])) {
         <tbody>
             <?php
             $no = 0;
+            $where_active_date = "";
             if (isset($_GET['isi']) && !empty($_GET['isi'])) {
                 //BERDASARKAN
                 $Berdasarkan = mysql_real_escape_string($_GET['Berdasarkan']);
                 $isi =  mysql_real_escape_string($_GET['isi']);
                 echo '<center> Cetak berdasarkan <b>' . $Berdasarkan . '</b> : <b>' . $isi . '</b></center>';
                 $querytabel = "SELECT * FROM data_transaksi where $Berdasarkan like '%$isi%'";
+                $where_active_date = " AND t.$Berdasarkan LIKE '%$isi%'";
             } else if (isset($_GET['tanggal1']) && !empty($_GET['tanggal1'])) {
                 //PERIODE
                 $Berdasarkan =  mysql_real_escape_string($_GET['Berdasarkan']);
@@ -112,13 +114,18 @@ if (isset($_GET['input'])) {
                     $spbu_selected = mysql_real_escape_string($_GET['spbu']);
                     $filter_spbu = " AND id_petugas IN (SELECT id_petugas FROM data_petugas WHERE nama_spbu LIKE '$spbu_selected%')";
                     $spbu_info = ' | SPBU : <b>' . $spbu_selected . '</b>';
+                } else {
+                    // Overall view: restrict to valid SPBU prefixes (Sarolangun and Singkut)
+                    $filter_spbu = " AND id_petugas IN (SELECT id_petugas FROM data_petugas WHERE nama_spbu LIKE '24.373.27%' OR nama_spbu LIKE '24.373.32%')";
                 }
                 
                 echo '<center> Cetak Berdasarkan <b>' . $Berdasarkan . '</b> Dari Tanggal <b>' . $tanggal1_indo . '</b> s/d <b>' . $tanggal2_indo . '</b>' . $spbu_info . '</center>';
                 $querytabel = "SELECT * FROM data_transaksi where ($Berdasarkan BETWEEN '$tanggal1' AND '$tanggal2 23:59:59')$filter_spbu";
+                $where_active_date = " AND t.$Berdasarkan BETWEEN '$tanggal1' AND '$tanggal2 23:59:59'";
             } else {
                 //SEMUA
-                $querytabel = "SELECT * FROM data_transaksi";
+                $querytabel = "SELECT * FROM data_transaksi WHERE id_petugas IN (SELECT id_petugas FROM data_petugas WHERE nama_spbu LIKE '24.373.27%' OR nama_spbu LIKE '24.373.32%')";
+                $where_active_date = "";
             }
             $proses = mysql_query($querytabel);
             
@@ -139,7 +146,7 @@ if (isset($_GET['input'])) {
             $transaksi_terakhir = [];
             if (!empty($list_id_member)) {
                 $in_members = implode(',', $list_id_member);
-                $qm = mysql_query("SELECT id_member, nama, tanggal_terdaftar FROM data_member WHERE id_member IN ($in_members)");
+                $qm = mysql_query("SELECT id_member, nama, tanggal_terdaftar, spbu FROM data_member WHERE id_member IN ($in_members)");
                 while($m = mysql_fetch_array($qm)) {
                     $members[$m['id_member']] = $m;
                 }
@@ -196,6 +203,46 @@ if (isset($_GET['input'])) {
                 ];
             }
 
+            // Query active members directly to align with dashboard logic
+            $q_active = mysql_query("
+                SELECT DISTINCT t.id_member, m.spbu AS member_spbu, t.id_kategori_member, p.nama_spbu AS trans_spbu
+                FROM data_transaksi t
+                INNER JOIN data_member m ON t.id_member = m.id_member
+                LEFT JOIN data_petugas p ON t.id_petugas = p.id_petugas
+                WHERE 1=1 $where_active_date
+            ");
+            if ($q_active) {
+                while ($row = mysql_fetch_assoc($q_active)) {
+                    $id_member = $row['id_member'];
+                    $m_spbu = $row['member_spbu'];
+                    $t_spbu = $row['trans_spbu'];
+                    $cat = !empty($row['id_kategori_member']) ? $row['id_kategori_member'] : 'Lainnya';
+                    $cat_lower = strtolower($cat);
+                    if (strpos($cat_lower, 'truck') !== false || strpos($cat_lower, 'niaga') !== false) {
+                        $cat = 'Truck atau niaga';
+                    } elseif (strpos($cat_lower, 'drigen') !== false || strpos($cat_lower, 'jerigen') !== false) {
+                        $cat = 'Drigen';
+                    } elseif (strpos($cat_lower, 'motor') !== false) {
+                        $cat = 'Motor';
+                    } elseif (strpos($cat_lower, 'mobil') !== false) {
+                        $cat = 'Mobil';
+                    }
+                    
+                    $m_spbu_code = explode(' ', $m_spbu)[0];
+                    $t_spbu_code = explode(' ', $t_spbu)[0];
+                    
+                    if ($m_spbu_code === $t_spbu_code && !empty($m_spbu_code)) {
+                        if ($m_spbu_code === '24.373.27') {
+                            $spbu_data['overall']['member_categories'][$id_member] = $cat;
+                            $spbu_data['24.373.27']['member_categories'][$id_member] = $cat;
+                        } elseif ($m_spbu_code === '24.373.32') {
+                            $spbu_data['overall']['member_categories'][$id_member] = $cat;
+                            $spbu_data['24.373.32']['member_categories'][$id_member] = $cat;
+                        }
+                    }
+                }
+            }
+
             foreach ($rows as $data) {
                 $id_member = $data['id_member'];
                 $id_petugas = $data['id_petugas'];
@@ -227,11 +274,13 @@ if (isset($_GET['input'])) {
 
                 // --- Untuk Summary Tabel Bawah ---
                 $spbu_code = explode(' ', $spbu_petugas)[0];
-                $target_keys = ['overall'];
+                
+                // Transaction target keys (overall + transaction SPBU)
+                $trans_target_keys = ['overall'];
                 if (in_array($spbu_code, $spbus_to_track)) {
-                    $target_keys[] = $spbu_code;
+                    $trans_target_keys[] = $spbu_code;
                 }
-
+                
                 $jenis = !empty($data['id_jenis_transaksi']) ? $data['id_jenis_transaksi'] : 'Lainnya';
                 $cat = !empty($data['id_kategori_member']) ? $data['id_kategori_member'] : 'Lainnya';
                 $cat_lower = strtolower($cat);
@@ -239,7 +288,8 @@ if (isset($_GET['input'])) {
                     $cat = 'Truck atau niaga';
                 }
 
-                foreach ($target_keys as $key) {
+                // Populate Transaction summaries
+                foreach ($trans_target_keys as $key) {
                     if (!isset($spbu_data[$key]['summary_transaksi'][$jenis])) $spbu_data[$key]['summary_transaksi'][$jenis] = 0;
                     if (!isset($spbu_data[$key]['summary_rupiah'][$jenis])) $spbu_data[$key]['summary_rupiah'][$jenis] = 0;
                     if (!isset($spbu_data[$key]['summary_liter'][$jenis])) $spbu_data[$key]['summary_liter'][$jenis] = 0;
@@ -255,9 +305,6 @@ if (isset($_GET['input'])) {
                     }
 
                     $spbu_data[$key]['summary_transaction_category'][$cat] = (isset($spbu_data[$key]['summary_transaction_category'][$cat]) ? $spbu_data[$key]['summary_transaction_category'][$cat] : 0) + 1;
-                    if (!empty($id_member)) {
-                        $spbu_data[$key]['member_categories'][$id_member] = $cat;
-                    }
                 }
             ?>
                 <tr class="event2">
@@ -315,9 +362,6 @@ if (isset($_GET['input'])) {
 
     <?php
     // --- Hitung Active & Inactive Members serta Category Counts untuk setiap SPBU ---
-    $ref_date = date('Y-m-d');
-    $active_threshold_date = date('Y-m-d', strtotime('-3 months', strtotime($ref_date)));
-
     foreach ($spbu_data as $key => $sdata) {
         $summary_member_category = [];
         foreach ($sdata['member_categories'] as $m_id => $m_cat) {
@@ -325,18 +369,17 @@ if (isset($_GET['input'])) {
         }
         $spbu_data[$key]['summary_member_category'] = $summary_member_category;
 
-        $count_active = 0;
-        $count_inactive = 0;
-        foreach ($sdata['member_categories'] as $m_id => $m_cat) {
-            $last_trx = isset($transaksi_terakhir[$m_id]) ? $transaksi_terakhir[$m_id] : '';
-            if (!empty($last_trx) && $last_trx >= $active_threshold_date) {
-                $count_active++;
-            } else {
-                $count_inactive++;
-            }
+        $count_active = count($sdata['member_categories']);
+        
+        if ($key === 'overall') {
+            $total_members_spbu = (int) mysql_result(mysql_query("SELECT COUNT(*) FROM data_member WHERE (spbu LIKE '24.373.27%' OR spbu LIKE '24.373.32%')"), 0);
+        } else {
+            $total_members_spbu = (int) mysql_result(mysql_query("SELECT COUNT(*) FROM data_member WHERE spbu LIKE '$key%'"), 0);
         }
+        
+        $spbu_data[$key]['total_members_spbu'] = $total_members_spbu;
         $spbu_data[$key]['count_active'] = $count_active;
-        $spbu_data[$key]['count_inactive'] = $count_inactive;
+        $spbu_data[$key]['count_inactive'] = $total_members_spbu - $count_active;
     }
     ?>
 
@@ -538,7 +581,7 @@ if (isset($_GET['input'])) {
                 <td valign="top" width="33%">
                     <table class="tabel2" width="100%" border="1" style="border-collapse: collapse;">
                         <thead>
-                            <tr><th colspan="2" style="background-color: #f3e8ff; padding: 5px;">Active Members (<?php echo ($sdata['count_active'] + $sdata['count_inactive']); ?>)</th></tr>
+                            <tr><th colspan="2" style="background-color: #f3e8ff; padding: 5px;">Active Members (<?php echo number_format($sdata['count_active'], 0, ',', '.'); ?>)</th></tr>
                         </thead>
                         <tbody>
                             <tr>
@@ -551,7 +594,7 @@ if (isset($_GET['input'])) {
                             </tr>
                             <tr style="font-weight: bold; background-color: #f9fafb;">
                                 <td style="padding: 3px;">TOTAL</td>
-                                <td align="right" style="padding: 3px;"><?php echo number_format($sdata['count_active'] + $sdata['count_inactive'], 0, ',', '.'); ?></td>
+                                <td align="right" style="padding: 3px;"><?php echo number_format($sdata['total_members_spbu'], 0, ',', '.'); ?></td>
                             </tr>
                         </tbody>
                     </table>

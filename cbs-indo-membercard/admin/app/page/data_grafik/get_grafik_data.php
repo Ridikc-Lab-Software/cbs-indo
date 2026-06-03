@@ -43,6 +43,11 @@ if ($spbu != '') {
     $where_trans .= " AND p.nama_spbu LIKE '$spbu_prefix%'";
     $where_redeem .= " AND p2.nama_spbu LIKE '$spbu_prefix%'";
     $where_member .= " AND m.spbu LIKE '$spbu_prefix%'";
+} else {
+    // Overall view: restrict to valid SPBU prefixes (Sarolangun and Singkut)
+    $where_trans .= " AND (p.nama_spbu LIKE '24.373.27%' OR p.nama_spbu LIKE '24.373.32%')";
+    $where_redeem .= " AND (p2.nama_spbu LIKE '24.373.27%' OR p2.nama_spbu LIKE '24.373.32%')";
+    $where_member .= " AND (m.spbu LIKE '24.373.27%' OR m.spbu LIKE '24.373.32%')";
 }
 
 if ($kategori != '') {
